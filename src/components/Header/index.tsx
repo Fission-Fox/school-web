@@ -1,48 +1,41 @@
-"use client"
+"use client";
 // import LogoLight from "@/assets/images/logo-light.png";
 import Link from "next/link";
 import { useState } from "react";
 export default function Header() {
-    const [isOpen, setMenu] = useState(true);
-    const toggleMenu = () => {
-        setMenu(!isOpen)
-    }
-    return (
-        <nav className="navbar bg-black" id="navbar">
-            <div className="container flex flex-wrap items-center justify-end">
-                <a className="navbar-brand text-white" href="index.html">
-                    <span className="inline-block dark:hidden">
-                        {/* <Image src={LogoDark} className="l-dark" alt="" />
+  const [isOpen, setMenu] = useState(true);
+  const toggleMenu = () => {
+    setMenu(!isOpen);
+  };
+  return (
+    <nav className="navbar bg-black" id="navbar">
+      <div className="container flex flex-wrap items-center justify-end">
+        <a className="navbar-brand text-white" href="index.html">
+          <span className="inline-block dark:hidden">
+            {/* <Image src={LogoDark} className="l-dark" alt="" />
                         <Image src={LogoLight} className="l-light" alt="" /> */}
-                        img
-                    </span>
-                    {/* <Image
+            img
+          </span>
+          {/* <Image
                         src={LogoLight}
                         className="hidden dark:inline-block"
                         alt=""
                     /> */}
-                    img
-                </a>
-                <div >
-                    <Link
-                        href={'/'}
-                    >
-                        <span className="nav-link">Home</span>
-                    </Link>
-                    <Link
-                        href={'/'}
-                    >
-                        <span className="nav-link">About Us</span>
-                    </Link>
-                    <Link
-                        href={'/'}
-                    >
-                        <span className="nav-link">Contact Us</span>
-                    </Link>
-                </div>
+          img
+        </a>
+        <div>
+          <Link href={"/"}>
+            <span className="nav-link">Home</span>
+          </Link>
+          <Link href={"/"}>
+            <span className="nav-link">About Us</span>
+          </Link>
+          <Link href={"/"}>
+            <span className="nav-link">Contact Us</span>
+          </Link>
+        </div>
 
-
-                {/* <div className="nav-icons flex items-center lg_992:order-2 ms-auto">
+        {/* <div className="nav-icons flex items-center lg_992:order-2 ms-auto">
                     <ul className="list-none menu-social mb-0">
                         <li className="inline ms-1">
                             <Link href="#">
@@ -97,29 +90,25 @@ export default function Header() {
                     </button>
                 </div> */}
 
-                <div
-                    className={`${isOpen === true ? 'hidden' : 'block'} navigation lg_992:order-1 lg_992:flex`}
-                    id="menu-collapse"
-                >
-                    <ul className="navbar-nav nav-light" id="navbar-navlist">
-                        <Link
-                            href={'/'}
-                        >
-                            <span className="nav-link">Home</span>
-                        </Link>
-                        <Link
-                            href={'/'}
-                        >
-                            <span className="nav-link">About Us</span>
-                        </Link>
-                        <Link
-                            href={'/'}
-                        >
-                            <span className="nav-link">Contact Us</span>
-                        </Link>
-                    </ul>
-                </div>
-            </div>
-        </nav >
-    )
+        <div
+          className={`${
+            isOpen === true ? "hidden" : "block"
+          } navigation lg_992:order-1 lg_992:flex`}
+          id="menu-collapse"
+        >
+          <ul className="navbar-nav nav-light" id="navbar-navlist">
+            <Link href={"/"}>
+              <span className="nav-link">Home</span>
+            </Link>
+            <Link href={"/"}>
+              <span className="nav-link">About Us</span>
+            </Link>
+            <Link href={"/"}>
+              <span className="nav-link">Contact Us</span>
+            </Link>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
 }
