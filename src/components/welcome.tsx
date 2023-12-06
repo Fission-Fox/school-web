@@ -13,7 +13,7 @@ export default function Welcome() {
           <Image src={badge} alt="" />
         </div>
 
-        <div className="leading-[55px] mt-12 w-full md:w-[50%]">
+        <div className="leading-[55px] mt-12 w-full md:w-[90%]">
           <h2 className="text-[50px] font-sans font-bold text-[#00306E]">
             Welcome to
           </h2>
