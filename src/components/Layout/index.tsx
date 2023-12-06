@@ -10,7 +10,6 @@ export default function Layout({ children }: Prop) {
   return (
     <Box>
       <Header />
-      <CoverImg />
       {children}
     </Box>
   );
