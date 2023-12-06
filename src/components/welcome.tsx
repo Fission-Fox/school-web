@@ -8,7 +8,7 @@ export default function Welcome() {
   return (
     <div>
       <div className="flex flex-col lg:flex-row justify-center gap-28 mt-36 px-3 w-[90%] m-auto">
-        <div className="lg:w-[50%]">
+        <div className="lg:w-[65%]">
           <Image src={ab} alt="" />
           <Image src={badge} alt="" />
         </div>
