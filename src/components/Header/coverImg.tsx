@@ -23,7 +23,7 @@ export default function CoverImg() {
             Discover the world of <br />
             possible university.
           </div>
-          <div className="px-5 py-1 border flex justify-center items-center rounded-[6px] hover:bg-[#D2093C] hover:border-none mt-5">
+          <div className="px-5 py-2 border flex justify-center items-center rounded-[6px] hover:bg-[#D2093C] hover:border-none mt-5">
             <button className="text-[#ffffff] font-semibold text-[14px] sm:text-[16px]">
               Admission
             </button>
