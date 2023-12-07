@@ -9,7 +9,6 @@ export default function Layout({ children }: Prop) {
   return (
     <Box>
       <Header />
-      <div className="mt-20"></div>
       {children}
     </Box>
   );
