@@ -1,7 +1,7 @@
 import "@/assets/css/tailwind.css";
 import { Box } from "@mui/material";
 import Header from "../Header";
-import CoverImg from "../Header/coverImg";
+import CoverImg from "../coverImg";
 
 type Prop = {
   children: JSX.Element;
