@@ -1,11 +1,14 @@
 "use client";
+import CoverImg from "@/components/coverImg";
+import Welcome from "@/components/welcome";
 // import BackgroudImage from "@/app/assets/images/bg/1.jpg";
-import { Box } from "@mui/material";
+import Academics from "@/components/academics";
 export default function HomePage() {
-
   return (
-    <Box sx={{ width: "100%" }}>
-      homepage
-    </Box>
+    <>
+      <CoverImg />
+      <Welcome />
+      <Academics />
+    </>
   );
 }
