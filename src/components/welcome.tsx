@@ -7,13 +7,13 @@ import ab from "@/assets/images/ab.png";
 export default function Welcome() {
   return (
     <div className="">
-      <div className="flex flex-col lg:flex-row justify-center gap-28 mt-36 px-3 w-[90%] m-auto">
-        <div className="lg:w-[65%]">
+      <div className="flex flex-col lg:flex-row justify-center gap-28 mt-36 px-3 w-[90%] lg:w-[80%] m-auto">
+        <div className="lg:w-[50%]">
           <Image src={ab} alt="" />
           <Image src={badge} alt="" />
         </div>
 
-        <div className="leading-[55px] mt-12 w-full md:w-[90%]">
+        <div className="leading-[55px] mt-12 w-full lg:w-[50%]">
           <h2 className="text-[50px] font-sans font-bold text-[#00306E]">
             Welcome to
           </h2>
@@ -36,7 +36,7 @@ export default function Welcome() {
               Get Free Guide{" "}
             </a>
           </p>
-          <hr />
+          <hr className="w-[80%]" />
           <p className=" mt-10 text-[16px] text-[#777777] ">
             Education also refers to the knowledge received through schooling
             instruction <br />
