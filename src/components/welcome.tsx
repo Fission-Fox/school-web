@@ -6,7 +6,7 @@ import badge from "@/assets/images/badge.png";
 import ab from "@/assets/images/ab.png";
 export default function Welcome() {
   return (
-    <div className="">
+    <div>
       <div className="flex flex-col lg:flex-row justify-center gap-28 mt-36 px-3 w-[90%] lg:w-[80%] m-auto">
         <div className="lg:w-[50%]">
           <Image src={ab} alt="" />
