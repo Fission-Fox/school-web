@@ -140,8 +140,8 @@ export default function Popular() {
             </div>
           </div>
         </div>
-        <div className=" flex justify-center ">
-          <button className="  text-blue-900 font-sans font-semibold text-xs border hover:bg-red-600 hover:!text-white rounded-md mt-40 2xl:h-11 w-[15%]  xl:h-05 [w-20%]">
+        <div className=" flex justify-center mb-40 ">
+          <button className=" px-5 py-2  text-blue-900 font-sans font-bold text-lg border hover:bg-[#D2093C] hover:!text-white rounded-md mt-16 ">
             <p>
               View All Courses
               <ArrowForwardIcon />
