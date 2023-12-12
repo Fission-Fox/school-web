@@ -3,6 +3,7 @@ import CoverImg from "@/components/coverImg";
 import Welcome from "@/components/welcome";
 // import BackgroudImage from "@/app/assets/images/bg/1.jpg";
 import Academics from "@/components/academics";
+import Popular from "@/components/popular
 import Campuslife from "@/components/campuslife";
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
       <CoverImg />
       <Welcome />
       <Academics />
+      <Popular />
       <Campuslife />
     </>
   );
