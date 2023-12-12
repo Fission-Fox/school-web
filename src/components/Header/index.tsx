@@ -1,10 +1,12 @@
 "use client";
 // import LogoLight from "@/assets/images/logo-light.png";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import MenuIcon from "@mui/icons-material/Menu";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import Link from "next/link";
+import { relative } from "path";
 import { useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 export default function Header() {
   const [isOpen, setMenu] = useState(true);
   const toggleMenu = () => {
@@ -68,7 +70,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="flex  items-center !justify-between lg:!justify-evenly mt-3">
+      <div className="flex h-24 items-center !justify-between lg:!justify-evenly mt-3">
         <div>
           <img
             src="https://reactheme.com/products/html/echooling/assets/images/logo.png"
