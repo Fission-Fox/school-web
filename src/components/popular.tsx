@@ -1,13 +1,12 @@
-import Image from "next/image";
-import React from "react";
 import Img from "@/assets/images/line.png";
-import img from "@/assets/images/pic 5.png";
-import imgs from "@/assets/images/pic 6.png";
-import imgss from "@/assets/images/pic 7.png";
+import img from "@/assets/images/pic5.png";
+import imgs from "@/assets/images/pic6.png";
+import imgss from "@/assets/images/pic7.png";
 import imgsss from "@/assets/images/pic8.png";
-import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
+import Image from "next/image";
 
 export default function Popular() {
   return (

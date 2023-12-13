@@ -1,14 +1,12 @@
-import Image from "next/image";
 import FacebookIcon from "@/assets/images/facebook";
+import logo from "@/assets/images/footer-logo-Copy.png";
 import InstagramIcon from "@/assets/images/instagram";
 import Location2Icon from "@/assets/images/location2";
 import PhoneIcon from "@/assets/images/phone";
 import Tweeter2Icon from "@/assets/images/tweeter2";
 import Tweeter3Icon from "@/assets/images/tweeter3";
 import YoutubeIcon from "@/assets/images/youtube";
-import logo from "@/assets/images/footer-logo - Copy.png";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import React from "react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
