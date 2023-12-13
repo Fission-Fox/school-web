@@ -14,7 +14,7 @@ export default function Popular() {
     <>
       <div>
         <div className="  w-full flex flex-col items-center ">
-          <h1 className="font-bold text-[50px] font-sans text-blue-900  text-center mt-5 ">
+          <h1 className="font-bold text-[50px] font-sans text-blue-900  text-center mt-36 ">
             Popular Courses
           </h1>
 
