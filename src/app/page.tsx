@@ -5,6 +5,7 @@ import Welcome from "@/components/welcome";
 import Academics from "@/components/academics";
 import Campuslife from "@/components/campuslife";
 import Upcoming from "@/components/upcoming";
+import Student from "@/components/student";
 export default function HomePage() {
   return (
     <>
@@ -13,6 +14,7 @@ export default function HomePage() {
       <Academics />
       <Campuslife />
       <Upcoming />
+      <Student />
     </>
   );
 }
