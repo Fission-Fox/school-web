@@ -51,7 +51,7 @@ export default function Campuslife() {
               <div className="px-3 flex gap-2">
                 <AssessmentIcon style={{ fontSize: "50px" }} />
                 <div>
-                  <div className="text-[#00306E] text-[15px] md:text-[20px] lg:text-[16px] font-sans font-bold align items-center">
+                  <div className="text-[#00306E] text-[15px] md:text-[20px] lg:text-[22px] font-sans font-bold align items-center">
                     The Business Intelligence
                   </div>
                   <div className="text-[#4d5765] text-[11px] md:text-[15px] lg:text-[12px]flex flex-row mt-4">
@@ -72,7 +72,7 @@ export default function Campuslife() {
               <div className="px-3 flex gap-2">
                 <SettingsIcon style={{ fontSize: "50px" }} />
                 <div>
-                  <div className="text-[#00306E] text-[15px] md:text-[20px] lg:text-[16px] font-sans font-bold align items-center">
+                  <div className="text-[#00306E] text-[15px] md:text-[20px] lg:text-[22px] font-sans font-bold align items-center">
                     System Administration
                   </div>
                   <div className="text-[#4d5765] text-[11px] md:text-[15px] flex flex-row mt-4">
