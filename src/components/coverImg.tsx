@@ -1,6 +1,5 @@
+import coverImage from "@/assets/images/coverImage.jpg";
 import Image from "next/image";
-import React from "react";
-import coverImage from "@/assets/images/cover Image.jpg";
 export default function CoverImg() {
   return (
     <section className="py-24 w-full table relative h-[60vh] mt-5 ">

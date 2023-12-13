@@ -1,12 +1,11 @@
-import Image from "next/image";
-import React from "react";
 import line from "@/assets/images/line.png";
-import cuppic from "@/assets/images/pic cup.png";
+import cuppic from "@/assets/images/piccup.png";
 import shape from "@/assets/images/shape.png";
-import BorderColorIcon from "@mui/icons-material/BorderColor";
-import AssessmentIcon from "@mui/icons-material/Assessment";
-import SettingsIcon from "@mui/icons-material/Settings";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import AssessmentIcon from "@mui/icons-material/Assessment";
+import BorderColorIcon from "@mui/icons-material/BorderColor";
+import SettingsIcon from "@mui/icons-material/Settings";
+import Image from "next/image";
 
 export default function Campuslife() {
   return (

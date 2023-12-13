@@ -1,10 +1,9 @@
-import React from "react";
-import img from "@/assets/images/pic 1.png";
-import Image from "next/image";
-import imgs from "@/assets/images/pic 2.png";
-import imgss from "@/assets/images/pic 3.png";
-import imagess from "@/assets/images/pic 4.png";
 import images from "@/assets/images/line.png";
+import img from "@/assets/images/pic1.png";
+import imgs from "@/assets/images/pic2.png";
+import imgss from "@/assets/images/pic3.png";
+import imagess from "@/assets/images/pic4.png";
+import Image from "next/image";
 
 export default function Academics() {
   return (
