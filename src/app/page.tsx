@@ -10,13 +10,13 @@ import Student from "@/components/student";
 export default function HomePage() {
   return (
     <>
-      <CoverImg />
+      {/* <CoverImg />
       <Welcome />
       <Academics />
       <Popular />
       <Campuslife />
       <Upcoming />
-      <Student />
+      <Student /> */}
     </>
   );
 }

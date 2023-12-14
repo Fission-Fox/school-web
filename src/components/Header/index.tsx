@@ -7,6 +7,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import TemporaryDrawer from "../menu";
 export default function Header() {
   const [isOpen, setMenu] = useState(true);
   const toggleMenu = () => {
@@ -134,7 +135,7 @@ export default function Header() {
             </div>
           </div>
           <div className="ml-7 w-[43px] h-[40px] mt-3 bg-[#2a6df5] text-[#ffffff] flex lg:!hidden justify-center items-center rounded-[5px] ">
-            <MenuIcon />
+            <TemporaryDrawer />
           </div>
         </div>
       </div>
