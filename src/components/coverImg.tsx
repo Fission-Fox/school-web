@@ -1,4 +1,4 @@
-import coverImage from "@/assets/images/coverImage.jpg";
+import coverImage from "@/assets/images/studentzone.jpg";
 import Image from "next/image";
 export default function CoverImg() {
   return (
@@ -14,6 +14,12 @@ export default function CoverImg() {
           top: "0px",
         }}
       />
+      <div
+        style={{
+          background: "linear-gradient(to right, black , transparent)",
+        }}
+        className="absolute top-0 h-full w-full opacity-75"
+      ></div>
       <div className="mx-auto md:!mx-36 relative flex flex-col justify-center h-full">
         <div className=" flex flex-col items-start   w-[70%] m-auto mt-36 ml-20 sm:ml-30 xl:ml-40">
           <div className="text-[#FFFFFF] flex justify-center items-center text-[14px] sm:text-[16px] md:!text-[20px] xl:!text-[26px] bg-[#D2093C] px-3 py-1">
