@@ -1,12 +1,12 @@
 "use client";
 // import LogoLight from "@/assets/images/logo-light.png";
-import Link from "next/link";
-import { relative } from "path";
-import { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
+import logo from "@/assets/images/bluelogo.png";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import Image from "next/image";
+import { useState } from "react";
+import TemporaryDrawer from "../menu";
 export default function Header() {
   const [isOpen, setMenu] = useState(true);
   const toggleMenu = () => {
@@ -70,13 +70,13 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="flex h-24 items-center !justify-between lg:!justify-evenly mt-3">
-        <div>
-          <img
-            src="https://reactheme.com/products/html/echooling/assets/images/logo.png"
+      <div className="flex h-16 items-center !justify-between lg:!justify-evenly mt-3">
+        <div className="mt-3">
+          <Image
+            src={logo}
             alt=""
             style={{
-              width: "100%",
+              width: "100px",
             }}
           />
         </div>
@@ -134,7 +134,7 @@ export default function Header() {
             </div>
           </div>
           <div className="ml-7 w-[43px] h-[40px] mt-3 bg-[#2a6df5] text-[#ffffff] flex lg:!hidden justify-center items-center rounded-[5px] ">
-            <MenuIcon />
+            <TemporaryDrawer />
           </div>
         </div>
       </div>
