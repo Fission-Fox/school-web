@@ -1,5 +1,5 @@
 import images from "@/assets/images/line.png";
-import img from "@/assets/images/pic1.png";
+import img from "@/assets/images/pic1.jpg";
 import imgs from "@/assets/images/pic2.png";
 import imgss from "@/assets/images/pic3.png";
 import imagess from "@/assets/images/pic4.png";

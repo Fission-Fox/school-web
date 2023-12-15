@@ -1,5 +1,5 @@
+import cuppic from "@/assets/images/campuslife.jpg";
 import line from "@/assets/images/line.png";
-import cuppic from "@/assets/images/piccup.png";
 import shape from "@/assets/images/shape.png";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import AssessmentIcon from "@mui/icons-material/Assessment";
