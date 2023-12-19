@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function Campuslife() {
   return (
-    <div className=" bg-[#f8f7f7] w-full mt-8 pt-20 pb-40">
+    <div className=" bg-[#f8f7f7] w-full mt-8 pt-20 pb-40 " id="campuslife">
       <div className="mb-10">
         <div className="flex justify-center ">
           <h1 className="text-[50px] font-sans font-bold mt-6  text-[#00306E]">

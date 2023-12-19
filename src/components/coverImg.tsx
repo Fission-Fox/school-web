@@ -19,6 +19,7 @@ export default function CoverImg() {
           background: "linear-gradient(to right, black , transparent)",
         }}
         className="absolute top-0 h-full w-full opacity-75"
+        id="coverimg"
       ></div>
       <div className="mx-auto md:!mx-36 relative flex flex-col justify-center h-full">
         <div className=" flex flex-col items-start   w-[70%] m-auto mt-36 ml-20 sm:ml-30 xl:ml-40">

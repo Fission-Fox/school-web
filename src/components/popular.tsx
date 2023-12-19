@@ -11,7 +11,7 @@ import Image from "next/image";
 export default function Popular() {
   return (
     <>
-      <div>
+      <div id="popular">
         <div className="  w-full flex flex-col items-center ">
           <h1 className="font-bold text-[50px] font-sans text-blue-900  text-center mt-36 ">
             Popular Courses
