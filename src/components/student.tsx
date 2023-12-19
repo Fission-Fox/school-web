@@ -42,7 +42,7 @@ export default function Testominal() {
     if (currentIndex > 0) setIndex(currentIndex - 1);
   };
   return (
-    <div className="container my-24 mx-auto md:px-6">
+    <div className="container my-24 mx-auto md:px-6" id="student">
       <section className="mb-32 text-center">
         <div className="mb-10">
           <div className="flex justify-center ">
