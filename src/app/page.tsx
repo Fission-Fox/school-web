@@ -7,16 +7,18 @@ import Campuslife from "@/components/campuslife";
 import Popular from "@/components/popular";
 import Student from "@/components/student";
 import Upcoming from "@/components/upcoming";
+import StandardImageList from "@/components/gallery";
 export default function HomePage() {
   return (
     <>
       <CoverImg />
       <Welcome />
       <Academics />
-      <Popular />
+      {/* <Popular /> */}
       <Campuslife />
       <Upcoming />
       <Student />
+      <StandardImageList />
     </>
   );
 }

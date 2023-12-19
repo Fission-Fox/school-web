@@ -87,6 +87,7 @@ export default function Header() {
           <div className="hover:text-[#D2093C] cursor-pointer">Blog</div>
           <div className="hover:text-[#D2093C] cursor-pointer">Contact</div>
         </div>
+
         <div className="flex  items-center gap-0 sm:gap-4 mr-5 sm:mr-20 text-[#00306e]">
           <div className="hidden sm:!flex">
             <div>
