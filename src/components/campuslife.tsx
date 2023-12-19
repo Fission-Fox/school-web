@@ -1,5 +1,5 @@
+import main2 from "@/assets/images/main2.jpg";
 import line from "@/assets/images/line.png";
-import cuppic from "@/assets/images/piccup.png";
 import shape from "@/assets/images/shape.png";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import AssessmentIcon from "@mui/icons-material/Assessment";
@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function Campuslife() {
   return (
-    <div className=" bg-[#f8f7f7] w-full mt-8 pt-20 pb-40">
+    <div className=" bg-[#f8f7f7] w-full mt-8 pt-20 pb-40 " id="campuslife">
       <div className="mb-10">
         <div className="flex justify-center ">
           <h1 className="text-[50px] font-sans font-bold mt-6  text-[#00306E]">
@@ -29,13 +29,14 @@ export default function Campuslife() {
                 <BorderColorIcon style={{ fontSize: "40px" }} />
                 <div>
                   <div className="text-[#00306E] text-[16px] md:text-[20px] lg:text-[22px] font-sans font-bold align items-center">
-                    Do More, Stress Less
+                    Studies With The Subject Experts
                   </div>
                   <div className="text-[#4d5765] text-[12px] md:text-[15px] flex flex-row mt-4">
                     <p>
                       {" "}
-                      Why I say old chap that is spiffing he legged <br />
-                      it in my flat easy peasy.
+                      Our institution boasts a team of the most experienced &
+                      highly qualified teachers who are dedicated to foster a
+                      dynamic learning environment.
                     </p>
                   </div>
                 </div>
@@ -51,13 +52,14 @@ export default function Campuslife() {
                 <AssessmentIcon style={{ fontSize: "50px" }} />
                 <div>
                   <div className="text-[#00306E] text-[15px] md:text-[20px] lg:text-[22px] font-sans font-bold align items-center">
-                    The Business Intelligence
+                    Assessment Based Learning
                   </div>
                   <div className="text-[#4d5765] text-[11px] md:text-[15px] lg:text-[12px]flex flex-row mt-4">
                     <p>
                       {" "}
-                      Why I say old chap that is spiffing he legged <br />
-                      it in my flat easy peasy.
+                      It is an educational approach that places a strong
+                      emphasis on continuous evaluation and feedback to guide
+                      the learning process.
                     </p>
                   </div>
                 </div>
@@ -72,13 +74,14 @@ export default function Campuslife() {
                 <SettingsIcon style={{ fontSize: "50px" }} />
                 <div>
                   <div className="text-[#00306E] text-[15px] md:text-[20px] lg:text-[22px] font-sans font-bold align items-center">
-                    System Administration
+                    PTM (Parents Teacher Meeting)
                   </div>
                   <div className="text-[#4d5765] text-[11px] md:text-[15px] flex flex-row mt-4">
                     <p>
                       {" "}
-                      Why I say old chap that is spiffing he legged <br />
-                      it in my flat easy peasy.
+                      PTM provides an oppoprtunity for parents to understand
+                      their child's strengths and weaknesses and work
+                      collaboartively with teachers.
                     </p>
                   </div>
                 </div>
@@ -90,7 +93,7 @@ export default function Campuslife() {
           </div>
         </div>
         <div className=" relative max-w-[470px] lg: max-w-auto m-auto lg:m-0">
-          <Image src={cuppic} alt="" />
+          <Image src={main2} alt="" />
           <div className="mt-16  xl:mt-80 top-1/2 xl:top-0 right-[25px] lg:right-[-30px] xl:right-[-50px] absolute ">
             <Image className="" src={shape} alt="" />
           </div>

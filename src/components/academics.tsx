@@ -1,13 +1,13 @@
 import images from "@/assets/images/line.png";
-import img from "@/assets/images/pic1.png";
-import imgs from "@/assets/images/pic2.png";
-import imgss from "@/assets/images/pic3.png";
-import imagess from "@/assets/images/pic4.png";
+import img from "@/assets/images/pic1.jpg";
+import academic from "@/assets/images/academic.jpg";
+import academic2 from "@/assets/images/academic2.jpg";
+import academic3 from "@/assets/images/academic3.jpg";
 import Image from "next/image";
 
 export default function Academics() {
   return (
-    <div className="flex flex-col  ">
+    <div className="flex flex-col " id="academics">
       <div className="  w-[90%] md:w-[85%] m-auto justify-center">
         <div className="w-full flex flex-col items-center">
           <h1 className="font-bold  text-[50px] text-blue-900 m-0  font-sans  mt-[120px] ">
@@ -39,7 +39,7 @@ export default function Academics() {
               className="absolute w-full h-full flex flex-col justify-end  cursor-pointer group hover:!bg-black opacity-80  hover:transition-opacity hover:duration-[3000ms]"
             >
               <p className="text-[white] font-bold text-xl font-sans ml-4   hover:!text-gray-500 ">
-                Let's Talk Science{" "}
+                Pre-Medical{" "}
               </p>
               <div className="flex w-full mb-5 ">
                 <p className="text-white font-sans font-bold text-sm  group-hover:!text-gray-500 opacity-80   ml-4 ">
@@ -73,7 +73,7 @@ export default function Academics() {
                 position: "absolute",
                 top: "0px",
               }}
-              src={imgs}
+              src={academic}
               alt=""
             />
             <div
@@ -84,7 +84,7 @@ export default function Academics() {
               className="absolute w-full h-full flex  flex-col justify-end cursor-pointer group hover:!bg-black opacity-80  hover:transition-opacity hover:duration-[3000ms]"
             >
               <p className="text-[white] font-bold text-xl font-sans ml-4   hover:!text-gray-500">
-                Innovative Courses
+                Pre-Engineering
               </p>
               <div className="flex w-full mb-5">
                 <p className="text-[white] font-bold text-sm font-sans ml-4  group-hover:!text-gray-500 ">
@@ -118,7 +118,7 @@ export default function Academics() {
                 position: "absolute",
                 top: "0px",
               }}
-              src={imgss}
+              src={academic2}
               alt=""
             />
             <div
@@ -130,7 +130,7 @@ export default function Academics() {
             >
               <p className="text-white font-sans font-bold text-xl ml-4  hover:!text-gray-500">
                 {" "}
-                Cloud Storage
+                Computer Science
               </p>
               <div className="flex w-full mb-5">
                 <p className="text-white font-sans font-bold text-sm ml-4  group-hover:!text-gray-500 ">
@@ -164,7 +164,7 @@ export default function Academics() {
                 position: "absolute",
                 top: "0px",
               }}
-              src={imagess}
+              src={academic3}
               alt=""
             />
             <div
@@ -176,7 +176,7 @@ export default function Academics() {
             >
               "
               <p className="text-white font-sans font-bold text-xl ml-4  hover:!text-gray-500">
-                Online Education
+                Commerce
               </p>
               <div className="flex w-full mb-5">
                 <p className="text-white font-sans font-bold text-sm  ml-4  group-hover:!text-gray-500">

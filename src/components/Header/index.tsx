@@ -1,20 +1,21 @@
 "use client";
 // import LogoLight from "@/assets/images/logo-light.png";
-import Link from "next/link";
-import { relative } from "path";
-import { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
+import logo from "@/assets/images/bluelogo.png";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import Image from "next/image";
+import { useState } from "react";
+import TemporaryDrawer from "../menu";
+import Link from "next/link";
 export default function Header() {
   const [isOpen, setMenu] = useState(true);
   const toggleMenu = () => {
     setMenu(!isOpen);
   };
   return (
-    <nav>
-      <div className="bg-[#00306e]  text-[14px] text-[white] hidden lg:!flex justify-around gap-5  h-10 items-center">
+    <nav className="fixed z-50 w-full top-0">
+      <div className="bg-[#00306e]  text-[14px] text-[white] hidden lg:!flex justify-around gap-5  h-10 items-center ">
         <div className="flex gap-3">
           <div className="flex gap-2">
             <div>
@@ -33,7 +34,7 @@ export default function Header() {
               </svg>
             </div>
             <div className="hover:text-[#FFDFC7] cursor-pointer">
-              (+1) 3344 999 999
+              021-34810063
             </div>
           </div>
           <div className="flex gap-2">
@@ -58,7 +59,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 top-0">
           <div>
             <FacebookIcon />
           </div>
@@ -70,24 +71,42 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="flex h-24 items-center !justify-between lg:!justify-evenly mt-3">
-        <div>
-          <img
-            src="https://reactheme.com/products/html/echooling/assets/images/logo.png"
+      <div className="relative -top-3 bg-white flex h-20 items-center !justify-between lg:!justify-evenly mt-3">
+        <div className="mt-3">
+          <Image
+            src={logo}
             alt=""
             style={{
-              width: "100%",
+              width: "100px",
             }}
           />
         </div>
         <div className="hidden lg:!flex text-[#00306e] !text-base xl:!text-lg gap-10 xl:gap-20 font-semibold">
-          <div className="hover:text-[#D2093C] cursor-pointer">Home</div>
-          <div className="hover:text-[#D2093C] cursor-pointer">Pages</div>
-          <div className="hover:text-[#D2093C] cursor-pointer">Courses</div>
-          <div className="hover:text-[#D2093C] cursor-pointer">Blog</div>
-          <div className="hover:text-[#D2093C] cursor-pointer">Contact</div>
+          <Link href="#coverimg">
+            <div className="hover:text-[#D2093C] cursor-pointer">Home</div>
+          </Link>
+          <Link href="#academics">
+            <div className="hover:text-[#D2093C] cursor-pointer">Academics</div>
+          </Link>
+          <Link href="#campuslife">
+            <div className="hover:text-[#D2093C] cursor-pointer">
+              Campus life
+            </div>
+          </Link>
+          <Link href="#popular">
+            <div className="hover:text-[#D2093C] cursor-pointer">Courses</div>
+          </Link>
+          <Link href="#upcoming">
+            <div className="hover:text-[#D2093C] cursor-pointer">Events</div>
+          </Link>
+          <Link href="#student">
+            <div className="hover:text-[#D2093C] cursor-pointer">
+              Testimonial
+            </div>
+          </Link>
         </div>
-        <div className="flex  items-center gap-0 sm:gap-4 mr-5 sm:mr-20 text-[#00306e]">
+
+        <div className="st flex  items-center gap-0 sm:gap-4 mr-5 sm:mr-20 text-[#00306e]">
           <div className="hidden sm:!flex">
             <div>
               <svg
@@ -134,7 +153,7 @@ export default function Header() {
             </div>
           </div>
           <div className="ml-7 w-[43px] h-[40px] mt-3 bg-[#2a6df5] text-[#ffffff] flex lg:!hidden justify-center items-center rounded-[5px] ">
-            <MenuIcon />
+            <TemporaryDrawer />
           </div>
         </div>
       </div>
