@@ -34,7 +34,7 @@ export default function Header() {
               </svg>
             </div>
             <div className="hover:text-[#FFDFC7] cursor-pointer">
-              (+1) 3344 999 999
+              021-34810063
             </div>
           </div>
           <div className="flex gap-2">

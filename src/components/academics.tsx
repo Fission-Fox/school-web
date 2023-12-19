@@ -39,7 +39,7 @@ export default function Academics() {
               className="absolute w-full h-full flex flex-col justify-end  cursor-pointer group hover:!bg-black opacity-80  hover:transition-opacity hover:duration-[3000ms]"
             >
               <p className="text-[white] font-bold text-xl font-sans ml-4   hover:!text-gray-500 ">
-                Let's Talk Science{" "}
+                Pre-Medical{" "}
               </p>
               <div className="flex w-full mb-5 ">
                 <p className="text-white font-sans font-bold text-sm  group-hover:!text-gray-500 opacity-80   ml-4 ">
@@ -84,7 +84,7 @@ export default function Academics() {
               className="absolute w-full h-full flex  flex-col justify-end cursor-pointer group hover:!bg-black opacity-80  hover:transition-opacity hover:duration-[3000ms]"
             >
               <p className="text-[white] font-bold text-xl font-sans ml-4   hover:!text-gray-500">
-                Innovative Courses
+                Pre-Engineering
               </p>
               <div className="flex w-full mb-5">
                 <p className="text-[white] font-bold text-sm font-sans ml-4  group-hover:!text-gray-500 ">
@@ -130,7 +130,7 @@ export default function Academics() {
             >
               <p className="text-white font-sans font-bold text-xl ml-4  hover:!text-gray-500">
                 {" "}
-                Cloud Storage
+                Computer Science
               </p>
               <div className="flex w-full mb-5">
                 <p className="text-white font-sans font-bold text-sm ml-4  group-hover:!text-gray-500 ">
@@ -176,7 +176,7 @@ export default function Academics() {
             >
               "
               <p className="text-white font-sans font-bold text-xl ml-4  hover:!text-gray-500">
-                Online Education
+                Commerce
               </p>
               <div className="flex w-full mb-5">
                 <p className="text-white font-sans font-bold text-sm  ml-4  group-hover:!text-gray-500">
