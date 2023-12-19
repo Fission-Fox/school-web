@@ -15,7 +15,7 @@ export default function Upcoming() {
       <div className="mb-10">
         <div className="flex justify-center ">
           <h1 className="text-[35px] lg:text-[50px]  font-sans font-bold mt-6  text-[#00306E]">
-            Upcoming Events
+            Events
           </h1>
         </div>
         <div className="flex justify-center ">
@@ -54,15 +54,18 @@ export default function Upcoming() {
             </div>
             <div className="px-10">
               <p className="text-[#4D5765] text-[16px]"> April, 2022</p>
-              <p className="text-[#D2093C] mt-8">12:00 AM - 01:30PM</p>
+              <p className="text-[#D2093C] mt-8">09:00AM - 12:00PM</p>
               <h3 className="text-[#00306e] text-[18px] xl:text-[20px] font-sans font-bold leading-7 mt-2">
-                A Better Alternative To <br /> Grading Student Writing
+                Parent's Orientation
               </h3>
               <div className="flex flex-row gap-2">
                 <div className="text-[#00306e] mt-3">
                   <PersonPinCircleIcon />
                 </div>
-                <p className="text-[4D5765] text-[16px] mt-4"> New York, USA</p>{" "}
+                <p className="text-[4D5765] text-[16px] mt-4">
+                  {" "}
+                  Karachi, Sindh
+                </p>{" "}
               </div>
             </div>
             <div className="flex justify-center mt-6 ">
@@ -81,16 +84,19 @@ export default function Upcoming() {
             </div>
             <div className="px-10">
               <p className="text-[#4D5765] text-[16px]"> February, 2022</p>
-              <p className="text-[#D2093C] mt-8">10:30 AM - 12:30PM</p>
+              <p className="text-[#D2093C] mt-8">09:00AM-01:00PM</p>
               <h3 className="text-[#00306e] text-[20px] font-sans font-bold leading-7 mt-2">
-                12 Things Successful <br /> Mompreneurs
+                Election Campaign
               </h3>
 
               <div className="flex flex-row gap-2">
                 <div className="text-[#00306e] mt-3">
                   <PersonPinCircleIcon />
                 </div>
-                <p className="text-[4D5765] text-[16px] mt-4"> New York, USA</p>{" "}
+                <p className="text-[4D5765] text-[16px] mt-4">
+                  {" "}
+                  Karachi, Sindh
+                </p>{" "}
               </div>
             </div>
             <div className="flex justify-center mt-6 ">
@@ -109,15 +115,18 @@ export default function Upcoming() {
             </div>
             <div className="px-10">
               <p className="text-[#4D5765] text-[16px]"> March, 2022</p>
-              <p className="text-[#D2093C] mt-8">01:30 AM - 02:00PM</p>
+              <p className="text-[#D2093C] mt-8">09:00AM-12:00PM</p>
               <h3 className="text-[#00306e] text-[20px] font-sans font-bold leading-7 mt-2">
-                Ethics in AI Live Event <br /> Machines Judging.
+                Independence Day
               </h3>
               <div className="flex flex-row gap-2">
                 <div className="text-[#00306e] mt-3">
                   <PersonPinCircleIcon />
                 </div>
-                <p className="text-[4D5765] text-[16px] mt-4"> New York, USA</p>{" "}
+                <p className="text-[4D5765] text-[16px] mt-4">
+                  {" "}
+                  Karachi, Sindh
+                </p>{" "}
               </div>
             </div>
             <div className="flex justify-center mt-6 ">
@@ -136,15 +145,18 @@ export default function Upcoming() {
             </div>
             <div className="px-10">
               <p className="text-[#4D5765] text-[16px]"> April, 2022</p>
-              <p className="text-[#D2093C] mt-8">03:00 AM - 04:30PM</p>
+              <p className="text-[#D2093C] mt-8">09:00AM-12:00PM</p>
               <p className="text-[#00306e] text-[20px] font-sans font-bold leading-7 mt-2">
-                The Importance Of <br /> Intrinsic Motivation.
+                Youm-e-Hussain (A.S)
               </p>
               <div className="flex flex-row gap-2">
                 <div className="text-[#00306e] mt-3">
                   <PersonPinCircleIcon />
                 </div>
-                <p className="text-[4D5765] text-[16px] mt-4"> New York, USA</p>{" "}
+                <p className="text-[4D5765] text-[16px] mt-4">
+                  {" "}
+                  Karachi, Sindh
+                </p>{" "}
               </div>
             </div>
             <div className="flex justify-center mt-6 ">
@@ -174,7 +186,10 @@ export default function Upcoming() {
                 <div className="text-[#00306e] mt-3">
                   <PersonPinCircleIcon />
                 </div>
-                <p className="text-[4D5765] text-[16px] mt-4"> New York, USA</p>{" "}
+                <p className="text-[4D5765] text-[16px] mt-4">
+                  {" "}
+                  Karachi, Sindh
+                </p>{" "}
               </div>
             </div>
             <div className="flex justify-center mt-6 ">
@@ -202,7 +217,10 @@ export default function Upcoming() {
                 <div className="text-[#00306e] mt-3">
                   <PersonPinCircleIcon />
                 </div>
-                <p className="text-[4D5765] text-[16px] mt-4"> New York, USA</p>{" "}
+                <p className="text-[4D5765] text-[16px] mt-4">
+                  {" "}
+                  Karachi, Sindh
+                </p>{" "}
               </div>
             </div>
             <div className="flex justify-center mt-6 ">
@@ -229,7 +247,10 @@ export default function Upcoming() {
                 <div className="text-[#00306e] mt-3">
                   <PersonPinCircleIcon />
                 </div>
-                <p className="text-[4D5765] text-[16px] mt-4"> New York, USA</p>{" "}
+                <p className="text-[4D5765] text-[16px] mt-4">
+                  {" "}
+                  Karachi, Sindh
+                </p>{" "}
               </div>
             </div>
             <div className="flex justify-center mt-6 ">
@@ -256,7 +277,10 @@ export default function Upcoming() {
                 <div className="text-[#00306e] mt-3">
                   <PersonPinCircleIcon />
                 </div>
-                <p className="text-[4D5765] text-[16px] mt-4"> New York, USA</p>{" "}
+                <p className="text-[4D5765] text-[16px] mt-4">
+                  {" "}
+                  Karachi, Sindh
+                </p>{" "}
               </div>
             </div>
             <div className="flex justify-center mt-6 ">

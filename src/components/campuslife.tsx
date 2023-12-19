@@ -29,13 +29,14 @@ export default function Campuslife() {
                 <BorderColorIcon style={{ fontSize: "40px" }} />
                 <div>
                   <div className="text-[#00306E] text-[16px] md:text-[20px] lg:text-[22px] font-sans font-bold align items-center">
-                    Do More, Stress Less
+                    Studies With The Subject Experts
                   </div>
                   <div className="text-[#4d5765] text-[12px] md:text-[15px] flex flex-row mt-4">
                     <p>
                       {" "}
-                      Why I say old chap that is spiffing he legged <br />
-                      it in my flat easy peasy.
+                      Our institution boasts a team of the most experienced &
+                      highly qualified teachers who are dedicated to foster a
+                      dynamic learning environment.
                     </p>
                   </div>
                 </div>
@@ -51,13 +52,14 @@ export default function Campuslife() {
                 <AssessmentIcon style={{ fontSize: "50px" }} />
                 <div>
                   <div className="text-[#00306E] text-[15px] md:text-[20px] lg:text-[22px] font-sans font-bold align items-center">
-                    The Business Intelligence
+                    Assessment Based Learning
                   </div>
                   <div className="text-[#4d5765] text-[11px] md:text-[15px] lg:text-[12px]flex flex-row mt-4">
                     <p>
                       {" "}
-                      Why I say old chap that is spiffing he legged <br />
-                      it in my flat easy peasy.
+                      It is an educational approach that places a strong
+                      emphasis on continuous evaluation and feedback to guide
+                      the learning process.
                     </p>
                   </div>
                 </div>
@@ -72,13 +74,14 @@ export default function Campuslife() {
                 <SettingsIcon style={{ fontSize: "50px" }} />
                 <div>
                   <div className="text-[#00306E] text-[15px] md:text-[20px] lg:text-[22px] font-sans font-bold align items-center">
-                    System Administration
+                    PTM (Parents Teacher Meeting)
                   </div>
                   <div className="text-[#4d5765] text-[11px] md:text-[15px] flex flex-row mt-4">
                     <p>
                       {" "}
-                      Why I say old chap that is spiffing he legged <br />
-                      it in my flat easy peasy.
+                      PTM provides an oppoprtunity for parents to understand
+                      their child's strengths and weaknesses and work
+                      collaboartively with teachers.
                     </p>
                   </div>
                 </div>
