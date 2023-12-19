@@ -105,7 +105,6 @@ export default function Header() {
             </div>
           </Link>
         </div>
-        <div></div>
 
         <div className="st flex  items-center gap-0 sm:gap-4 mr-5 sm:mr-20 text-[#00306e]">
           <div className="hidden sm:!flex">

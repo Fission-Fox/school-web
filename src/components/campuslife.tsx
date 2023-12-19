@@ -1,4 +1,4 @@
-import cuppic from "@/assets/images/campuslife.jpg";
+import main2 from "@/assets/images/main2.jpg";
 import line from "@/assets/images/line.png";
 import shape from "@/assets/images/shape.png";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -90,7 +90,7 @@ export default function Campuslife() {
           </div>
         </div>
         <div className=" relative max-w-[470px] lg: max-w-auto m-auto lg:m-0">
-          <Image src={cuppic} alt="" />
+          <Image src={main2} alt="" />
           <div className="mt-16  xl:mt-80 top-1/2 xl:top-0 right-[25px] lg:right-[-30px] xl:right-[-50px] absolute ">
             <Image className="" src={shape} alt="" />
           </div>

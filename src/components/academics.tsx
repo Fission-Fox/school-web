@@ -1,8 +1,8 @@
 import images from "@/assets/images/line.png";
 import img from "@/assets/images/pic1.jpg";
-import imgs from "@/assets/images/pic2.png";
-import imgss from "@/assets/images/pic3.png";
-import imagess from "@/assets/images/pic4.png";
+import academic from "@/assets/images/academic.jpg";
+import academic2 from "@/assets/images/academic2.jpg";
+import academic3 from "@/assets/images/academic3.jpg";
 import Image from "next/image";
 
 export default function Academics() {
@@ -73,7 +73,7 @@ export default function Academics() {
                 position: "absolute",
                 top: "0px",
               }}
-              src={imgs}
+              src={academic}
               alt=""
             />
             <div
@@ -118,7 +118,7 @@ export default function Academics() {
                 position: "absolute",
                 top: "0px",
               }}
-              src={imgss}
+              src={academic2}
               alt=""
             />
             <div
@@ -164,7 +164,7 @@ export default function Academics() {
                 position: "absolute",
                 top: "0px",
               }}
-              src={imagess}
+              src={academic3}
               alt=""
             />
             <div
