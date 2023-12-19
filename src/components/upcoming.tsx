@@ -11,7 +11,7 @@ import PersonPinCircleIcon from "@mui/icons-material/PersonPinCircle";
 import { ClassNames } from "@emotion/react";
 export default function Upcoming() {
   return (
-    <div className=" bg-[#f8f7f7] w-full mt-6 pt-20 pb-40">
+    <div className=" bg-[#f8f7f7] w-full mt-6 pt-20 pb-40" id="upcoming">
       <div className="mb-10">
         <div className="flex justify-center ">
           <h1 className="text-[35px] lg:text-[50px]  font-sans font-bold mt-6  text-[#00306E]">

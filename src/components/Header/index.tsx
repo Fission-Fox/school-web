@@ -7,14 +7,15 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import Image from "next/image";
 import { useState } from "react";
 import TemporaryDrawer from "../menu";
+import Link from "next/link";
 export default function Header() {
   const [isOpen, setMenu] = useState(true);
   const toggleMenu = () => {
     setMenu(!isOpen);
   };
   return (
-    <nav>
-      <div className="bg-[#00306e]  text-[14px] text-[white] hidden lg:!flex justify-around gap-5  h-10 items-center">
+    <nav className="fixed z-50 w-full top-0">
+      <div className="bg-[#00306e]  text-[14px] text-[white] hidden lg:!flex justify-around gap-5  h-10 items-center ">
         <div className="flex gap-3">
           <div className="flex gap-2">
             <div>
@@ -58,7 +59,7 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 top-0">
           <div>
             <FacebookIcon />
           </div>
@@ -70,7 +71,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="flex h-16 items-center !justify-between lg:!justify-evenly mt-3">
+      <div className="relative -top-3 bg-white flex h-20 items-center !justify-between lg:!justify-evenly mt-3">
         <div className="mt-3">
           <Image
             src={logo}
@@ -81,13 +82,32 @@ export default function Header() {
           />
         </div>
         <div className="hidden lg:!flex text-[#00306e] !text-base xl:!text-lg gap-10 xl:gap-20 font-semibold">
-          <div className="hover:text-[#D2093C] cursor-pointer">Home</div>
-          <div className="hover:text-[#D2093C] cursor-pointer">Pages</div>
-          <div className="hover:text-[#D2093C] cursor-pointer">Courses</div>
-          <div className="hover:text-[#D2093C] cursor-pointer">Blog</div>
-          <div className="hover:text-[#D2093C] cursor-pointer">Contact</div>
+          <Link href="#coverimg">
+            <div className="hover:text-[#D2093C] cursor-pointer">Home</div>
+          </Link>
+          <Link href="#academics">
+            <div className="hover:text-[#D2093C] cursor-pointer">Academics</div>
+          </Link>
+          <Link href="#campuslife">
+            <div className="hover:text-[#D2093C] cursor-pointer">
+              Campus life
+            </div>
+          </Link>
+          <Link href="#popular">
+            <div className="hover:text-[#D2093C] cursor-pointer">Courses</div>
+          </Link>
+          <Link href="#upcoming">
+            <div className="hover:text-[#D2093C] cursor-pointer">Events</div>
+          </Link>
+          <Link href="#student">
+            <div className="hover:text-[#D2093C] cursor-pointer">
+              Testimonial
+            </div>
+          </Link>
         </div>
-        <div className="flex  items-center gap-0 sm:gap-4 mr-5 sm:mr-20 text-[#00306e]">
+        <div></div>
+
+        <div className="st flex  items-center gap-0 sm:gap-4 mr-5 sm:mr-20 text-[#00306e]">
           <div className="hidden sm:!flex">
             <div>
               <svg

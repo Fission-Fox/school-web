@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function Academics() {
   return (
-    <div className="flex flex-col  ">
+    <div className="flex flex-col " id="academics">
       <div className="  w-[90%] md:w-[85%] m-auto justify-center">
         <div className="w-full flex flex-col items-center">
           <h1 className="font-bold  text-[50px] text-blue-900 m-0  font-sans  mt-[120px] ">
