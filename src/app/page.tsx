@@ -4,6 +4,7 @@ import Welcome from "@/components/welcome";
 // import BackgroudImage from "@/app/assets/images/bg/1.jpg";
 import Academics from "@/components/academics";
 import Campuslife from "@/components/campuslife";
+import StandardImageList from "@/components/gallery";
 import Student from "@/components/student";
 import Upcoming from "@/components/upcoming";
 export default function HomePage() {
@@ -16,7 +17,7 @@ export default function HomePage() {
       <Campuslife />
       <Upcoming />
       <Student />
-      {/* <StandardImageList /> */}
+      <StandardImageList />
     </>
   );
 }
