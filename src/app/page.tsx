@@ -4,10 +4,9 @@ import Welcome from "@/components/welcome";
 // import BackgroudImage from "@/app/assets/images/bg/1.jpg";
 import Academics from "@/components/academics";
 import Campuslife from "@/components/campuslife";
-import Popular from "@/components/popular";
+import StandardImageList from "@/components/gallery";
 import Student from "@/components/student";
 import Upcoming from "@/components/upcoming";
-import StandardImageList from "@/components/gallery";
 export default function HomePage() {
   return (
     <>
