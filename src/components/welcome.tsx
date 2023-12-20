@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import comment from "@/assets/images/comment.png";
-import badge from "@/assets/images/badge.png";
+
 import ab from "@/assets/images/ab.png";
 export default function Welcome() {
   return (
@@ -10,7 +10,6 @@ export default function Welcome() {
       <div className="flex flex-col lg:flex-row justify-center gap-28 mt-36 px-3 w-[90%] lg:w-[80%] m-auto">
         <div className="lg:w-[50%]">
           <Image src={ab} alt="" />
-          <Image src={badge} alt="" />
         </div>
 
         <div className="leading-[55px] mt-12 w-full lg:w-[50%]">
@@ -45,7 +44,7 @@ export default function Welcome() {
           </p>
 
           <div className="flex flex-col lg:flex-row ">
-            <button className="mt-10 text-[16px] text-[#00306E]  border-2 rounded font-bold px-4">
+            <button className="mt-10 text-[16px] text-[#00306E]  border-2 rounded-md font-bold px-8  hover:bg-[#D2093C] hover:text-white">
               Read More
               <ArrowForwardIcon />
             </button>
@@ -57,7 +56,7 @@ export default function Welcome() {
                 <p className="text-[14px] text-[#999999]">Get Support</p>
                 <a
                   href=""
-                  className="text-left text-[18px] text-[#00306E] font-bold"
+                  className="text-left text-[18px] text-[#00306E] font-bold hover:text-[#D2093C]"
                 >
                   www.studentszone.com.pk
                 </a>
