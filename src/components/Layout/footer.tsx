@@ -7,6 +7,7 @@ import Tweeter2Icon from "@/assets/images/tweeter2";
 import Tweeter3Icon from "@/assets/images/tweeter3";
 import YoutubeIcon from "@/assets/images/youtube";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -49,26 +50,45 @@ export default function Footer() {
         </div>
 
         <div className="mr-40">
-          <div>
+          <Link href="#coverimg">
             {" "}
-            <p className="font-bold text-[16px]">Legal</p>{" "}
-          </div>
-          <div>
-            {" "}
-            <p className="mt-8">About Us</p>{" "}
-          </div>
-          <div>
-            {" "}
-            <p className="mt-4">Carrier</p>{" "}
-          </div>
-          <div>
-            {" "}
-            <p className="mt-4">We are hiring</p>{" "}
-          </div>
-          <div>
-            {" "}
-            <p className="mt-4">Blog</p>{" "}
-          </div>
+            <div>
+              {" "}
+              <p className="font-bold text-[16px]">Home</p>{" "}
+            </div>{" "}
+          </Link>
+
+          <Link href="#academics">
+            <div>
+              {" "}
+              <p className="mt-8">Academics</p>{" "}
+            </div>
+          </Link>
+          <Link href="#campuslife">
+            <div>
+              {" "}
+              <p className="mt-4">Campus life</p>{" "}
+            </div>
+          </Link>
+          <Link href="#popular">
+            <div>
+              {" "}
+              <p className="mt-4">Courses</p>{" "}
+            </div>
+          </Link>
+          <Link href="#upcoming">
+            <div>
+              {" "}
+              <p className="mt-4">Events</p>{" "}
+            </div>
+          </Link>
+
+          <Link href="#student">
+            <div>
+              {" "}
+              <p className="mt-4">Testimonial</p>{" "}
+            </div>{" "}
+          </Link>
         </div>
 
         <div>
