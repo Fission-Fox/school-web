@@ -1,8 +1,8 @@
+import academic from "@/assets/images/academic.jpeg";
+import academic2 from "@/assets/images/academic2.jpeg";
+import academic3 from "@/assets/images/academic3.jpeg";
 import images from "@/assets/images/line.png";
-import img from "@/assets/images/pic1.jpg";
-import academic from "@/assets/images/academic.jpg";
-import academic2 from "@/assets/images/academic2.jpg";
-import academic3 from "@/assets/images/academic3.jpg";
+import img from "@/assets/images/pic1.jpeg";
 import Image from "next/image";
 
 export default function Academics() {

@@ -64,8 +64,10 @@ export default function TemporaryDrawer() {
               <div className="h-14  px-1  ">
                 <Image src={logo} alt="" />
               </div>
-              <div className=" px-4 py-4 font-bold h-14 items-center text-[#00306e] hover:text-[#D2093C]">
-                Home
+              <div>
+                <p className=" px-4 py-4 font-bold h-14 items-center text-[#00306e] hover:text-[#D2093C]">
+                  Home
+                </p>
               </div>
               <hr />
               <div className="px-4 py-4 font-bold h-14  text-[#00306e] hover:text-[#D2093C]">

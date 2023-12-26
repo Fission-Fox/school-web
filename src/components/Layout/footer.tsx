@@ -7,6 +7,7 @@ import Tweeter2Icon from "@/assets/images/tweeter2";
 import Tweeter3Icon from "@/assets/images/tweeter3";
 import YoutubeIcon from "@/assets/images/youtube";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -37,49 +38,102 @@ export default function Footer() {
             }}
           />
 
-          <div className="font-bold text-[16px] mt-6">
-            There are course and event custom <br />
-            post types so you can easily create <br />
-            and <br />
-            manage course, events.
+          <div>
+            <p className="font-bold text-[16px] mt-6">
+              {" "}
+              There are course and event custom <br />
+              post types so you can easily create <br />
+              and <br />
+              manage course, events.
+            </p>
           </div>
         </div>
 
         <div className="mr-40">
-          <div className="font-bold text-[16px]">Legal</div>
-          <div className="mt-8">About Us</div>
-          <div className="mt-4">Carrier</div>
-          <div className="mt-4">We are hiring</div>
-          <div className="mt-4">Blog</div>
+          <Link href="#coverimg">
+            {" "}
+            <div>
+              {" "}
+              <p className="font-bold text-[16px]">Home</p>{" "}
+            </div>{" "}
+          </Link>
+
+          <Link href="#academics">
+            <div>
+              {" "}
+              <p className="mt-8">Academics</p>{" "}
+            </div>
+          </Link>
+          <Link href="#campuslife">
+            <div>
+              {" "}
+              <p className="mt-4">Campus life</p>{" "}
+            </div>
+          </Link>
+          <Link href="#popular">
+            <div>
+              {" "}
+              <p className="mt-4">Courses</p>{" "}
+            </div>
+          </Link>
+          <Link href="#upcoming">
+            <div>
+              {" "}
+              <p className="mt-4">Events</p>{" "}
+            </div>
+          </Link>
+
+          <Link href="#student">
+            <div>
+              {" "}
+              <p className="mt-4">Testimonial</p>{" "}
+            </div>{" "}
+          </Link>
         </div>
 
         <div>
-          <div className="font-bold text-[16px]">Get In Touch</div>
+          <div>
+            {" "}
+            <p className="font-bold text-[16px]">Get In Touch</p>{" "}
+          </div>
           <div className="flex">
             <div className="mr-3 mt-8">
               <PhoneIcon />
             </div>
-            <div className="mt-8 flex">021-34810063, 03452149660</div>
+            <div>
+              {" "}
+              <p className="mt-8 flex">021-34810063, 03452149660</p>
+            </div>
           </div>
           <div className="flex mt-4">
             <div className="mr-3">
               <Location2Icon />
             </div>
-            <div>GULSHAN CAMPUS, PECHS CAMPUS </div>
+            <div>
+              {" "}
+              <p>GULSHAN CAMPUS, PECHS CAMPUS</p>{" "}
+            </div>
           </div>
           <div className="flex mt-4">
             <div className="mr-3 ">
               <Tweeter2Icon />
             </div>
-            <div>www.studentszone.com.pk</div>
+            <div>
+              {" "}
+              <p>www.studentszone.com.pk</p>{" "}
+            </div>
           </div>
         </div>
       </div>
       <hr />
       <div className=" flex flex-col lg:flex-row  lg:justify-between pt-8 bg-[#000000] pb-8">
         <div className="ml-0 lg:ml-52 text-[#ffffff] gap-1 flex">
-          © 2022 <div className="text-[#D2093C]"> Student's Zone </div> All
-          Rights Reserved
+          © 2022{" "}
+          <div>
+            {" "}
+            <p className="text-[#D2093C]">Student's Zone</p>{" "}
+          </div>
+          <p>All Rights Reserved</p>
         </div>
         <div className="flex  mr-52  hover-[#D2093C]">
           <div className="mr-7">

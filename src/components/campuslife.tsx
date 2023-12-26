@@ -28,11 +28,13 @@ export default function Campuslife() {
               <div className="px-3 flex gap-2">
                 <BorderColorIcon style={{ fontSize: "40px" }} />
                 <div>
-                  <div className="text-[#00306E] text-[16px] md:text-[20px] lg:text-[22px] font-sans font-bold align items-center">
-                    Studies With The Subject Experts
+                  <div>
+                    <p className="text-[#00306E] text-[16px] md:text-[20px] lg:text-[22px] font-sans font-bold align items-center">
+                      Studies With The Subject Experts
+                    </p>
                   </div>
-                  <div className="text-[#4d5765] text-[12px] md:text-[15px] flex flex-row mt-4">
-                    <p>
+                  <div>
+                    <p className="text-[#4d5765] text-[12px] md:text-[15px] flex flex-row mt-4">
                       {" "}
                       Our institution boasts a team of the most experienced &
                       highly qualified teachers who are dedicated to foster a
@@ -51,11 +53,11 @@ export default function Campuslife() {
               <div className="px-3 flex gap-2">
                 <AssessmentIcon style={{ fontSize: "50px" }} />
                 <div>
-                  <div className="text-[#00306E] text-[15px] md:text-[20px] lg:text-[22px] font-sans font-bold align items-center">
+                  <p className="text-[#00306E] text-[15px] md:text-[20px] lg:text-[22px] font-sans font-bold align items-center">
                     Assessment Based Learning
-                  </div>
-                  <div className="text-[#4d5765] text-[11px] md:text-[15px] lg:text-[12px]flex flex-row mt-4">
-                    <p>
+                  </p>
+                  <div>
+                    <p className="text-[#4d5765] text-[11px] md:text-[15px] lg:text-[12px]flex flex-row mt-4">
                       {" "}
                       It is an educational approach that places a strong
                       emphasis on continuous evaluation and feedback to guide
@@ -73,11 +75,11 @@ export default function Campuslife() {
               <div className="px-3 flex gap-2">
                 <SettingsIcon style={{ fontSize: "50px" }} />
                 <div>
-                  <div className="text-[#00306E] text-[15px] md:text-[20px] lg:text-[22px] font-sans font-bold align items-center">
+                  <p className="text-[#00306E] text-[15px] md:text-[20px] lg:text-[22px] font-sans font-bold align items-center">
                     PTM (Parents Teacher Meeting)
-                  </div>
-                  <div className="text-[#4d5765] text-[11px] md:text-[15px] flex flex-row mt-4">
-                    <p>
+                  </p>
+                  <div>
+                    <p className="text-[#4d5765] text-[11px] md:text-[15px] flex flex-row mt-4">
                       {" "}
                       PTM provides an oppoprtunity for parents to understand
                       their child's strengths and weaknesses and work

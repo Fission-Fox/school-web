@@ -49,9 +49,9 @@ export default function Upcoming() {
         <SwiperSlide className=" mb-16 flex justify-center">
           {/* <div className="flex flex-wrap justify-center items-center m-auto flex-col lg:flex-row  gap-10"> */}
           <div className="bg-[#fff] w-[300px] !py-4 xl:!py-10 ">
-            <div className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
+            <p className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
               10{" "}
-            </div>
+            </p>
             <div className="px-10">
               <p className="text-[#4D5765] text-[16px]"> April, 2022</p>
               <p className="text-[#D2093C] mt-8">09:00AM - 12:00PM</p>
@@ -79,9 +79,9 @@ export default function Upcoming() {
         </SwiperSlide>
         <SwiperSlide className="flex justify-center">
           <div className="bg-[#fff]  w-[300px] !py-4 xl:!py-10 ">
-            <div className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
+            <p className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
               14{" "}
-            </div>
+            </p>
             <div className="px-10">
               <p className="text-[#4D5765] text-[16px]"> February, 2022</p>
               <p className="text-[#D2093C] mt-8">09:00AM-01:00PM</p>
@@ -110,9 +110,9 @@ export default function Upcoming() {
         </SwiperSlide>
         <SwiperSlide className="flex justify-center">
           <div className="bg-[#fff]  w-[300px] !py-4 xl:!py-10">
-            <div className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
+            <p className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
               26{" "}
-            </div>
+            </p>
             <div className="px-10">
               <p className="text-[#4D5765] text-[16px]"> March, 2022</p>
               <p className="text-[#D2093C] mt-8">09:00AM-12:00PM</p>
@@ -140,9 +140,9 @@ export default function Upcoming() {
         </SwiperSlide>
         <SwiperSlide className="flex justify-center">
           <div className="bg-[#fff]  w-[300px] !py-4 xl:!py-10">
-            <div className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
+            <p className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
               19{" "}
-            </div>
+            </p>
             <div className="px-10">
               <p className="text-[#4D5765] text-[16px]"> April, 2022</p>
               <p className="text-[#D2093C] mt-8">09:00AM-12:00PM</p>
@@ -173,9 +173,9 @@ export default function Upcoming() {
         <SwiperSlide className="flex justify-center">
           {/* <div className="flex flex-wrap justify-center items-center m-auto flex-col lg:flex-row  gap-10"> */}
           <div className="bg-[#fff] w-[300px] !py-4 xl:!py-10 ">
-            <div className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
+            <p className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
               10{" "}
-            </div>
+            </p>
             <div className="px-10">
               <p className="text-[#4D5765] text-[16px]"> April, 2022</p>
               <p className="text-[#D2093C] mt-8">12:00 AM - 01:30PM</p>
@@ -203,9 +203,9 @@ export default function Upcoming() {
         </SwiperSlide>
         <SwiperSlide className="flex justify-center">
           <div className="bg-[#fff]  w-[300px] !py-4 xl:!py-10 ">
-            <div className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
+            <p className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
               14{" "}
-            </div>
+            </p>
             <div className="px-10">
               <p className="text-[#4D5765] text-[16px]"> February, 2022</p>
               <p className="text-[#D2093C] mt-8">10:30 AM - 12:30PM</p>
@@ -234,9 +234,9 @@ export default function Upcoming() {
         </SwiperSlide>
         <SwiperSlide className="flex justify-center">
           <div className="bg-[#fff]  w-[300px] !py-4 xl:!py-10">
-            <div className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
+            <p className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
               26{" "}
-            </div>
+            </p>
             <div className="px-10">
               <p className="text-[#4D5765] text-[16px]"> March, 2022</p>
               <p className="text-[#D2093C] mt-8">01:30 AM - 02:00PM</p>
@@ -264,9 +264,9 @@ export default function Upcoming() {
         </SwiperSlide>
         <SwiperSlide className="flex justify-center">
           <div className="bg-[#fff]  w-[300px] !py-4 xl:!py-10">
-            <div className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
+            <p className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
               19{" "}
-            </div>
+            </p>
             <div className="px-10">
               <p className="text-[#4D5765] text-[16px]"> April, 2022</p>
               <p className="text-[#D2093C] mt-8">03:00 AM - 04:30PM</p>
