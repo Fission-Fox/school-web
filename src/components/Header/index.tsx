@@ -15,7 +15,7 @@ export default function Header() {
   };
   return (
     <nav className="fixed z-50 w-full top-0">
-      <div className="bg-[#00306e]  text-[14px] text-[white] hidden lg:!flex justify-around gap-5  h-10 items-center ">
+      <div className="bg-[#00306e]  text-[14px] text-[white] !hidden lg:!flex justify-around gap-5  h-10 items-center ">
         <div className="flex gap-3">
           <div className="flex gap-2">
             <div>
@@ -121,7 +121,7 @@ export default function Header() {
             </div>
           </Link>
         </div>
-
+        <TemporaryDrawer />
         {/* <div className="st flex  items-center gap-0 sm:gap-4 mr-5 sm:mr-20 text-[#00306e]">
           <div className="hidden sm:!flex">
             <div>
