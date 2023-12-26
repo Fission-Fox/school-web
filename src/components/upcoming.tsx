@@ -3,9 +3,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import line from "@/assets/images/line.png";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import PersonPinCircleIcon from "@mui/icons-material/PersonPinCircle";
 import { ClassNames } from "@emotion/react";
@@ -68,13 +66,6 @@ export default function Upcoming() {
                 </p>{" "}
               </div>
             </div>
-            <div className="flex justify-center mt-6 ">
-              <button className="text-[1b6px] text-[#00306E]  border-2 rounded font-bold px-14 py-2 hover:bg-[#D2093C] hover:text-white">
-                <p>
-                  Find Out More <ArrowForwardIcon />
-                </p>
-              </button>
-            </div>
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex justify-center">
@@ -99,13 +90,6 @@ export default function Upcoming() {
                 </p>{" "}
               </div>
             </div>
-            <div className="flex justify-center mt-6 ">
-              <button className="text-[16px] text-[#00306E]  border-2 rounded font-bold px-14 py-2 hover:bg-[#D2093C] hover:text-white">
-                <p>
-                  Find Out More <ArrowForwardIcon />
-                </p>
-              </button>
-            </div>
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex justify-center">
@@ -129,13 +113,6 @@ export default function Upcoming() {
                 </p>{" "}
               </div>
             </div>
-            <div className="flex justify-center mt-6 ">
-              <button className="text-[16px] text-[#00306E]  border-2 rounded font-bold px-14 py-2 hover:bg-[#D2093C] hover:text-white">
-                <p>
-                  Find Out More <ArrowForwardIcon />
-                </p>
-              </button>
-            </div>
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex justify-center">
@@ -158,13 +135,6 @@ export default function Upcoming() {
                   Karachi, Sindh
                 </p>{" "}
               </div>
-            </div>
-            <div className="flex justify-center mt-6 ">
-              <button className="text-[16px] text-[#00306E]  border-2 rounded font-bold px-14 py-2 hover:bg-[#D2093C] hover:text-white">
-                <p>
-                  Find Out More <ArrowForwardIcon />
-                </p>
-              </button>
             </div>
           </div>
 
@@ -192,13 +162,6 @@ export default function Upcoming() {
                 </p>{" "}
               </div>
             </div>
-            <div className="flex justify-center mt-6 ">
-              <button className="text-[1b6px] text-[#00306E]  border-2 rounded font-bold px-14 py-2 hover:bg-[#D2093C] hover:text-white">
-                <p>
-                  Find Out More <ArrowForwardIcon />
-                </p>
-              </button>
-            </div>
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex justify-center">
@@ -223,13 +186,6 @@ export default function Upcoming() {
                 </p>{" "}
               </div>
             </div>
-            <div className="flex justify-center mt-6 ">
-              <button className="text-[16px] text-[#00306E]  border-2 rounded font-bold px-14 py-2 hover:bg-[#D2093C] hover:text-white">
-                <p>
-                  Find Out More <ArrowForwardIcon />
-                </p>
-              </button>
-            </div>
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex justify-center">
@@ -253,13 +209,6 @@ export default function Upcoming() {
                 </p>{" "}
               </div>
             </div>
-            <div className="flex justify-center mt-6 ">
-              <button className="text-[16px] text-[#00306E]  border-2 rounded font-bold px-14 py-2 hover:bg-[#D2093C] hover:text-white">
-                <p>
-                  Find Out More <ArrowForwardIcon />
-                </p>
-              </button>
-            </div>
           </div>
         </SwiperSlide>
         <SwiperSlide className="flex justify-center">
@@ -282,13 +231,6 @@ export default function Upcoming() {
                   Karachi, Sindh
                 </p>{" "}
               </div>
-            </div>
-            <div className="flex justify-center mt-6 ">
-              <button className="text-[16px] text-[#00306E]  border-2 rounded font-bold px-14 py-2 hover:bg-[#D2093C] hover:text-white">
-                <p>
-                  Find Out More <ArrowForwardIcon />
-                </p>
-              </button>
             </div>
           </div>
 
