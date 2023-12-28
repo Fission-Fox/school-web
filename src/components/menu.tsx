@@ -12,8 +12,10 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import MenuIcon from "@mui/icons-material/Menu";
-import logo from "@/assets/images/logo blue.png";
+import logo from "@/assets/images/bluelogo.png";
+import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
+import Link from "next/link";
 type Anchor = "top";
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
@@ -45,11 +47,11 @@ export default function TemporaryDrawer() {
     </Box>
   );
   return (
-    <div>
+    <div className="!flex  lg:!hidden">
       {(["top"] as const).map((anchor) => (
         <React.Fragment key={anchor}>
           <Button
-            className="!text-[black]"
+            className="!text-[#00306e] "
             onClick={toggleDrawer(anchor, true)}
           >
             <MenuIcon />
@@ -61,9 +63,22 @@ export default function TemporaryDrawer() {
           >
             {/* {list(anchor)} */}
             <div>
-              <div className="h-14  px-1  ">
-                <Image src={logo} alt="" />
+              <div className="flex justify-between">
+                <Image
+                  src={logo}
+                  alt=""
+                  style={{
+                    width: "100px",
+                  }}
+                />
+                <div
+                  onClick={toggleDrawer(anchor, false)}
+                  className="py-2 px-4 text-[#00306e] "
+                >
+                  <CloseIcon />
+                </div>
               </div>
+
               <div>
                 <p className=" px-4 py-4 font-bold h-14 items-center text-[#00306e] hover:text-[#D2093C]">
                   Home
