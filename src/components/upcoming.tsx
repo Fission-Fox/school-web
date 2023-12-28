@@ -46,130 +46,81 @@ export default function Upcoming() {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide className=" mb-16 flex justify-center">
+        <SwiperSlide className=" flex justify-center">
           {/* <div className="flex flex-wrap justify-center items-center m-auto flex-col lg:flex-row  gap-10"> */}
-          <div className="bg-[#fff] w-[300px] !py-4 xl:!py-10 ">
-            <p className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
-              10{" "}
+          <div className="bg-[#fff] w-[300px] !py-10 xl:!py-14 ">
+            <p className="text-[#D2093C] text-[24px] font-sans font-semibold leading-8 px-10">
+              Parents Orientation
             </p>
             <div className="px-10">
-              <p className="text-[#4D5765] text-[16px]"> April, 2022</p>
-              <p className="text-[#D2093C] mt-8">09:00AM - 12:00PM</p>
-              <h3 className="text-[#00306e] text-[18px] xl:text-[20px] font-sans font-bold leading-7 mt-2">
-                Parent's Orientation
-              </h3>
-              <div className="flex flex-row gap-2">
-                <div className="text-[#00306e] mt-3">
-                  <PersonPinCircleIcon />
-                </div>
-                <p className="text-[4D5765] text-[16px] mt-4">
-                  {" "}
-                  Karachi, Sindh
-                </p>{" "}
-              </div>
-            </div>
-            <div className="flex justify-center mt-6 ">
-              <button className="text-[1b6px] text-[#00306E]  border-2 rounded font-bold px-14 py-2 hover:bg-[#D2093C] hover:text-white">
-                <p>
-                  Find Out More <ArrowForwardIcon />
-                </p>
-              </button>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="flex justify-center">
-          <div className="bg-[#fff]  w-[300px] !py-4 xl:!py-10 ">
-            <p className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
-              14{" "}
-            </p>
-            <div className="px-10">
-              <p className="text-[#4D5765] text-[16px]"> February, 2022</p>
-              <p className="text-[#D2093C] mt-8">09:00AM-01:00PM</p>
-              <h3 className="text-[#00306e] text-[20px] font-sans font-bold leading-7 mt-2">
-                Election Campaign
-              </h3>
-
-              <div className="flex flex-row gap-2">
-                <div className="text-[#00306e] mt-3">
-                  <PersonPinCircleIcon />
-                </div>
-                <p className="text-[4D5765] text-[16px] mt-4">
-                  {" "}
-                  Karachi, Sindh
-                </p>{" "}
-              </div>
-            </div>
-            <div className="flex justify-center mt-6 ">
-              <button className="text-[16px] text-[#00306E]  border-2 rounded font-bold px-14 py-2 hover:bg-[#D2093C] hover:text-white">
-                <p>
-                  Find Out More <ArrowForwardIcon />
-                </p>
-              </button>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="flex justify-center">
-          <div className="bg-[#fff]  w-[300px] !py-4 xl:!py-10">
-            <p className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
-              26{" "}
-            </p>
-            <div className="px-10">
-              <p className="text-[#4D5765] text-[16px]"> March, 2022</p>
-              <p className="text-[#D2093C] mt-8">09:00AM-12:00PM</p>
-              <h3 className="text-[#00306e] text-[20px] font-sans font-bold leading-7 mt-2">
-                Independence Day
-              </h3>
-              <div className="flex flex-row gap-2">
-                <div className="text-[#00306e] mt-3">
-                  <PersonPinCircleIcon />
-                </div>
-                <p className="text-[4D5765] text-[16px] mt-4">
-                  {" "}
-                  Karachi, Sindh
-                </p>{" "}
-              </div>
-            </div>
-            <div className="flex justify-center mt-6 ">
-              <button className="text-[16px] text-[#00306E]  border-2 rounded font-bold px-14 py-2 hover:bg-[#D2093C] hover:text-white">
-                <p>
-                  Find Out More <ArrowForwardIcon />
-                </p>
-              </button>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="flex justify-center">
-          <div className="bg-[#fff]  w-[300px] !py-4 xl:!py-10">
-            <p className="text-[#D2093C] text-[50px] font-sans font-bold mt-2 px-10">
-              19{" "}
-            </p>
-            <div className="px-10">
-              <p className="text-[#4D5765] text-[16px]"> April, 2022</p>
-              <p className="text-[#D2093C] mt-8">09:00AM-12:00PM</p>
-              <p className="text-[#00306e] text-[20px] font-sans font-bold leading-7 mt-2">
-                Youm-e-Hussain (A.S)
+              <p className="text-[#00306e] text-[12px] xl:text-[18px] font-sans  leading-7 mt-1">
+                To establish healthy communication regarding the academics our
+                school conducted an orientation for the parents . The
+                headmistress Maam Safia Muhammad Ali presented the mission and
+                vision of the institution, and shared a brief overview of the
+                school’s agenda.
               </p>
-              <div className="flex flex-row gap-2">
-                <div className="text-[#00306e] mt-3">
-                  <PersonPinCircleIcon />
-                </div>
-                <p className="text-[4D5765] text-[16px] mt-4">
-                  {" "}
-                  Karachi, Sindh
-                </p>{" "}
-              </div>
-            </div>
-            <div className="flex justify-center mt-6 ">
-              <button className="text-[16px] text-[#00306E]  border-2 rounded font-bold px-14 py-2 hover:bg-[#D2093C] hover:text-white">
-                <p>
-                  Find Out More <ArrowForwardIcon />
-                </p>
-              </button>
-            </div>
+            </div>{" "}
           </div>
-
-          {/* </div> */}
         </SwiperSlide>
+        <SwiperSlide className=" flex justify-center">
+          {/* <div className="flex flex-wrap justify-center items-center m-auto flex-col lg:flex-row  gap-10"> */}
+          <div className="bg-[#fff] w-[300px] !py-10 xl:!py-14 ">
+            <p className="text-[#D2093C] text-[24px] font-sans font-semibold leading-8 px-10">
+              Parents Teacher Meeting (PTM)
+            </p>
+            <div className="px-10">
+              <p className="text-[#00306e] text-[12px] xl:text-[18px] font-sans  leading-7 mt-1">
+                We organize Parent's Teacher Meeting in every month. To discuss
+                the performance of students with their parents it was a great
+                interaction between the teachers & the parents for the
+                development of their children, where they discussed the strength
+                and areas of improvements.
+              </p>
+            </div>{" "}
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className=" flex justify-center">
+          {/* <div className="flex flex-wrap justify-center items-center m-auto flex-col lg:flex-row  gap-10"> */}
+          <div className="bg-[#fff] w-[300px] !py-10 xl:!py-14 ">
+            <p className="text-[#D2093C] text-[24px] font-sans font-semibold leading-8 px-10">
+              Election Campaign
+            </p>
+            <div className="px-10">
+              <p className="text-[#00306e] text-[12px] xl:text-[18px] font-sans  leading-7 mt-1">
+                The school elections are one of the most important events among
+                other highlighted events of the school. The students zone
+                schooling system organized the event being sure that the
+                elections were free and fair and the rules and regulations were
+                followed.
+              </p>
+            </div>{" "}
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className=" flex justify-center">
+          {/* <div className="flex flex-wrap justify-center items-center m-auto flex-col lg:flex-row  gap-10"> */}
+          <div className="bg-[#fff] w-[300px] !py-10 xl:!py-14 ">
+            <p className="text-[#D2093C] text-[24px] font-sans font-semibold leading-8 px-10">
+              YOUM-E-HUSSAIN (A.S.)
+            </p>
+            <div className="px-10">
+              <p className="text-[#00306e] text-[12px] xl:text-[18px] font-sans  leading-7 mt-1">
+                Hussain Ibn-e-Ali (a.s.) – Remembered with Love and Devotion
+                “Hussain is from me, and, I am from Hussain…”, said Prophet
+                Muhammad (PBUH) The mission of Hazrat Imam Hussain (a.s.) is
+                distinctly unique, religious and revolutionary movement in the
+                history of the World which is an example of persistence and
+                courage for the right and victory over justice. This year,
+                Youm-e-Hussain was organized with honor and respect in the
+                memory of Hazrat Imam Hussain (a.s.) at the Student’s Zone
+                Schooling System. students presented nohas, speeches and quotes
+                of prominent world leaders and scholars, who are greatly
+                inspired by the supreme sacrifice of Imam Hussain (a.s.).
+              </p>
+            </div>{" "}
+          </div>
+        </SwiperSlide>
+
         <SwiperSlide className="flex justify-center">
           {/* <div className="flex flex-wrap justify-center items-center m-auto flex-col lg:flex-row  gap-10"> */}
           <div className="bg-[#fff] w-[300px] !py-4 xl:!py-10 ">
