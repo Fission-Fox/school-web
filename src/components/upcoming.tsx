@@ -3,9 +3,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import line from "@/assets/images/line.png";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import PersonPinCircleIcon from "@mui/icons-material/PersonPinCircle";
 import { ClassNames } from "@emotion/react";

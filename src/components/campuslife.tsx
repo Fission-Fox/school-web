@@ -34,7 +34,7 @@ export default function Campuslife() {
                     </p>
                   </div>
                   <div>
-                    <p className="text-[#4d5765] text-[12px] md:text-[15px] flex flex-row mt-4">
+                    <p className="text-[#4d5765] text-[12px] md:text-[15px] flex flex-row mt-0">
                       {" "}
                       Our institution boasts a team of the most experienced &
                       highly qualified teachers who are dedicated to foster a
@@ -43,9 +43,6 @@ export default function Campuslife() {
                   </div>
                 </div>
               </div>
-              <button className="border w-10 h-10 flex items-center justify-center rounded-full   text-[#00306E] hover:bg-[#00306E] hover:text-white">
-                <ArrowForwardIcon />
-              </button>
             </div>
 
             <hr className="w-[80%] m-auto" />
@@ -66,9 +63,6 @@ export default function Campuslife() {
                   </div>
                 </div>
               </div>
-              <button className="border rounded-full w-10 h-10 flex items-center justify-center text-[#00306E] hover:bg-[#00306E] hover:text-white">
-                <ArrowForwardIcon />
-              </button>
             </div>
             <hr className="w-[80%] m-auto" />
             <div className="flex flex-row justify-between h-40 w-full py-7 px-2 md:px-9">
@@ -88,9 +82,6 @@ export default function Campuslife() {
                   </div>
                 </div>
               </div>
-              <button className="border rounded-full w-10 h-10 flex items-center justify-center  text-[#00306E] hover:bg-[#00306E] hover:text-white">
-                <ArrowForwardIcon />
-              </button>
             </div>
           </div>
         </div>

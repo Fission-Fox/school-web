@@ -23,11 +23,11 @@ export const inter = Inter({
 });
 
 const theme = createTheme({
-  palette: {
-    primary: { main: "#2D969B" },
-    secondary: { main: "#2D969B" },
-    mode: "light",
-  },
+  // palette: {
+  //   primary: { main: "#2D969B" },
+  //   secondary: { main: "#2D969B" },
+  //   mode: "light",
+  // },
 
   typography: {
     fontFamily: exo.style.fontFamily,
