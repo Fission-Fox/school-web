@@ -100,36 +100,80 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className=" rounded-lg shadow w-[780px] h-[345px] px-4 bg-[#ffff] flex justify-between">
-            <div>
-              <div className="text-[#A3AED0] flex">
-                <Calender />
-                <p> This month</p>
-              </div>
-              <div className="">
-                <p className="text-[#2B3674] text-[34px] font-sans font-bold">
-                  $37.5K
-                </p>
-
-                <div className="flex">
-                  <p className="text-[#A3AED0]">Total Spent</p>
-                  <Arrowdown />
-                  <p className="text-[14px] text-[#05CD99] font-sans font-semibold">
-                    +2.45%
-                  </p>
+          <div className="flex gap-6 mt-5">
+            <div className=" rounded-lg shadow w-[780px] h-[345px] px-4 bg-[#ffff] flex justify-between">
+              <div>
+                <div className="text-[#A3AED0] flex">
+                  <Calender />
+                  <p> This month</p>
                 </div>
-                <Trackon />
+                <div className="">
+                  <p className="text-[#2B3674] text-[34px] font-sans font-bold">
+                    $37.5K
+                  </p>
+
+                  <div className="flex">
+                    <p className="text-[#A3AED0]">Total Spent</p>
+                    <Arrowdown />
+                    <p className="text-[14px] text-[#05CD99] font-sans font-semibold">
+                      +2.45%
+                    </p>
+                  </div>
+                  <div className="py-4">
+                    <Trackon />
+                  </div>
+                </div>
+                <div className="flex flex-col justify-center items-center">
+                  <Group />
+                  <Line1 />
+                  <Line2 />
+                </div>
+                <div className="flex flex-row gap-6">
+                  <p className="text-[#A3AED0]">SEP</p>
+                  <p className="text-[#A3AED0]">OCT</p>
+                  <p className="text-[#A3AED0]">NOV</p>
+                  <p className="text-[#A3AED0]">DEC</p>
+                  <p className="text-[#A3AED0]">JAN</p>
+                  <p className="text-[#A3AED0]">FEB</p>
+                </div>
               </div>
-              <div className="flex flex-col justify-center">
-                <Group />
-                <Line1 />
-                <Line2 />
+
+              <div className="">
+                {" "}
+                <Earningicon />
               </div>
             </div>
+            <div className=" rounded-lg shadow w-[780px] h-[345px] px-4 bg-[#ffff] flex justify-between">
+              <div>
+                <div className="text-[#A3AED0] flex">
+                  <Calender />
+                  <p> This month</p>
+                </div>
+                <div className="">
+                  <p className="text-[#2B3674] text-[34px] font-sans font-bold">
+                    $37.5K
+                  </p>
 
-            <div className="">
-              {" "}
-              <Earningicon />
+                  <div className="flex">
+                    <p className="text-[#A3AED0]">Total Spent</p>
+                    <Arrowdown />
+                    <p className="text-[14px] text-[#05CD99] font-sans font-semibold">
+                      +2.45%
+                    </p>
+                  </div>
+                  <Trackon />
+                </div>
+                <div className="flex flex-col justify-center">
+                  <Group />
+                  <Line1 />
+                  <Line2 />
+                </div>
+              </div>
+
+              <div className="">
+                {" "}
+                <Earningicon />
+              </div>
             </div>
           </div>
         </div>
