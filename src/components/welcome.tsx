@@ -3,13 +3,13 @@ import React from "react";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import comment from "@/assets/images/comment.png";
 
-import ab from "@/assets/images/ab.png";
+import image from "@/assets/images/picimage.png";
 export default function Welcome() {
   return (
     <div>
       <div className="flex flex-col lg:flex-row justify-center gap-28 mt-36 px-3 w-[90%] lg:w-[80%] m-auto">
         <div className="lg:w-[50%]">
-          <Image src={ab} alt="" />
+          <Image src={image} alt=" image" />
         </div>
 
         <div className="leading-[55px] mt-12 w-full lg:w-[50%]">

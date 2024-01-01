@@ -15,14 +15,14 @@ import Dollar from "./svg/dollar";
 import Line1 from "./svg/line1";
 import Trackon from "./svg/trackon";
 import Line2 from "./svg/line2";
-import Group from "./svg/group";
+import Chart from "@/assets/images/chart.jpg";
 
 const Dashboard = () => {
   return (
     <div className="bg-[#F4F7FE] w-full">
       <Box sx={{ width: "100%", display: "flex", flexDirection: "column" }}>
         <div className="">
-          <div className="px-7">
+          <div className="px-7 mt-6">
             <p className="text-[#707EAE] text-[14px]"> Pages / Dashboard</p>
             <p className="text-[#2B3674] text-[34px] font-sans font-bold leading-8">
               Main Dashboard
@@ -100,35 +100,43 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className="flex gap-6 mt-5">
-            <div className=" rounded-lg shadow w-[780px] h-[345px] px-4 bg-[#ffff] flex justify-between">
-              <div>
-                <div className="text-[#A3AED0] flex">
-                  <Calender />
-                  <p> This month</p>
-                </div>
-                <div className="">
+          <div className="flex gap-6 mt-6 px-6 ">
+            <div className=" rounded-lg shadow w-[780px] h-[345px] px-4 bg-[#ffff]   ">
+              <div className="flex justify-between">
+                <div className="text-[#A3AED0] flex flex-col">
+                  <div>
+                    <button className="flex mt-3 shadow">
+                      {" "}
+                      <Calender />
+                      <p> This month</p>
+                    </button>
+                  </div>
+
                   <p className="text-[#2B3674] text-[34px] font-sans font-bold">
                     $37.5K
                   </p>
-
-                  <div className="flex">
-                    <p className="text-[#A3AED0]">Total Spent</p>
+                  <div className="flex flex-row">
+                    <p className="text-[#A3AED0] text-[15px]">Total Spent</p>
                     <Arrowdown />
                     <p className="text-[14px] text-[#05CD99] font-sans font-semibold">
                       +2.45%
                     </p>
                   </div>
-                  <div className="py-4">
+                  <div className="mt-3">
                     <Trackon />
                   </div>
                 </div>
-                <div className="flex flex-col justify-center items-center">
-                  <Group />
-                  <Line1 />
-                  <Line2 />
+
+                <div className="mt-3">
+                  {" "}
+                  <Earningicon />
                 </div>
-                <div className="flex flex-row gap-6">
+              </div>
+
+              <div className="flex flex-col justify-center items-center">
+                <Line1 />
+                <Line2 />
+                <div className="flex flex-row gap-6 mt-4">
                   <p className="text-[#A3AED0]">SEP</p>
                   <p className="text-[#A3AED0]">OCT</p>
                   <p className="text-[#A3AED0]">NOV</p>
@@ -137,43 +145,40 @@ const Dashboard = () => {
                   <p className="text-[#A3AED0]">FEB</p>
                 </div>
               </div>
+            </div>
 
-              <div className="">
-                {" "}
-                <Earningicon />
+            <div className=" rounded-lg shadow w-[750px] h-[345px] px-4 bg-[#ffff] ">
+              <div className=" flex mt-2 justify-between">
+                <p className="text-[#1B2559] text-[24px] font-semibold">
+                  {" "}
+                  Weekly Revenue
+                </p>
+                <div className="mt-3">
+                  {" "}
+                  <Earningicon />
+                </div>
+              </div>
+              <div className="mt-20">
+                <Image src={Chart} alt="chart" />
               </div>
             </div>
-            <div className=" rounded-lg shadow w-[780px] h-[345px] px-4 bg-[#ffff] flex justify-between">
-              <div>
-                <div className="text-[#A3AED0] flex">
-                  <Calender />
-                  <p> This month</p>
-                </div>
-                <div className="">
-                  <p className="text-[#2B3674] text-[34px] font-sans font-bold">
-                    $37.5K
-                  </p>
-
-                  <div className="flex">
-                    <p className="text-[#A3AED0]">Total Spent</p>
-                    <Arrowdown />
-                    <p className="text-[14px] text-[#05CD99] font-sans font-semibold">
-                      +2.45%
-                    </p>
-                  </div>
-                  <Trackon />
-                </div>
-                <div className="flex flex-col justify-center">
-                  <Group />
-                  <Line1 />
-                  <Line2 />
-                </div>
+          </div>
+          <div className="px-6 mt-4">
+            <div className=" rounded-lg shadow w-[640px] h-[330px]  bg-[#ffff] ">
+              <div className=" mt-2">
+                <p className="text-[#1B2559] px-4  text-[24px] py-2 font-semibold">
+                  {" "}
+                  Check Table
+                </p>
               </div>
-
-              <div className="">
-                {" "}
-                <Earningicon />
-              </div>
+              <table>
+                <tr>
+                  <td>NAME</td>
+                  <td>PROGRESS</td>
+                  <td>QUANTITY</td>
+                  <td>DATE</td>
+                </tr>
+              </table>
             </div>
           </div>
         </div>
