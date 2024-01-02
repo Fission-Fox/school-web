@@ -1,5 +1,5 @@
-import FacebookIcon from "@/assets/images/facebook";
 import logo from "@/assets/images/bluelogo.png";
+import FacebookIcon from "@/assets/images/facebook";
 import InstagramIcon from "@/assets/images/instagram";
 import Location2Icon from "@/assets/images/location2";
 import PhoneIcon from "@/assets/images/phone";
@@ -69,12 +69,6 @@ export default function Footer() {
             <div>
               {" "}
               <p className="mt-4">Campus life</p>{" "}
-            </div>
-          </Link>
-          <Link href="#popular">
-            <div>
-              {" "}
-              <p className="mt-4">Courses</p>{" "}
             </div>
           </Link>
           <Link href="#upcoming">
