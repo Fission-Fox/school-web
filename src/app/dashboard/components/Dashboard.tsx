@@ -1,140 +1,133 @@
 import { Box } from "@mui/material";
 import Link from "next/link";
 import Image from "next/image";
-import Earningicon from "./svg/earningicon";
+import Graph from "./svg/graph";
+import { ClassNames } from "@emotion/react";
+import Money from "./svg/money";
 import flag from "@/assets/images/flag.jpg";
-import Spend from "@/app/dashboard/components/svg/spend";
-import Arrow from "@/app/dashboard/components/svg/arrowicon";
-import Blueicon from "@/app/dashboard/components/svg/blueicon";
-import Tickicon from "./svg/tickicon";
-import Pageicon from "@/app/dashboard/components/svg/pageicon";
+import Shadow from "@/assets/images/Shadow.jpg";
+import Icon from "@/assets/images/Icon.jpg";
+import DOC from "@/assets/images/DOC.jpg";
 import Calender from "./svg/calender";
-import Arrowdown from "./svg/arrowdown";
-import Button from "./svg/button";
-import Dollar from "./svg/dollar";
-import Line1 from "./svg/line1";
-import Trackon from "./svg/trackon";
-import Line2 from "./svg/line2";
-import Group from "./svg/group";
+import Arrowdropup from "./arrowdropup";
+import Tick from "./tick";
 
 const Dashboard = () => {
   return (
-    <div className="bg-[#F4F7FE] w-full">
-      <Box sx={{ width: "100%", display: "flex", flexDirection: "column" }}>
-        <div className="">
-          <div className="px-7">
-            <p className="text-[#707EAE] text-[14px]"> Pages / Dashboard</p>
-            <p className="text-[#2B3674] text-[34px] font-sans font-bold leading-8">
-              Main Dashboard
-            </p>
+    <Box sx={{ width: "100%", display: "flex", flexDirection: "column" }}>
+      <div className="bg-[#F4F7FE] w-full h-[100vh] pl-7">
+        <div>
+          <div className="mt-10 ">
+            <p className="text-gray-500">Pages/Dashboard</p>
+            <p className="font-bold text-lg">Main Dashboard</p>
           </div>
+          <div className="flex flex-row gap-4">
+            <div className="bg-[white] rounded-3xl justify-start pl-4 items-center w-[248px] h-[97px] flex flex-row gap-4">
+              <div>
+                <Graph />
+              </div>
+              <div>
+                <p className="text-gray-400 text-center">Earnings</p>
+                <p className="text-center font-bold ">$350.4</p>
+              </div>
+            </div>
 
-          <div className="flex flex-row gap-5 px-6 mt-10">
-            <div className="rounded-2xl shadow w-[350px] h-[100px] px-4 bg-[#ffff] flex  justify-center items-center gap-10">
+            <div className="bg-[white] rounded-3xl justify-start pl-4 items-center w-[248px] h-[97px]  gap-4 flex flex-row">
               <div>
-                <Earningicon />
+                <Money />
               </div>
               <div>
-                <p className=" text-[14px] text-[#A3AED0] ">Earnings</p>
-                <p className="text-[#2B3674] text-[24px] font-semibold ">
-                  $350.4
-                </p>
+                <p className="text-gray-400  text-sm">Spend this month</p>
+                <p className=" font-bold ">$642.39</p>
               </div>
             </div>
-            <div className="rounded-2xl shadow w-[350px] h-[100px] bg-[#ffff] flex  justify-center items-center gap-3">
+            <div className="bg-[white] rounded-3xl justify-start pl-4 items-center w-[248px] h-[97px] flex gap-4">
               <div>
-                <Spend />
-              </div>
-              <div>
-                <p className=" text-[14px] text-[#A3AED0]">Spend this month</p>
-                <p className="text-[#2B3674] text-[24px]  font-semibold">
-                  $642.39
-                </p>
-              </div>
-            </div>
-            <div className="rounded-2xl shadow w-[350px] h-[100px] bg-[#ffff]">
-              <div className="flex flex-col px-4 pt-2">
-                <p className=" text-[14px] text-[#A3AED0]">Sales</p>
-                <p className="text-[#2B3674] text-[24px]  font-semibold">
-                  $574.34
-                </p>
+                <p className="text-gray-400 ">Sales</p>
+                <p className=" font-bold ">$574.34</p>
                 <div className="flex gap-2">
-                  <p className="text-[#05CD99] text-[12px] font-sans font-bold">
-                    +23%
-                  </p>
-                  <p className="text-[14px] text-[#A3AED0]">since last month</p>
+                  <p className="text-[#05CD99]">+23%</p>
+                  <p>since last month</p>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-2xl shadow w-[350px] h-[100px] flex  justify-center items-center gap-5 bg-[#ffff]">
-              <div className="">
-                <p className=" text-[14px] text-[#A3AED0]">Your balance</p>
-                <p className="text-[#2B3674] text-[24px]  font-semibold">
-                  $1,000
+            <div className="bg-[white] rounded-3xl  pl-4 items-center w-[248px] h-[97px] flex gap-4 justify-start">
+              <div>
+                <p className="text-gray-400 text-center text-sm">
+                  Your balance
                 </p>
+                <p className=" font-bold ">$1000</p>
               </div>
-              <div className="flex">
-                <Image
-                  className="border rounded-full w-10 h-10 "
-                  src={flag}
-                  alt=""
-                />
-                <Arrow />
+              <div>
+                {" "}
+                <Image src={flag} alt="" />
               </div>
             </div>
-            <div className="rounded-2xl shadow w-[350px] h-[100px] bg-[#ffff] flex  justify-center items-center gap-10 ">
-              <Blueicon />
+
+            <div className="bg-[white] rounded-3xl justify-start pl-4 items-center w-[248px] h-[97px] flex gap-4">
               <div>
-                <p className=" text-[14px] text-[#A3AED0]">New Tasks</p>
-                <p className="text-[#2B3674] text-[24px]  font-semibold">154</p>
+                <Image src={Icon} alt="" />
+              </div>
+
+              <div>
+                <p className="text-gray-400 text-center">New Tasks</p>
+                <p className=" font-bold ">154</p>
               </div>
             </div>
-            <div className="rounded-2xl shadow w-[350px] h-[100px] bg-[#ffff]  flex  justify-center items-center gap-6 ">
-              <Pageicon />
+
+            <div className="bg-[white] rounded-3xl justify-start pl-4 items-center w-[248px] h-[97px] flex gap-4">
               <div>
-                <p className=" text-[14px] text-[#A3AED0]">Total Projects</p>
-                <p className="text-[#2B3674] text-[24px]  font-semibold">
-                  2935
+                <Image src={DOC} alt="" />
+              </div>
+
+              <div>
+                <p className="text-gray-400 text-center gap-4">
+                  Total Projects
                 </p>
+                <p className=" font-bold ">2935</p>
               </div>
             </div>
           </div>
-          <div className=" rounded-lg shadow w-[780px] h-[345px] px-4 bg-[#ffff] flex justify-between">
-            <div>
-              <div className="text-[#A3AED0] flex">
-                <Calender />
-                <p> This month</p>
-              </div>
-              <div className="">
-                <p className="text-[#2B3674] text-[34px] font-sans font-bold">
-                  $37.5K
-                </p>
 
-                <div className="flex">
-                  <p className="text-[#A3AED0]">Total Spent</p>
-                  <Arrowdown />
-                  <p className="text-[14px] text-[#05CD99] font-sans font-semibold">
-                    +2.45%
-                  </p>
-                </div>
-                <Trackon />
+          {/* 1st box */}
+
+          <div className="w-[774px] h-[345px] bg-white rounded-lg mt-5 px-4 py-4">
+            <div>
+              <button className="flex bg-[#F4F7FE]  ">
+                <Calender /> <p className="text-[#A3AED0]">this month</p>
+              </button>
+            </div>
+
+            <div>
+              <p className="font-bold w-[149.81px] h-[39.88px] text-3xl mt-5">
+                $37.5K
+              </p>
+            </div>
+
+            <div className="flex flex-row text-sm">
+              <div className="text-[#A3AED0]">
+                <p>Total Spent</p>
               </div>
-              <div className="flex flex-col justify-center">
-                <Group />
-                <Line1 />
-                <Line2 />
+              <div>
+                <Arrowdropup />
+              </div>
+              <div className="text-[#05CD99] font-semibold">
+                <p>+2.45%</p>
               </div>
             </div>
 
-            <div className="">
+            <div className="flex flex-row mt-4">
               {" "}
-              <Earningicon />
+              <Tick />
+              <div className="text-[#05CD99] text-sm font-semibold">
+                <p>On Track</p>
+              </div>
             </div>
           </div>
         </div>
-      </Box>
-    </div>
+      </div>
+    </Box>
   );
 };
 
