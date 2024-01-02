@@ -58,7 +58,7 @@ export default function Header() {
             </div>
             <div>
               <p className="hover:text-[#FFDFC7] cursor-pointer">
-                info@reactheme.com
+                Studentszone6@gmail.com
               </p>
             </div>
           </div>
