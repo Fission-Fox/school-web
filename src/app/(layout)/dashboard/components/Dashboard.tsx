@@ -105,7 +105,7 @@ const Dashboard = () => {
               <div className="flex justify-between">
                 <div className="text-[#A3AED0] flex flex-col">
                   <div>
-                    <button className="flex mt-3 shadow">
+                    <button className="flex mt-3 shadow bg-slate-100">
                       {" "}
                       <Calender />
                       <p> This month</p>
@@ -128,7 +128,6 @@ const Dashboard = () => {
                 </div>
 
                 <div className="mt-3">
-                  {" "}
                   <Earningicon />
                 </div>
               </div>
@@ -164,21 +163,130 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="px-6 mt-4">
-            <div className=" rounded-lg shadow w-[640px] h-[330px]  bg-[#ffff] ">
+            <div className=" rounded-lg shadow w-[640px]  bg-[#ffff] ">
               <div className=" mt-2">
                 <p className="text-[#1B2559] px-4  text-[24px] py-2 font-semibold">
                   {" "}
                   Check Table
-                </p>
+                </p>{" "}
+                <table cellPadding={16}>
+                  <thead className=" mt-3 text-[14px] text-[#A3AED0] ">
+                    <th align="left" className=" w-[250px] px-6">
+                      NAME
+                    </th>
+                    <th align="left" className=" w-[150px] ">
+                      PROGRESS
+                    </th>
+                    <th align="left" className=" w-[150px] ">
+                      QUANTITY
+                    </th>
+                    <th align="left" className=" w-[150px]">
+                      DATE
+                    </th>
+                  </thead>
+                  <tbody className="  mt-3 text-[14px] text-[#353f77]">
+                    <tr className="w-[200px]">
+                      <td align="left" className="px-6">
+                        <input type="checkbox" className="mr-4" />
+                        Horizon UI PRO
+                      </td>
+                      <td>17.5%</td>
+                      <td>2.458</td>
+                      <td>24.Jan.2021</td>
+                    </tr>
+                    <tr className="w-[200px]">
+                      <td align="left" className="px-6">
+                        <input type="checkbox" className="mr-4" />
+                        Horizon UI PRO
+                      </td>
+                      <td>17.5%</td>
+                      <td>2.458</td>
+                      <td>24.Jan.2021</td>
+                    </tr>
+                    <tr className="w-[200px]">
+                      <td align="left" className="px-6">
+                        <input type="checkbox" className="mr-4" />
+                        Horizon UI PRO
+                      </td>
+                      <td>17.5%</td>
+                      <td>2.458</td>
+                      <td>24.Jan.2021</td>
+                    </tr>
+                    <tr className="w-[200px]">
+                      <td align="left" className="px-6">
+                        <input type="checkbox" className="mr-4" />
+                        Horizon UI PRO
+                      </td>
+                      <td>17.5%</td>
+                      <td>2.458</td>
+                      <td>24.Jan.2021</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <table>
-                <tr>
-                  <td>NAME</td>
-                  <td>PROGRESS</td>
-                  <td>QUANTITY</td>
-                  <td>DATE</td>
-                </tr>
-              </table>
+
+              <div className=" rounded-lg shadow w-[640px]  mt-6 bg-[#ffff] ">
+                <div className=" mt-2">
+                  <p className="text-[#1B2559] px-4  text-[24px] py-2 font-semibold">
+                    {" "}
+                    Check Table
+                  </p>
+                </div>
+                <table cellPadding={16}>
+                  <thead className=" mt-3 text-[14px] text-[#A3AED0] ">
+                    <th align="left" className=" w-[250px] px-6">
+                      NAME
+                    </th>
+                    <th align="left" className=" w-[150px] ">
+                      PROGRESS
+                    </th>
+                    <th align="left" className=" w-[150px] ">
+                      QUANTITY
+                    </th>
+                    <th align="left" className=" w-[150px]">
+                      DATE
+                    </th>
+                  </thead>
+                  <tbody className="  mt-3 text-[14px] text-[#353f77]">
+                    <tr className="w-[200px]">
+                      <td align="left" className="px-6">
+                        <input type="checkbox" className="mr-4" />
+                        Horizon UI PRO
+                      </td>
+                      <td>17.5%</td>
+                      <td>2.458</td>
+                      <td>24.Jan.2021</td>
+                    </tr>
+                    <tr className="w-[200px]">
+                      <td align="left" className="px-6">
+                        <input type="checkbox" className="mr-4" />
+                        Horizon UI PRO
+                      </td>
+                      <td>17.5%</td>
+                      <td>2.458</td>
+                      <td>24.Jan.2021</td>
+                    </tr>
+                    <tr className="w-[200px]">
+                      <td align="left" className="px-6">
+                        <input type="checkbox" className="mr-4" />
+                        Horizon UI PRO
+                      </td>
+                      <td>17.5%</td>
+                      <td>2.458</td>
+                      <td>24.Jan.2021</td>
+                    </tr>
+                    <tr className="w-[200px]">
+                      <td align="left" className="px-6">
+                        <input type="checkbox" className="mr-4" />
+                        Horizon UI PRO
+                      </td>
+                      <td>17.5%</td>
+                      <td>2.458</td>
+                      <td>24.Jan.2021</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
