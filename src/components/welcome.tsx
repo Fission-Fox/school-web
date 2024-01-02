@@ -1,15 +1,14 @@
-import Image from "next/image";
-import React from "react";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import comment from "@/assets/images/comment.png";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Image from "next/image";
 
-import ab from "@/assets/images/ab.png";
+import image from "@/assets/images/picimage.png";
 export default function Welcome() {
   return (
     <div>
-      <div className="flex flex-col lg:flex-row justify-center gap-28 mt-36 px-3 w-[90%] lg:w-[80%] m-auto">
+      <div className="flex flex-col items-center lg:flex-row justify-center gap-28 mt-36 px-3 w-[90%] lg:w-[80%] m-auto">
         <div className="lg:w-[50%]">
-          <Image src={ab} alt="" />
+          <Image src={image} alt=" image" />
         </div>
 
         <div className="leading-[55px] mt-12 w-full lg:w-[50%]">
@@ -36,11 +35,13 @@ export default function Welcome() {
           </p>
           <hr className="w-[80%]" />
           <p className=" mt-10 text-[16px] text-[#777777] ">
-            Education also refers to the knowledge received through schooling
-            instruction <br />
-            and to the institution of teaching as a whole. The main purpose of
-            education <br />
-            is the integral development of a person.
+            <span className="text-[#00306E] font-bold text-[20px] ">
+              students zone coaching offer{" "}
+            </span>{" "}
+            <br /> ix x xi xii and o ' level <br /> AGA Khan Board Federal Board
+            Sindh board MDCAT ECAT AND BCAT aptitude <br />
+            test preparation <br />
+            Junior's coaching classes from I to viii
           </p>
 
           <div className="flex flex-col lg:flex-row ">
