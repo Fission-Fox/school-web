@@ -85,7 +85,7 @@ export default function Header() {
             }}
           />
         </div>
-        <div className="hidden lg:!flex text-[#00306e] !text-base xl:!text-lg gap-10 xl:gap-20 font-semibold">
+        <div className="invisible lg:visible w-0 lg:w-auto flex text-[#00306e] !text-base xl:!text-lg gap-10 xl:gap-20 font-semibold">
           <Link href="#coverimg">
             <div>
               {" "}
