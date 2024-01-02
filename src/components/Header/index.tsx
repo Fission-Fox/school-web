@@ -5,9 +5,9 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import TemporaryDrawer from "../menu";
-import Link from "next/link";
 export default function Header() {
   const [isOpen, setMenu] = useState(true);
   const toggleMenu = () => {
@@ -101,12 +101,6 @@ export default function Header() {
           <Link href="#campuslife">
             <div>
               <p className="hover:text-[#D2093C] cursor-pointer">Campus life</p>
-            </div>
-          </Link>
-          <Link href="#popular">
-            <div>
-              {" "}
-              <p className="hover:text-[#D2093C] cursor-pointer">Courses</p>
             </div>
           </Link>
           <Link href="#upcoming">

@@ -1,21 +1,12 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import MenuIcon from "@mui/icons-material/Menu";
 import logo from "@/assets/images/bluelogo.png";
 import CloseIcon from "@mui/icons-material/Close";
+import MenuIcon from "@mui/icons-material/Menu";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
 import Image from "next/image";
-import Link from "next/link";
+import * as React from "react";
 type Anchor = "top";
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
@@ -89,9 +80,6 @@ export default function TemporaryDrawer() {
                 Pages
               </div>
               <hr />
-              <div className="px-4 py-4 font-bold h-14   text-[#00306e] hover:text-[#D2093C]">
-                Courses
-              </div>
               <hr />
               <div className="px-4 py-4 font-bold h-14  text-[#00306e] hover:text-[#D2093C]">
                 Blogs

@@ -1,7 +1,6 @@
-import Image from "next/image";
-import React from "react";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import comment from "@/assets/images/comment.png";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Image from "next/image";
 
 import image from "@/assets/images/picimage.png";
 export default function Welcome() {
@@ -36,9 +35,9 @@ export default function Welcome() {
           </p>
           <hr className="w-[80%]" />
           <p className=" mt-10 text-[16px] text-[#777777] ">
-            <p className="text-[#00306E] font-bold text-[20px] ">
+            <span className="text-[#00306E] font-bold text-[20px] ">
               students zone coaching offer{" "}
-            </p>{" "}
+            </span>{" "}
             <br /> ix x xi xii and o ' level <br /> AGA Khan Board Federal Board
             Sindh board MDCAT ECAT AND BCAT aptitude <br />
             test preparation <br />
