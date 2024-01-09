@@ -1,4 +1,4 @@
-import coverImage from "@/assets/images/cover.jpg";
+import coverImage from "@/assets/images/cover.jpeg";
 import Image from "next/image";
 
 export default function HeroSection() {
