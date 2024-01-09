@@ -2,9 +2,9 @@ import { TextField, TextFieldProps } from "@mui/material";
 import React from "react";
 
 type Props = {
-  placeholder: string;
+  placeholder?: string;
   value?: string;
-  onChange: (
+  onChange?: (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
   sx?: TextFieldProps["sx"];
@@ -31,6 +31,9 @@ const InputComponent = ({
         width: "100%",
         backgroundColor: "#F7F7F7",
         marginBottom: "20px",
+        "& .MuiInputBase-root": {
+          height: "40px",
+        },
         ...sx,
       }}
     />

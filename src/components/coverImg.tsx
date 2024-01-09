@@ -1,4 +1,5 @@
 import coverImage from "@/assets/images/studentzone.jpg";
+import Link from "next/link";
 import Image from "next/image";
 export default function CoverImg() {
   return (
@@ -37,9 +38,11 @@ export default function CoverImg() {
             </p>
           </div>
           <div className="px-5 py-2 border flex justify-center items-center rounded-[6px] hover:bg-[#D2093C] hover:border-none mt-5">
-            <button className="text-[#ffffff] font-semibold text-[14px] sm:text-[16px]">
-              <p>Admissions</p>
-            </button>
+            <Link href={"/admission"}>
+              <button className="text-[#ffffff] font-semibold text-[14px] sm:text-[16px]">
+                <p>Admissions</p>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
