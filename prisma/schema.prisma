@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_PRISMA_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
+model AdmissionType {
+  id   Int    @id @default(autoincrement())
+  type String @unique
+  form Form @relation(fields: [FormID], references: [id])
+  formID Int
+}
+
+model Classes {
+  id    Int    @id @default(autoincrement())
+  class Int    @unique
+  form  Form @relation(fields: [FormID], references: [id])
+formID Int
+}
+
+model Form {
+  id              Int           @id @default(autoincrement())
+  admissionType   admissionType
+  classes         Classes       
+  name            String
+  address         String
+  phoneNumber     String
+  placeOfBirth    String
+}
