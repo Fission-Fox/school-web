@@ -1,8 +1,10 @@
+"use client";
 import DescriptionIcon from "@mui/icons-material/Description";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
 import { Box, Container, Grid } from "@mui/material";
 // import HomeBill from 'components/ui/homeBill';
 // import HomeInvoice from 'components/ui/homeInvoice';
+import { useRouter } from "next/navigation";
 import { DashboardCard } from "./components/DashboardCard";
 // const DashboardLayoutRoot = styled('div')(({ theme }) => ({
 //     display: 'flex',
@@ -13,7 +15,7 @@ import { DashboardCard } from "./components/DashboardCard";
 // }));
 
 export default function DashboardPage() {
-  // const router = useRouter()
+  const router = useRouter();
   return (
     <>
       {/* <DashboardLayoutRoot> */}
@@ -31,6 +33,9 @@ export default function DashboardPage() {
               <DashboardCard
                 title={"View Admissions"}
                 backgroundColor={"#1CC88A"}
+                buttonClick={() => {
+                  router.push("/admin/dashboard/admissions");
+                }}
                 label="View Admissions"
                 borderColor={"#1CC88A"}
                 icon={<NewspaperIcon style={{ fontSize: "45px" }} />}

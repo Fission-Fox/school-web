@@ -2,12 +2,12 @@ import SignalCellularAlt2BarIcon from "@mui/icons-material/SignalCellularAlt2Bar
 
 export const MENU = [
   {
-    href: "/admin/dasboard",
+    href: "/admin/dashboard",
     icon: <SignalCellularAlt2BarIcon />,
     title: "Home",
   },
   {
-    href: "/admin/admissions",
+    href: "/admin/dashboard/admissions",
     icon: <SignalCellularAlt2BarIcon />,
     title: "Admissions",
   },

@@ -54,7 +54,7 @@ export default function Page() {
               <List
                 columns={COLUMNS}
                 content={users}
-                url={"/admissions"}
+                url={"/dashboard/admissions"}
                 editCol={true}
               />
             </div>
