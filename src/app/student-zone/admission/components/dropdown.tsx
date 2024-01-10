@@ -138,12 +138,14 @@ import * as React from "react";
 type Prop = {
   list: any;
   label: string;
+  setValue?: any;
 };
-export default function SelectDropdown({ list, label }: Prop) {
+export default function SelectDropdown({ list, label, setValue }: Prop) {
   const [age, setAge] = React.useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
+    if (setValue) setValue(event.target.value as string);
   };
 
   return (
