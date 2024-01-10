@@ -2,10 +2,18 @@
 import { Checkbox, FormControlLabel } from "@mui/material";
 import { useState } from "react";
 import SelectDropdown from "./dropdown";
+import Input from "./formInput";
 // import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
-
+import { addSubmission } from "@/config/firebase";
+import { TStudent } from "@/types/admission";
+import { useForm } from "react-hook-form";
 export default function Admission() {
   const [formType, setType] = useState("");
+  const [classe, setClass] = useState("");
+  const [admissionFor, setAdmissionFor] = useState("");
+
+  const form = useForm<TStudent>();
+  const { register, control, formState, setValue, handleSubmit } = form;
   const admissionfor = [
     // { name: "Junior zone" },
     { name: "School" },
@@ -67,15 +75,39 @@ export default function Admission() {
             </h2>
           </div>
 
-          <form className="bg-white shadow-sm ring-1 py-3 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+          <form
+            onSubmit={handleSubmit(async (data) => {
+              console.log({
+                ...data,
+                admissionFor,
+                admissionType: formType,
+                class: classe,
+              });
+              addSubmission({
+                ...data,
+                admissionFor,
+                admissionType: formType,
+                class: classe,
+              });
+            })}
+            className="bg-white shadow-sm ring-1 py-3 ring-gray-900/5 sm:rounded-xl md:col-span-2"
+          >
             <div className="flex flex-wrap justify-evenly">
-              <SelectDropdown label={"Admission for"} list={admissionfor} />
+              <SelectDropdown
+                label={"Admission for"}
+                setValue={setAdmissionFor}
+                list={admissionfor}
+              />
               <SelectDropdown
                 setValue={setType}
                 label={"Admission type"}
                 list={people}
               />
-              <SelectDropdown label={"Classes"} list={getCurrentList()} />
+              <SelectDropdown
+                setValue={setClass}
+                label={"Classes"}
+                list={getCurrentList()}
+              />
             </div>
             {/* <div className="flex justify-center">
                         <Example heading={"Federal / AKU-EB"} list={people3} />
@@ -86,58 +118,43 @@ export default function Admission() {
                 <div className="font-semibold">Science Subjects</div>
                 <div className="text-[14px] pl-1 w-32 mt-2">
                   <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox defaultChecked />}
-                      label="BIOLOGY"
-                    />
+                    <FormControlLabel control={<Checkbox />} label="BIOLOGY" />
                   </div>
                   <div className="mb-1">
                     <FormControlLabel
-                      control={<Checkbox defaultChecked />}
+                      control={<Checkbox />}
                       label="  COMPUTER"
                     />
                   </div>
                   <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox defaultChecked />}
-                      label="PHYSICS"
-                    />
+                    <FormControlLabel control={<Checkbox />} label="PHYSICS" />
                   </div>
                   <div className="mb-1">
                     <FormControlLabel
-                      control={<Checkbox defaultChecked />}
+                      control={<Checkbox />}
                       label="CHEMISTRY"
                     />
                   </div>
                   <div className="mb-1">
                     <FormControlLabel
-                      control={<Checkbox defaultChecked />}
+                      control={<Checkbox />}
                       label="MATHEMATICS"
                     />
                   </div>
                   <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox defaultChecked />}
-                      label="URDU"
-                    />
+                    <FormControlLabel control={<Checkbox />} label="URDU" />
                   </div>
                   <div className="mb-1">
                     <FormControlLabel
-                      control={<Checkbox defaultChecked />}
+                      control={<Checkbox />}
                       label="  PAK.STUDIES"
                     />
                   </div>
                   <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox defaultChecked />}
-                      label="ENGLISH"
-                    />
+                    <FormControlLabel control={<Checkbox />} label="ENGLISH" />
                   </div>
                   <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox defaultChecked />}
-                      label="ISLAMIAT"
-                    />
+                    <FormControlLabel control={<Checkbox />} label="ISLAMIAT" />
                   </div>
                 </div>
               </div>
@@ -146,57 +163,48 @@ export default function Admission() {
                 <div className="text-[14px] pl-1 w-48 mt-2">
                   <div className="mb-1">
                     <FormControlLabel
-                      control={<Checkbox defaultChecked />}
+                      control={<Checkbox />}
                       label=" ACCOUNTING"
                     />
                   </div>
                   <div className="mb-1">
                     <FormControlLabel
-                      control={<Checkbox defaultChecked />}
+                      control={<Checkbox />}
                       label=" ECONOMICS"
                     />
                   </div>
                   <div className="mb-1">
                     <FormControlLabel
-                      control={<Checkbox defaultChecked />}
+                      control={<Checkbox />}
                       label=" GEN SCIENCE"
                     />
                   </div>
                   <div className="mb-1">
                     <FormControlLabel
-                      control={<Checkbox defaultChecked />}
+                      control={<Checkbox />}
                       label=" GEN. MATHS"
                     />
                   </div>
                   <div className="mb-1">
                     <FormControlLabel
-                      control={<Checkbox defaultChecked />}
+                      control={<Checkbox />}
                       label=" BUSINESS STUDIES"
                     />
                   </div>
                   <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox defaultChecked />}
-                      label=" URDU"
-                    />
+                    <FormControlLabel control={<Checkbox />} label=" URDU" />
                   </div>
                   <div className="mb-1">
                     <FormControlLabel
-                      control={<Checkbox defaultChecked />}
+                      control={<Checkbox />}
                       label=" PAK.STUDIES"
                     />
                   </div>
                   <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox defaultChecked />}
-                      label=" ENGLISH"
-                    />
+                    <FormControlLabel control={<Checkbox />} label=" ENGLISH" />
                   </div>
                   <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox defaultChecked />}
-                      label="ISLAMIAT"
-                    />
+                    <FormControlLabel control={<Checkbox />} label="ISLAMIAT" />
                   </div>
                 </div>
               </div>
@@ -205,57 +213,39 @@ export default function Admission() {
                 <div className="text-[14px] pl-1 w-40 mt-2">
                   <div className="mb-1">
                     <FormControlLabel
-                      control={<Checkbox defaultChecked />}
+                      control={<Checkbox />}
                       label="PAK.STUDIES"
                     />
                   </div>
                   <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox defaultChecked />}
-                      label="ISLAMIAT"
-                    />
+                    <FormControlLabel control={<Checkbox />} label="ISLAMIAT" />
+                  </div>
+                  <div className="mb-1">
+                    <FormControlLabel control={<Checkbox />} label="MATHS" />
                   </div>
                   <div className="mb-1">
                     <FormControlLabel
-                      control={<Checkbox defaultChecked />}
-                      label="MATHS"
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox defaultChecked />}
+                      control={<Checkbox />}
                       label="CHEMISTRY"
                     />
                   </div>
                   <div className="mb-1">
                     <FormControlLabel
-                      control={<Checkbox defaultChecked />}
+                      control={<Checkbox />}
                       label="ADD - MATHS"
                     />
                   </div>
                   <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox defaultChecked />}
-                      label="URDU"
-                    />
+                    <FormControlLabel control={<Checkbox />} label="URDU" />
                   </div>
                   <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox defaultChecked />}
-                      label="PHYSICS"
-                    />
+                    <FormControlLabel control={<Checkbox />} label="PHYSICS" />
                   </div>
                   <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox defaultChecked />}
-                      label="ENGLISH"
-                    />
+                    <FormControlLabel control={<Checkbox />} label="ENGLISH" />
                   </div>
                   <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox defaultChecked />}
-                      label="BIOLOGY"
-                    />
+                    <FormControlLabel control={<Checkbox />} label="BIOLOGY" />
                   </div>
                 </div>
               </div>
@@ -264,288 +254,207 @@ export default function Admission() {
             <div className="px-4 py-6 sm:p-8">
               <div className="grid max-w-full grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                 <div className="sm:col-span-3">
-                  <label
-                    htmlFor="first-name"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    First name
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="first-name"
-                      id="first-name"
-                      autoComplete="given-name"
-                      className="block w-full rounded-md border-0 py-1.5 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <Input
+                    label={"First name *"}
+                    type="text"
+                    htmlFor="firstname"
+                    register={{
+                      ...register("firstname", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
 
                 <div className="sm:col-span-3">
-                  <label
-                    htmlFor="last-name"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Last name
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="last-name"
-                      id="last-name"
-                      autoComplete="family-name"
-                      className="block w-full rounded-md border-0 py-1.5 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <Input
+                    label={"Last name *"}
+                    type="text"
+                    htmlFor="lastname"
+                    register={{
+                      ...register("lastname", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
                 <div className="sm:col-span-2">
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    S/o. D/o
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      id="text"
-                      name="text"
-                      type="text"
-                      autoComplete="email"
-                      className="block w-full rounded-md border-0 py-1.5 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <Input
+                    label={"S/o. D/o *"}
+                    type="text"
+                    htmlFor="sonOf"
+                    register={{
+                      ...register("sonOf", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
                 <div className="sm:col-span-2">
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Place of Birth
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      id="text"
-                      name="text"
-                      type="text"
-                      autoComplete="email"
-                      className="block w-full rounded-md border-0 py-1.5 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <Input
+                    label={"Place of Birth *"}
+                    type="text"
+                    htmlFor="birthPlace"
+                    register={{
+                      ...register("birthPlace", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
                 <div className="sm:col-span-2">
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Region
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      id="text"
-                      name="text"
-                      type="text"
-                      autoComplete="email"
-                      className="block w-full rounded-md border-0 py-1.5 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <Input
+                    label={"Region *"}
+                    type="text"
+                    htmlFor="region"
+                    register={{
+                      ...register("region", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
 
                 <div className="sm:col-span-2 sm:col-start-1">
-                  <label
-                    htmlFor="city"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Father’s Occupation
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="city"
-                      id="city"
-                      autoComplete="address-level2"
-                      className="block w-full rounded-md border-0 py-1.5 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <Input
+                    label={"Father’s Occupation *"}
+                    type="text"
+                    htmlFor="father_occupation"
+                    register={{
+                      ...register("father_occupation", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label
-                    htmlFor="region"
-                    className="block text-sm font-medium leading-6 pl-3 text-gray-900"
-                  >
-                    Father’s Cell#
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="region"
-                      id="region"
-                      autoComplete="address-level1"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <Input
+                    label={"   Father’s Cell# *"}
+                    type="number"
+                    htmlFor="father_phone"
+                    register={{
+                      ...register("father_phone", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label
-                    htmlFor="postal-code"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Mother’s Cell #
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="postal-code"
-                      id="postal-code"
-                      autoComplete="postal-code"
-                      className="block w-full rounded-md border-0 py-1.5 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <Input
+                    label={"    Mother’s Cell# *"}
+                    type="number"
+                    htmlFor="mother_phone"
+                    register={{
+                      ...register("mother_phone", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
 
                 <div className="col-span-full">
-                  <label
-                    htmlFor="street-address"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Address
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="street-address"
-                      id="street-address"
-                      autoComplete="street-address"
-                      className="block w-full rounded-md border-0 py-1.5 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <Input
+                    label={"    Address *"}
+                    type="text"
+                    htmlFor="address"
+                    register={{
+                      ...register("address", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
 
                 <div className="sm:col-span-2 sm:col-start-1">
-                  <label
-                    htmlFor="city"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Student’s Cell
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="city"
-                      id="city"
-                      autoComplete="address-level2"
-                      className="block w-full rounded-md border-0 py-1.5 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <Input
+                    label={"    Student’s Cell *"}
+                    type="text"
+                    htmlFor="student_phone"
+                    register={{
+                      ...register("student_phone", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label
-                    htmlFor="region"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Phone #
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="region"
-                      id="region"
-                      autoComplete="address-level1"
-                      className="block w-full rounded-md border-0 py-1.5 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <Input
+                    label={"Home Cell *"}
+                    type="text"
+                    htmlFor="home_phone"
+                    register={{
+                      ...register("home_phone", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
 
                 <div className="sm:col-span-3">
-                  <label
-                    htmlFor="first-name"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Name Of Present School/College
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="first-name"
-                      id="first-name"
-                      autoComplete="given-name"
-                      className="block w-full rounded-md border-0 py-1.5 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <Input
+                    label={" Name Of Present School/College *"}
+                    type="text"
+                    htmlFor="present_school"
+                    register={{
+                      ...register("present_school", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
-
                 <div className="sm:col-span-3">
-                  <label
-                    htmlFor="last-name"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    D.O.B
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="date"
-                      name="last-name"
-                      id="last-name"
-                      autoComplete="family-name"
-                      className="block w-full rounded-md border-0 py-1.5 pl-3 pr-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <Input
+                    label={" Date Of Birth *"}
+                    type="date"
+                    htmlFor="DOB"
+                    register={{
+                      ...register("DOB", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
 
                 <div className="sm:col-span-2 sm:col-start-1">
-                  <label
-                    htmlFor="city"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Parent’s Email ID
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="city"
-                      id="city"
-                      autoComplete="address-level2"
-                      className="block w-full rounded-md border-0 py-1.5 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <Input
+                    label={" Parent’s Email ID *"}
+                    type="email"
+                    htmlFor="parent_email"
+                    register={{
+                      ...register("parent_email", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label
-                    htmlFor="region"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Student’s Email ID
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="region"
-                      id="region"
-                      autoComplete="address-level1"
-                      className="block w-full rounded-md border-0 py-1.5 pl-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <Input
+                    label={"  Student’s Email ID *"}
+                    type="email"
+                    htmlFor="student_email"
+                    register={{
+                      ...register("student_email", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label
-                    htmlFor="postal-code"
-                    className="block text-sm font-medium leading-6 text-gray-900"
-                  >
-                    Relation
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="postal-code"
-                      id="postal-code"
-                      autoComplete="postal-code"
-                      className="block w-full rounded-md pl-3 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
+                  <Input
+                    label={"  Relation *"}
+                    type="text"
+                    htmlFor="student_email"
+                    register={{
+                      ...register("relation", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
               </div>
             </div>

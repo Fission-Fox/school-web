@@ -19,7 +19,7 @@ import { Card } from "../Card";
 type Props<TData> = {
   columns: IColumnProps[];
   url?: string;
-  content: TData[];
+  content: any[];
   selection?: boolean;
   onSelection?: (list: TData[]) => void;
   customURL?: (item: string) => string;
@@ -245,7 +245,7 @@ const ListComponent = <
         <GroupPanel visible={true} />
         <Grouping autoExpandAll={false} />
         {selection && <Selection mode={"multiple"} allowSelectAll />}
-        {columns.map((item, index) => (
+        {columns?.map((item, index) => (
           <Column
             alignment={"left"}
             allowEditing={true}

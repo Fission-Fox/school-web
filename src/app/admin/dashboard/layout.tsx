@@ -1,6 +1,8 @@
 "use client";
 import { Box } from "@mui/material";
 import { useState } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { DashboardNavbar } from "./components/Dashboard/DashboardNavbar";
 import { Sidebar } from "./components/Sidebar";
 import { HTMLHeader } from "./components/htmlHeader";
@@ -18,6 +20,18 @@ export default function Layout(props: Props) {
 
   return (
     <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <HTMLHeader heading={heading} />
       <LayoutRoot>
         <DashboardNavbar onSidebarOpen={() => setSidebarOpen(true)} />

@@ -1,10 +1,12 @@
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
+import { TStudent } from "@/types/admission";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { addDoc, collection, getDocs, getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
+import { toast } from "react-toastify";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCZvCHpPiHAfmCFkP2K3eWc68kbXRybOTA",
@@ -24,13 +26,26 @@ const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage();
 
-async function addSubmission(body: any) {
+async function addSubmission(body: TStudent) {
   try {
     await addDoc(collection(db, "submissions"), body);
     // alert('Successfully Added')
     console.log("successfully added");
   } catch (e: any) {
     alert(e.message);
+  }
+}
+async function getSubmissions() {
+  try {
+    const querySnapshot = await getDocs(collection(db, "submissions"));
+    const users: TStudent[] = [];
+    querySnapshot.forEach((doc: any) => {
+      users.push({ ...doc.data(), id: doc.id });
+    });
+    toast.success("Admission Form has been submitted");
+    return users;
+  } catch (e) {
+    console.log(e);
   }
 }
 
@@ -127,7 +142,4 @@ async function addSubmission(body: any) {
 //         return data
 
 // }
-export {
-  addSubmission,
-  // uploadImages
-};
+export { addSubmission, getSubmissions };
