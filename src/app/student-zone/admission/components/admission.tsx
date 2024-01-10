@@ -112,83 +112,119 @@ export default function Admission() {
             </div>
             <div>
               <div className="font-semibold">Commerce Subjects</div>
-              <div className="text-[14px] pl-1 w-40 mt-2">
+              <div className="text-[14px] pl-1 w-48 mt-2">
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  ACCOUNTING
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label=" ACCOUNTING"
+                  />
                 </div>
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  ECONOMICS
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label=" ECONOMICS"
+                  />
                 </div>
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  GEN SCIENCE
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label=" GEN SCIENCE"
+                  />
                 </div>
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  GEN. MATHS
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label=" GEN. MATHS"
+                  />
                 </div>
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  BUSINESS STUDIES
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label=" BUSINESS STUDIES"
+                  />
                 </div>
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  URDU
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label=" URDU"
+                  />
                 </div>
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  PAK.STUDIES
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label=" PAK.STUDIES"
+                  />
                 </div>
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  ENGLISH
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label=" ENGLISH"
+                  />
                 </div>
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  ISLAMIAT
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label="ISLAMIAT"
+                  />
                 </div>
               </div>
             </div>
             <div className="">
               <div className="font-semibold">O/A Levels Subjects</div>
-              <div className="text-[14px] pl-1 w-32 mt-2">
+              <div className="text-[14px] pl-1 w-40 mt-2">
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  PAK.STUDIES
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label="PAK.STUDIES"
+                  />
                 </div>
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  ISLAMIAT
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label="ISLAMIAT"
+                  />
                 </div>
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  MATHS
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label="MATHS"
+                  />
                 </div>
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  CHEMISTRY
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label="CHEMISTRY"
+                  />
                 </div>
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  ADD - MATHS
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label="ADD - MATHS"
+                  />
                 </div>
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  URDU
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label="URDU"
+                  />
                 </div>
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  PHYSICS
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label="PHYSICS"
+                  />
                 </div>
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  ENGLISH
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label="ENGLISH"
+                  />
                 </div>
                 <div className="mb-1">
-                  <input type="checkbox" className="mr-1" />
-                  BIOLOGY
+                  <FormControlLabel
+                    control={<Checkbox defaultChecked />}
+                    label="BIOLOGY"
+                  />
                 </div>
               </div>
             </div>
