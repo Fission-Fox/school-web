@@ -2,10 +2,7 @@ import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { TStudent } from "@/types/admission";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth";
 import { addDoc, collection, getDocs, getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
 import { toast } from "react-toastify";
 
 const firebaseConfig = {
@@ -20,11 +17,10 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const auth = getAuth();
+initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+// const auth = getAuth();
 const db = getFirestore();
-const storage = getStorage();
 
 async function addSubmission(body: TStudent) {
   try {
