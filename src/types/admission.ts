@@ -1,0 +1,21 @@
+export type TStudent = {
+  admissionFor: string;
+  admissionType: string;
+  class: string;
+  firstname: string;
+  lastname: string;
+  sonOf: string;
+  relation: string;
+  student_email: string;
+  parent_email: string;
+  DOB: Date;
+  father_occupation: string;
+  present_school: string;
+  home_phone: number;
+  student_phone: number;
+  address: string;
+  mother_phone: number;
+  father_phone: number;
+  region: string;
+  birthPlace: string;
+};
