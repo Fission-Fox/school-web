@@ -7,6 +7,7 @@ import Input from "./formInput";
 import { addSubmission } from "@/config/firebase";
 import { TStudent } from "@/types/admission";
 import { useForm } from "react-hook-form";
+import { Label } from "@mui/icons-material";
 export default function Admission() {
   const [formType, setType] = useState("");
   const [classe, setClass] = useState("");
@@ -65,6 +66,18 @@ export default function Admission() {
         return classes;
     }
   };
+  const [checkedvalue, setChecked] = useState<string[]>([]);
+  const handleChage = (event: any) => {
+    const { value, checked } = event.target;
+    if (checked) {
+      setChecked((pre) => [...pre, value]);
+    } else
+      setChecked((pre) => {
+        return [...pre.filter((skill) => skill !== value)];
+      });
+  };
+  console.log(checkedvalue);
+
   return (
     <div className="w-full bg-slate-200 py-10 ">
       <div className="w-full md:w-[50%] bg-white rounded-lg  py-3 m-auto space-y-10 divide-y mt-32 divide-gray-900/10">
@@ -118,43 +131,76 @@ export default function Admission() {
                 <div className="font-semibold">Science Subjects</div>
                 <div className="text-[14px] pl-1 w-32 mt-2">
                   <div className="mb-1">
-                    <FormControlLabel control={<Checkbox />} label="BIOLOGY" />
+                    <FormControlLabel
+                      onChange={handleChage}
+                      value={"BIOLOGY"}
+                      control={<Checkbox />}
+                      label="BIOLOGY"
+                    />
                   </div>
                   <div className="mb-1">
                     <FormControlLabel
                       control={<Checkbox />}
-                      label="  COMPUTER"
+                      onChange={handleChage}
+                      value={"COMPUTER"}
+                      label="COMPUTER"
                     />
                   </div>
                   <div className="mb-1">
-                    <FormControlLabel control={<Checkbox />} label="PHYSICS" />
+                    <FormControlLabel
+                      onChange={handleChage}
+                      value={"PHYSICS"}
+                      control={<Checkbox />}
+                      label="PHYSICS"
+                    />
                   </div>
                   <div className="mb-1">
                     <FormControlLabel
                       control={<Checkbox />}
                       label="CHEMISTRY"
+                      onChange={handleChage}
+                      value={"CHEMISTRY"}
                     />
                   </div>
                   <div className="mb-1">
                     <FormControlLabel
                       control={<Checkbox />}
                       label="MATHEMATICS"
+                      onChange={handleChage}
+                      value={"MATHEMATICS"}
                     />
                   </div>
                   <div className="mb-1">
-                    <FormControlLabel control={<Checkbox />} label="URDU" />
+                    <FormControlLabel
+                      onChange={handleChage}
+                      value={"URDU"}
+                      control={<Checkbox />}
+                      label="URDU"
+                    />
                   </div>
                   <div className="mb-1">
                     <FormControlLabel
                       control={<Checkbox />}
                       label="  PAK.STUDIES"
+                      onChange={handleChage}
+                      value={"PAK.STUDIES"}
                     />
                   </div>
                   <div className="mb-1">
-                    <FormControlLabel control={<Checkbox />} label="ENGLISH" />
+                    <FormControlLabel
+                      onChange={handleChage}
+                      value={"ENGLISH"}
+                      control={<Checkbox />}
+                      label="ENGLISH"
+                    />
                   </div>
                   <div className="mb-1">
-                    <FormControlLabel control={<Checkbox />} label="ISLAMIAT" />
+                    <FormControlLabel
+                      onChange={handleChage}
+                      value={"ISLAMIAT"}
+                      control={<Checkbox />}
+                      label="ISLAMIAT"
+                    />
                   </div>
                 </div>
               </div>
