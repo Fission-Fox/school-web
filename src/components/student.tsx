@@ -85,9 +85,10 @@ export default function Testominal() {
                   Director
                 </p> */}
                 <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-
-
-                  I visited this school  and I want to say that the school's administration demonstrated excellent management. They have effectively guided the school, creating a positive and conducive learning environment for both students and staff.
+                  I visited this school and I want to say that the school's
+                  administration demonstrated excellent management. They have
+                  effectively guided the school, creating a positive and
+                  conducive learning environment for both students and staff.
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
@@ -181,7 +182,9 @@ export default function Testominal() {
                   Director
                 </p> */}
                 <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-                  An extremely comfortable atmosphere to learn and to teach  and very cooperative staff and management .I highly recommend those who wants to have a peaceful teaching career.
+                  An extremely comfortable atmosphere to learn and to teach and
+                  very cooperative staff and management .I highly recommend
+                  those who wants to have a peaceful teaching career.
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
@@ -275,7 +278,11 @@ export default function Testominal() {
                   Director
                 </p> */}
                 <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-                  The teachers are amazing, each child is treated with care. My son and daughter attended this school as well. If you have any doubts please go and see (PN) and she will put you at ease. I am blessed that some of the same teachers who taught me are teaching my children as well.
+                  The teachers are amazing, each child is treated with care. My
+                  son and daughter attended this school as well. If you have any
+                  doubts please go and see (PN) and she will put you at ease. I
+                  am blessed that some of the same teachers who taught me are
+                  teaching my children as well.
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
