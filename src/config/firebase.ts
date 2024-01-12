@@ -45,6 +45,47 @@ async function getSubmissions() {
   }
 }
 
+async function getAdmissionType() {
+  try {
+    const querySnapshot = await getDocs(collection(db, "admissionType"));
+    const users: TStudent[] = [];
+    querySnapshot.forEach((doc: any) => {
+      users.push({ ...doc.data(), id: doc.id });
+    });
+
+    return users;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+async function getAdmissionFor() {
+  try {
+    const querySnapshot = await getDocs(collection(db, "admissionFor"));
+    const users: TStudent[] = [];
+    querySnapshot.forEach((doc: any) => {
+      users.push({ ...doc.data(), id: doc.id });
+    });
+
+    return users;
+  } catch (e) {
+    console.log(e);
+  }
+}
+async function getClass() {
+  try {
+    const querySnapshot = await getDocs(collection(db, "class"));
+    const users: TStudent[] = [];
+    querySnapshot.forEach((doc: any) => {
+      users.push({ ...doc.data(), id: doc.id });
+    });
+
+    return users;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 // async function register(email, password, name) {
 
 //         const userCredential = await createUserWithEmailAndPassword(auth, email, password)
@@ -138,4 +179,10 @@ async function getSubmissions() {
 //         return data
 
 // }
-export { addSubmission, getSubmissions };
+export {
+  addSubmission,
+  getSubmissions,
+  getAdmissionType,
+  getAdmissionFor,
+  getClass,
+};

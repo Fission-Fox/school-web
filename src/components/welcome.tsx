@@ -38,7 +38,7 @@ export default function Welcome() {
             <span className="text-[#00306E] font-bold text-[20px] ">
               Students Zone Coaching Offer{" "}
             </span>{" "}
-            <br /> IX,X, XI, XII, O ' LeveL,  AGA Khan Board, Federal Board,
+            <br /> IX,X, XI, XII, O ' LeveL, AGA Khan Board, Federal Board,
             Sindh Board, MDCAT, ECAT AND BCAT Aptitude Test Preparation.
             <br />
             Junior's Coaching Classes From I to VIII

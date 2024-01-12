@@ -76,60 +76,50 @@ const HomeTestimonial: FC = () => {
       id: 1,
       title: "Detailed learning materials",
       content:
-        "Classes that provide very detailed material in term of making UI UX Design starting team making low and hight quality, system designs, using data layout and make prototypes and testing.",
+        "I am grateful for the holistic education I received here, where innovative teaching methods and real-world applications have prepared me to navigate the complexities of the modern world.",
       user: {
         id: 1,
-        name: "Luis Sera",
-        professional: "UI/UX Engineer",
-        photo: "1.jpg",
+        name: "Muneeb parkar",
       },
     },
     {
       id: 2,
       title: "Best Quality Online Course!",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "The online courses provided by our school are top-notch, offering engaging content and interactive learning experiences that cater to diverse learning styles I appreciate, the high-quality instruction and well-structured curriculum.",
       user: {
         id: 1,
-        name: "Riski",
-        professional: "Software Engineer",
-        photo: "2.jpg",
+        name: "Shayan mehdi",
       },
     },
     {
       id: 3,
       title: "Very complete class",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "The class has a perfect balance between theoretical concepts and practical applications, allowing us to develop both a deep understanding of the subject matter and the skills needed in our future careers. It's a truly enriching educational experience.",
       user: {
         id: 1,
-        name: "Nguyễn Văn",
-        professional: "FullStack Designer",
-        photo: "3.jpg",
+        name: "Muhammad Maaz",
       },
     },
     {
       id: 4,
       title: "Great Quality!",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "The exceptional quality of education at our school has truly transformed my learning experience. The dedicated teachers and cutting-edge curriculum have equipped me with the skills and knowledge needed for success in today's competitive world.",
       user: {
         id: 1,
-        name: "Diana Jordan",
-        professional: "SEO Expert",
-        photo: "4.jpg",
+        name: "Anus shams",
       },
     },
     {
       id: 5,
       title: "Detailed learning materials",
       content:
-        "Classes that provide very detailed material in term of making UI UX Design starting team making low and hight quality, system designs, using data layout and make prototypes and testing.",
+        "The school's emphasis on holistic development goes beyond academics, promoting character-building, leadership skills, and a sense of social responsibility. I am proud to be associated with an institution that prioritizes both academic excellence and the overall growth of its students.",
       user: {
         id: 1,
-        name: "Ashley Graham",
-        professional: "Back-End Developer",
-        photo: "5.jpg",
+        name: "Muhib khan",
       },
     },
   ];

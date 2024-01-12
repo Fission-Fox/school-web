@@ -161,7 +161,7 @@ export default function SelectDropdown({ list, label, setValue }: Prop) {
         >
           {list.map((item: any) => {
             return (
-              <MenuItem key={item.name} value={item?.name}>
+              <MenuItem key={item.name} value={item?.id}>
                 {item.name}
               </MenuItem>
             );

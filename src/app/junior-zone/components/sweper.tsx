@@ -1,9 +1,9 @@
 "use client";
+import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
+import StarIcon from "@mui/icons-material/Star";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import StarIcon from "@mui/icons-material/Star";
-import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 export default function SidebarSlider() {
@@ -27,7 +27,7 @@ export default function SidebarSlider() {
               <div>
                 <div>
                   <p className="text-[20px] sm:text-[40px]  font-bold text-[#ffffff]">
-                    John Deo
+                    Amna Umair
                   </p>
                 </div>
                 <div className="flex text-[#FEC624]  ">
@@ -53,11 +53,10 @@ export default function SidebarSlider() {
               </div>
             </div>
             <div>
-              <p className="text-[14px] pl- sm:text-[20px] ml-1 text-[#ffffff]">
-                The passage experienced a surge in popularity <br />
-                during the 1960s when Letraset used it on their <br />
-                dry-transfer sheets, and again during the 90s <br />
-                as desktop publishers.
+              <p className="text-[14px] pl- sm:text-[20px] ml-1 text-[#ffffff] md:px-9">
+                perfect solution for working women. a place where Childers are
+                taken care of and loved. thank you junior's zone for providing
+                an outstanding place. a satisfactory parent.
               </p>
             </div>
           </div>
@@ -68,7 +67,7 @@ export default function SidebarSlider() {
               <div>
                 <div>
                   <p className="text-[20px] sm:text-[40px]  font-bold text-[#ffffff]">
-                    John Deo
+                    Sonia
                   </p>
                 </div>
                 <div className="flex text-[#FEC624]  ">
@@ -94,11 +93,9 @@ export default function SidebarSlider() {
               </div>
             </div>
             <div>
-              <p className="text-[14px] pl- sm:text-[20px] ml-1 text-[#ffffff]">
-                The passage experienced a surge in popularity <br />
-                during the 1960s when Letraset used it on their <br />
-                dry-transfer sheets, and again during the 90s <br />
-                as desktop publishers.
+              <p className="text-[14px] pl- sm:text-[20px] ml-1 text-[#ffffff] md:px-9">
+                Juniors'zone provides a peaceful and healthy environment which
+                is basic requirement growing kids.
               </p>
             </div>
           </div>
@@ -109,7 +106,7 @@ export default function SidebarSlider() {
               <div>
                 <div>
                   <p className="text-[20px] sm:text-[40px]  font-bold text-[#ffffff]">
-                    John Deo
+                    Farhana
                   </p>
                 </div>
                 <div className="flex text-[#FEC624]  ">
@@ -135,11 +132,10 @@ export default function SidebarSlider() {
               </div>
             </div>
             <div>
-              <p className="text-[14px] pl- sm:text-[20px] ml-1 text-[#ffffff]">
-                The passage experienced a surge in popularity <br />
-                during the 1960s when Letraset used it on their <br />
-                dry-transfer sheets, and again during the 90s <br />
-                as desktop publishers.
+              <p className="text-[14px] pl- sm:text-[20px] ml-1 text-[#ffffff] md:px-9">
+                It was lovely to see kids working independently under the
+                guidance of their Directresses. Rooms are spacious where kids
+                enjoy the learning process.
               </p>
             </div>
           </div>
@@ -150,7 +146,7 @@ export default function SidebarSlider() {
               <div>
                 <div>
                   <p className="text-[20px] sm:text-[40px]  font-bold text-[#ffffff]">
-                    John Deo
+                    Taimoor
                   </p>
                 </div>
                 <div className="flex text-[#FEC624]  ">
@@ -176,11 +172,10 @@ export default function SidebarSlider() {
               </div>
             </div>
             <div>
-              <p className="text-[14px] pl- sm:text-[20px] ml-1 text-[#ffffff]">
-                The passage experienced a surge in popularity <br />
-                during the 1960s when Letraset used it on their <br />
-                dry-transfer sheets, and again during the 90s <br />
-                as desktop publishers.
+              <p className="text-[14px] pl- sm:text-[20px] ml-1 text-[#ffffff] md:px-9">
+                This is the best school ever I have ever seen. Great teaching
+                method and training your child's future is safe and sound in
+                this school
               </p>
             </div>
           </div>
