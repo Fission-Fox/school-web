@@ -12,7 +12,7 @@ type Prop = {
 export default function layout({ children }: Prop) {
   return (
     <div className="flex w-full  mt-36">
-      <div className="h-[80vh] bg-[#fdf8f8] w-[300px] text-[#2B3674] font-sans flex flex-col">
+      <div className="h-[80vh] bg-[#fdf8f8] w-[300px] text-[#2B3674] font-sans hidden md:!flex flex-col">
         <div className="flex mb-14">
           <p className=" font-extrabold ">HORIZON</p>{" "}
           <p className="flex">FREE</p>
@@ -49,7 +49,7 @@ export default function layout({ children }: Prop) {
         </div>
       </div>
 
-      <div className="w-[70%]">{children}</div>
+      <div className="w-full">{children}</div>
     </div>
   );
 }
