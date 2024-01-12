@@ -20,7 +20,7 @@ const TestimonialItem: FC<Props> = ({ item }) => {
       </Box>
       <Box
         sx={{
-          boxShadow: " 0 3px 10px rgb(0 0 0 / 0.2)",
+          // boxShadow: " 0 3px 10px rgb(0 0 0 / 0.2)",
           borderRadius: 1,
           px: 2,
           py: 2,
@@ -44,13 +44,13 @@ const TestimonialItem: FC<Props> = ({ item }) => {
             },
           }}
         >
-          <Image
+          {/* <Image
             src={`/images/avatars/${item.user.photo}`}
             width={100}
             height={100}
             quality={97}
             alt={item.user.name}
-          />
+          /> */}
         </Box>
         <Box>
           <Typography variant="h6">{item.user.name}</Typography>

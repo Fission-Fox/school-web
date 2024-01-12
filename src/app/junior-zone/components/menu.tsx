@@ -18,6 +18,8 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Anchor } from "@mui/icons-material";
+import Image from "next/image";
+import logo from "@/assets/images/Logo-3.png";
 import Link from "next/link";
 
 type Anchor = "right" | "left";
@@ -61,15 +63,15 @@ export default function TemporaryDrawer() {
             >
               <div className="!hidden lg:!flex">
                 <Box sx={{ width: 500 }}>
-                  <div className="flex items-end justify-end bg-[#E8063C] text-[#ffffff] w-6 rounded-full mt-2 ml-3">
+                  <div
+                    onClick={toggleDrawer(anchor, false)}
+                    className="flex items-end justify-end bg-[#E8063C] text-[#ffffff] w-6 rounded-full mt-2 ml-3"
+                  >
                     <CloseIcon />
                   </div>
                   <div className="pl-14 pt-10">
                     <div>
-                      <img
-                        src="https://html.vecurosoft.com/kiddino/demo/assets/img/logo.svg"
-                        alt=""
-                      />
+                      <Image style={{ width: "200px" }} src={logo} alt="logo" />
                     </div>
                     <div className="text-[black] text-[14px] font-normal mt-5">
                       We are constantly expanding the range of services <br />
@@ -92,7 +94,7 @@ export default function TemporaryDrawer() {
                       <div>
                         Email:{" "}
                         <span className="hover:text-[#EC063C] cursor-pointer">
-                          user@domainname.com
+                          mralidilshad110@gmail.com
                         </span>
                       </div>
                     </div>
@@ -103,11 +105,11 @@ export default function TemporaryDrawer() {
                       <div>
                         Phone:{" "}
                         <span className="hover:text-[#EC063C] cursor-pointer">
-                          +44 (0) 207 689 7888
+                          (021) 34973439
                         </span>
                       </div>
                     </div>
-                    <div className="text-[30px] font-bold mt-8">
+                    {/* <div className="text-[30px] font-bold mt-8">
                       Latest News
                     </div>
                     <div className="flex items-center mt-6 gap-4">
@@ -172,7 +174,7 @@ export default function TemporaryDrawer() {
                           the earliest
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </Box>
               </div>
@@ -200,28 +202,22 @@ export default function TemporaryDrawer() {
               {/* {list(anchor)} */}
               <div>
                 <Box sx={{ width: 300 }}>
-                  <div className="flex items-end justify-end bg-[#E8063C] text-[#ffffff] w-6 rounded-full mt-2 ml-3">
+                  <div
+                    onClick={toggleDrawer(anchor, false)}
+                    className="flex items-end justify-end bg-[#E8063C] text-[#ffffff] w-6 rounded-full mt-2 ml-3"
+                  >
                     <CloseIcon />
                   </div>
                   <div className="text-center">
                     <div className="flex justify-center mt-10">
-                      <img
-                        src="https://html.vecurosoft.com/kiddino/demo/assets/img/logo.svg"
-                        alt=""
-                      />
+                      <Image style={{ width: "200px" }} src={logo} alt="logo" />
                     </div>
                     <div className="mt-10">
                       <div className="flex justify-between ml-7 mr-7">
                         <div className="flex gap-2 items-center">
-                          <div>
-                            <ArrowForwardIosIcon style={{ fontSize: "15px" }} />
-                          </div>
                           <Link href={"#home"}>
                             <div className="font-extrabold">Home</div>
                           </Link>
-                        </div>
-                        <div className="bg-[#490D59] flex items-center justify-center text-[#ffffff]  w-8 h-8 rounded-full">
-                          <AddIcon />
                         </div>
                       </div>
                       <hr className="w-[80%] ml-8 mt-3" />
@@ -229,9 +225,6 @@ export default function TemporaryDrawer() {
                     <div className="mt-3">
                       <div className="flex justify-between ml-7 mr-7">
                         <div className="flex gap-2 items-center">
-                          <div>
-                            <ArrowForwardIosIcon style={{ fontSize: "15px" }} />
-                          </div>
                           <Link href={"#aboutUs"}>
                             <div className="font-extrabold">About Us</div>
                           </Link>
@@ -242,15 +235,9 @@ export default function TemporaryDrawer() {
                     <div className="mt-3">
                       <div className="flex justify-between ml-7 mr-7">
                         <div className="flex gap-2 items-center">
-                          <div>
-                            <ArrowForwardIosIcon style={{ fontSize: "15px" }} />
-                          </div>
                           <Link href={"#classes"}>
                             <div className="font-extrabold">Classes</div>
                           </Link>
-                        </div>
-                        <div className="bg-[#490D59] flex items-center justify-center text-[#ffffff]  w-8 h-8 rounded-full">
-                          <AddIcon />
                         </div>
                       </div>
                       <hr className="w-[80%] ml-8 mt-3" />
@@ -258,29 +245,19 @@ export default function TemporaryDrawer() {
                     {/* <div className="mt-3">
                       <div className="flex justify-between ml-7 mr-7">
                         <div className="flex gap-2 items-center">
-                          <div>
-                            <ArrowForwardIosIcon style={{ fontSize: "15px" }} />
-                          </div>
+                         
                           <div className="font-extrabold">Blogs</div>
                         </div>
-                        <div className="bg-[#490D59] flex items-center justify-center text-[#ffffff]  w-8 h-8 rounded-full">
-                          <AddIcon />
-                        </div>
+                       
                       </div>
                       <hr className="w-[80%] ml-8 mt-3" />
                     </div> */}
                     <div className="mt-3">
                       <div className="flex justify-between ml-7 mr-7">
                         <div className="flex gap-2 items-center">
-                          <div>
-                            <ArrowForwardIosIcon style={{ fontSize: "15px" }} />
-                          </div>
                           <Link href={"#testimonial"}>
                             <div className="font-extrabold">Testimonials</div>
                           </Link>
-                        </div>
-                        <div className="bg-[#490D59] flex items-center justify-center text-[#ffffff]  w-8 h-8 rounded-full">
-                          <AddIcon />
                         </div>
                       </div>
                       <hr className="w-[80%] ml-8 mt-3" />
@@ -288,15 +265,9 @@ export default function TemporaryDrawer() {
                     <div className="mt-3">
                       <div className="flex justify-between ml-7 mr-7">
                         <div className="flex gap-2 items-center">
-                          <div>
-                            <ArrowForwardIosIcon style={{ fontSize: "15px" }} />
-                          </div>
                           <Link href={"#contact"}>
                             <div className="font-extrabold">Contact Us</div>
                           </Link>
-                        </div>
-                        <div className="bg-[#490D59] flex items-center justify-center text-[#ffffff]  w-8 h-8 rounded-full">
-                          <AddIcon />
                         </div>
                       </div>
                       <hr className="w-[80%] ml-8 mt-3" />

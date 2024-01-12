@@ -1,5 +1,5 @@
 "use client";
-import { getSubmissions } from "@/config/firebase";
+import { getAdmissionType, getSubmissions } from "@/config/firebase";
 import { TStudent } from "@/types/admission";
 import { Box, Container } from "@mui/material";
 import { useEffect, useState } from "react";

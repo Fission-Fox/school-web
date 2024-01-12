@@ -92,32 +92,75 @@ export default function Footer() {
             {" "}
             <p className="font-bold text-[16px]">Get In Touch</p>{" "}
           </div>
-          <div></div>
-          <div className="flex">
-            <div className="mr-3 mt-8">
-              <PhoneIcon />
-            </div>
+          <div className="flex flex-wrap gap-5">
             <div>
-              {" "}
-              <p className="mt-8 flex">021-34810063, 03452149660</p>
+              <div className="flex">
+                <div className="mr-3 mt-8">
+                  <PhoneIcon />
+                </div>
+                <div>
+                  {" "}
+                  <p className="mt-8 flex"> 03452149660</p>
+                </div>
+              </div>
+              <div className="flex mt-4">
+                <div className="mr-3">
+                  <Location2Icon />
+                </div>
+                <div className="w-40">
+                  {" "}
+                  <p>
+                    GULSHAN CAMPUS: <br />B 133, Block 13D Gulshan-e-Iqbal,
+                    Karachi, Sindh, Pakistan
+                  </p>{" "}
+                </div>
+              </div>
+              <div className="flex mt-4">
+                <div className="mr-3 ">
+                  <Tweeter2Icon />
+                </div>
+                <div>
+                  {" "}
+                  <p>www.studentszone.com.pk</p>{" "}
+                </div>
+              </div>
             </div>
           </div>
-          <div className="flex mt-4">
-            <div className="mr-3">
-              <Location2Icon />
-            </div>
+        </div>
+        <div className="text-12 ml-0 md:ml-24">
+          <div className="flex flex-wrap gap-5">
             <div>
-              {" "}
-              <p>GULSHAN CAMPUS, PECHS CAMPUS</p>{" "}
-            </div>
-          </div>
-          <div className="flex mt-4">
-            <div className="mr-3 ">
-              <Tweeter2Icon />
-            </div>
-            <div>
-              {" "}
-              <p>www.studentszone.com.pk</p>{" "}
+              <div className="flex">
+                <div className="mr-3 mt-8">
+                  <PhoneIcon />
+                </div>
+                <div>
+                  {" "}
+                  <p className="mt-8 flex"> 03452149660</p>
+                </div>
+              </div>
+              <div className="flex mt-4">
+                <div className="mr-3">
+                  <Location2Icon />
+                </div>
+                <div className="w-40">
+                  {" "}
+                  <p>
+                    PECHS CAMPUS: <br />
+                    164 M, 2, behind Mehfil E Murtaza, Block 3 PECHS, Karachi,
+                    Pakistan
+                  </p>{" "}
+                </div>
+              </div>
+              <div className="flex mt-4">
+                <div className="mr-3 ">
+                  <Tweeter2Icon />
+                </div>
+                <div>
+                  {" "}
+                  <p>www.studentszone.com.pk</p>{" "}
+                </div>
+              </div>
             </div>
           </div>
         </div>

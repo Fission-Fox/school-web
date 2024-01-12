@@ -23,8 +23,8 @@ export default function JuniorFooter() {
             <PlaceIcon sx={{ fontSize: { xs: "30px", sm: "50px" } }} />
           </div>
           <div className="text-[#ffffff] text-[14px] sm:text-[18px] ">
-            First Floor, 10A Chandos Street London <br />
-            New Town W1G 9LE
+            A-575 ,Block 5 ,Mochi morr signal ,Opposite Continental
+            <br /> Bakery, Karachi, Pakistan
           </div>
         </div>
         <div className="flex gap-3 mt-10">
@@ -64,7 +64,7 @@ export default function JuniorFooter() {
           <div className="text-[#ffffff] text-[14px] sm:text-[18px] ">
             Email:{" "}
             <span className="hover:text-[#E8063C] cursor-pointer">
-              user@domainname.com
+              mralidilshad110@gmail.com
             </span>
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function JuniorFooter() {
           <div className="text-[#ffffff] text-[14px] sm:text-[18px] ">
             Phone:{" "}
             <span className="hover:text-[#E8063C] cursor-pointer">
-              +44 (0) 207 689 7888
+              (021) 34973439
             </span>
           </div>
         </div>
@@ -85,10 +85,10 @@ export default function JuniorFooter() {
         <div className="text-[16px] text-[#ffffff] flex justify-center items-center rounded-full bg-[#E8063C] border-[#E8063C] border-4 hover:bg-[#490D59] w-[209px] h-[55px] font-bold">
           <button>Start Registration</button>
         </div>
-        <div className="text-[20px] sm:text-[36px] font-bold text-[#ffffff] mt-10">
+        {/* <div className="text-[20px] sm:text-[36px] font-bold text-[#ffffff] mt-10">
           Useful Services
-        </div>
-        <div className="flex items-center gap-10">
+        </div> */}
+        {/* <div className="flex items-center gap-10">
           <div>
             <div className="flex gap-2 group cursor-pointer">
               <div className="text-[#FFD600] ">
@@ -165,7 +165,7 @@ export default function JuniorFooter() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

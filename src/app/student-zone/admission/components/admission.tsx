@@ -1,72 +1,82 @@
 "use client";
 import { Checkbox, FormControlLabel } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SelectDropdown from "./dropdown";
 import Input from "./formInput";
 // import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
-import { addSubmission } from "@/config/firebase";
+import {
+  addSubmission,
+  getAdmissionFor,
+  getAdmissionType,
+  getClass,
+} from "@/config/firebase";
 import { TStudent } from "@/types/admission";
 import { useForm } from "react-hook-form";
 import { Label } from "@mui/icons-material";
 export default function Admission() {
   const [formType, setType] = useState("");
+  console.log(formType);
+
   const [classe, setClass] = useState("");
   const [admissionFor, setAdmissionFor] = useState("");
-
+  const [checkedvalue, setChecked] = useState<string[]>([]);
+  const [admissionType, setAdmissionType] = useState<any[]>([]);
+  const [admissionfor, setAdmissionfor] = useState<any[]>([]);
+  const [Class, Setclass] = useState<any[]>([]);
   const form = useForm<TStudent>();
   const { register, control, formState, setValue, handleSubmit } = form;
-  const admissionfor = [
-    // { name: "Junior zone" },
-    { name: "School" },
-    { name: "College" },
-  ];
-  const people = [
-    { name: "Federal / AKU-EB" },
-    { name: "O & A Levels" },
-    { name: "APTITUDE" },
-    { name: "OTHERS" },
-    // More users...
-  ];
-  const federal = [
-    { name: " IX" },
-    { name: "X" },
-    { name: " XI" },
-    { name: "XII" },
-  ];
-  const levels = [
-    { name: "  O-1" },
-    { name: "A’S" },
-    { name: " O-Levels" },
-    { name: " A-Levels" },
-  ];
-  const aptitude = [{ name: "  MCAT" }, { name: "BCAT" }, { name: " ECAT" }];
-  const classes = [
-    { name: "I" },
-    { name: "II" },
-    { name: "III" },
-    { name: " IV" },
-    { name: " V" },
-    { name: "VI" },
-    { name: "VII" },
-    { name: " VIII " },
-    { name: " IX" },
-    { name: "X" },
-    { name: " XI" },
-    { name: "XII" },
-  ];
-  const getCurrentList = () => {
-    switch (formType) {
-      case "Federal / AKU-EB":
-        return federal;
-      case "O & A Levels":
-        return levels;
-      case "APTITUDE":
-        return aptitude;
-      default:
-        return classes;
-    }
-  };
-  const [checkedvalue, setChecked] = useState<string[]>([]);
+  // const admissionfor = [
+  //   // { name: "Junior zone" },
+  //   { name: "School" },
+  //   { name: "College" },
+  // ];
+  // const people = [
+  //   { name: "Federal / AKU-EB" },
+  //   { name: "O & A Levels" },
+  //   { name: "APTITUDE" },
+  //   { name: "OTHERS" },
+  //   // More users...
+  // ];
+  // const federal = [
+  //   { name: " IX" },
+  //   { name: "X" },
+  //   { name: " XI" },
+  //   { name: "XII" },
+  // ];
+  // const levels = [
+  //   { name: "  O-1" },
+  //   { name: "A’S" },
+  //   { name: " O-Levels" },
+  //   { name: " A-Levels" },
+  // ];
+  // const aptitude = [{ name: "  MCAT" }, { name: "BCAT" }, { name: " ECAT" }];
+  // const classes = [
+  //   { name: "I" },
+  //   { name: "II" },
+  //   { name: "III" },
+  //   { name: " IV" },
+  //   { name: " V" },
+  //   { name: "VI" },
+  //   { name: "VII" },
+  //   { name: " VIII " },
+  //   { name: " IX" },
+  //   { name: "X" },
+  //   { name: " XI" },
+  //   { name: "XII" },
+  // ];
+  // const getCurrentList = () => {
+  //   switch (formType) {
+  //     case "Federal / AKU-EB":
+  //       return federal;
+  //     case "O & A Levels":
+  //       return levels;
+  //     case "APTITUDE":
+  //       return aptitude;
+  //     default:
+  //       return classes;
+  //   }
+  // };
+
   const handleChage = (event: any) => {
     const { value, checked } = event.target;
     if (checked) {
@@ -78,6 +88,37 @@ export default function Admission() {
   };
   console.log(checkedvalue);
 
+  useEffect(() => {
+    const getData = async () => {
+      const res: any = await getAdmissionType();
+      setAdmissionType(res);
+    };
+    getData();
+  }, []);
+
+  useEffect(() => {
+    const getData = async () => {
+      const res: any = await getAdmissionFor();
+      setAdmissionfor(res);
+    };
+    getData();
+  }, []);
+
+  useEffect(() => {
+    const getData = async () => {
+      const res: any = await getClass();
+      Setclass(res);
+    };
+    getData();
+  }, []);
+
+  const filteredClass = Class?.filter(
+    (itm) => itm?.admissionTypeID?.includes(formType),
+  );
+  const filteredAdmission = admissionType?.filter(
+    (itm) => itm?.admissionForID?.includes(admissionFor),
+  );
+  console.log(filteredClass);
   return (
     <div className="w-full bg-slate-200 py-10 ">
       <div className="w-full md:w-[50%] bg-white rounded-lg  py-3 m-auto space-y-10 divide-y mt-32 divide-gray-900/10">
@@ -109,17 +150,23 @@ export default function Admission() {
               <SelectDropdown
                 label={"Admission for"}
                 setValue={setAdmissionFor}
-                list={admissionfor}
+                list={admissionfor.map((itm) => {
+                  return { name: itm.admissionFor, ...itm };
+                })}
               />
               <SelectDropdown
                 setValue={setType}
                 label={"Admission type"}
-                list={people}
+                list={filteredAdmission.map((itm) => {
+                  return { name: itm.admissionType, ...itm };
+                })}
               />
               <SelectDropdown
                 setValue={setClass}
                 label={"Classes"}
-                list={getCurrentList()}
+                list={filteredClass.map((itm) => {
+                  return { name: itm.class, ...itm };
+                })}
               />
             </div>
             {/* <div className="flex justify-center">
