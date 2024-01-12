@@ -1,13 +1,9 @@
 "use client";
 // import LogoLight from "@/assets/images/logo-light.png";
+import logo from "@/assets/images/Logo-3.png";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import Image from "next/image";
-import logo from "@/assets/images/Logo-3.png";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import SearchIcon from "@mui/icons-material/Search";
-import EmailIcon from "@mui/icons-material/Email";
-import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import TemporaryDrawer from "../menu";
 export default function Header() {
   const [isOpen, setMenu] = useState(false);
@@ -54,7 +50,7 @@ export default function Header() {
             <Image className="w-[100px]" src={logo} alt="" />
           </div>
           <div className="text-[18px]   font-bold !hidden lg:!flex gap-8">
-            <Link href={"#home"}>
+            <Link href={"/junior-zone#home"}>
               <div className="hover:text-[#BC0B54] cursor-pointer">Home</div>
             </Link>
 
@@ -74,6 +70,11 @@ export default function Header() {
             </Link>
             <Link href={"#contact"}>
               <div className="hover:text-[#BC0B54] cursor-pointer">Contact</div>
+            </Link>
+            <Link href={"/"}>
+              <div className="hover:text-[#BC0B54] cursor-pointer">
+                Main Page
+              </div>
             </Link>
           </div>
           <div className="flex mr-1 sm:mr-10 md:mr-20 lg:gap-4  items-center">
