@@ -1,27 +1,26 @@
 "use client";
-import { getAdmissionType, getSubmissions } from "@/config/firebase";
-import { TStudent } from "@/types/admission";
 import { Box, Container } from "@mui/material";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { AppButton } from "../components/Button";
 import { List } from "../components/ListComponent";
 
 export default function Page() {
-  const [submission, setSubmissions] = useState<TStudent[]>([]);
+  const [users, setUsers] = useState([]);
+  const router = useRouter();
   useEffect(() => {
     const getData = async () => {
-      const res: any = await getSubmissions();
-      setSubmissions(res);
+      // const res: any = await getUsers()
+      // setUsers(res)
     };
     getData();
   }, []);
   const COLUMNS = [
-    { dataField: "admissionFor", caption: "Admission For " },
-    { dataField: "admissionType", caption: "Admission Type" },
-    { dataField: "class", caption: "Class" },
-    { dataField: "firstname", caption: "First Name" },
-    { dataField: "lastname", caption: "Last Name" },
+    { dataField: "email", caption: "Email" },
+    { dataField: "first_name", caption: "First Name" },
+    { dataField: "last_name", caption: "Last Name" },
+    { dataField: "phone", caption: "Phone" },
   ];
-
   return (
     <div>
       <Box>
@@ -35,16 +34,16 @@ export default function Page() {
               marginBottom: 10,
             }}
           >
-            <h2 style={{ fontWeight: 700, fontSize: "2rem" }}>Submissions</h2>
-            {/* <div>
+            <h2 style={{ fontWeight: 700, fontSize: "2rem" }}>User Details</h2>
+            <div>
               <AppButton
                 sx={{ mx: 3, px: "20px", py: "10px" }}
                 onClick={() => {
-                  router.push("/users/add");
+                  router.push("/admin/dashboard/users/add");
                 }}
                 title={"Add User"}
               />
-            </div> */}
+            </div>
           </div>
 
           <div
@@ -53,9 +52,9 @@ export default function Page() {
             <div style={{ minWidth: "1300px", width: "100%" }}>
               <List
                 columns={COLUMNS}
-                content={submission}
-                url={"/dashboard/admissions"}
-                detailCol={true}
+                content={users}
+                url={"admin/dashboard/users"}
+                editCol={true}
               />
             </div>
           </div>

@@ -26,7 +26,7 @@ async function addSubmission(body: TStudent) {
   try {
     await addDoc(collection(db, "submissions"), body);
     // alert('Successfully Added')
-    console.log("successfully added");
+    toast.success("Admission Form has been submitted");
   } catch (e: any) {
     alert(e.message);
   }
@@ -38,7 +38,48 @@ async function getSubmissions() {
     querySnapshot.forEach((doc: any) => {
       users.push({ ...doc.data(), id: doc.id });
     });
-    toast.success("Admission Form has been submitted");
+
+    return users;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+async function getAdmissionType() {
+  try {
+    const querySnapshot = await getDocs(collection(db, "admissionType"));
+    const users: TStudent[] = [];
+    querySnapshot.forEach((doc: any) => {
+      users.push({ ...doc.data(), id: doc.id });
+    });
+
+    return users;
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+async function getAdmissionFor() {
+  try {
+    const querySnapshot = await getDocs(collection(db, "admissionFor"));
+    const users: TStudent[] = [];
+    querySnapshot.forEach((doc: any) => {
+      users.push({ ...doc.data(), id: doc.id });
+    });
+
+    return users;
+  } catch (e) {
+    console.log(e);
+  }
+}
+async function getClass() {
+  try {
+    const querySnapshot = await getDocs(collection(db, "class"));
+    const users: TStudent[] = [];
+    querySnapshot.forEach((doc: any) => {
+      users.push({ ...doc.data(), id: doc.id });
+    });
+
     return users;
   } catch (e) {
     console.log(e);
@@ -138,4 +179,10 @@ async function getSubmissions() {
 //         return data
 
 // }
-export { addSubmission, getSubmissions };
+export {
+  addSubmission,
+  getSubmissions,
+  getAdmissionType,
+  getAdmissionFor,
+  getClass,
+};

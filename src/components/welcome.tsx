@@ -36,12 +36,12 @@ export default function Welcome() {
           <hr className="w-[80%]" />
           <p className=" mt-10 text-[16px] text-[#777777] ">
             <span className="text-[#00306E] font-bold text-[20px] ">
-              students zone coaching offer{" "}
+              Students Zone Coaching Offer{" "}
             </span>{" "}
-            <br /> ix x xi xii and o ' level <br /> AGA Khan Board Federal Board
-            Sindh board MDCAT ECAT AND BCAT aptitude <br />
-            test preparation <br />
-            Junior's coaching classes from I to viii
+            <br /> IX,X, XI, XII, O ' LeveL, AGA Khan Board, Federal Board,
+            Sindh Board, MDCAT, ECAT AND BCAT Aptitude Test Preparation.
+            <br />
+            Junior's Coaching Classes From I to VIII
           </p>
 
           <div className="flex flex-col lg:flex-row ">

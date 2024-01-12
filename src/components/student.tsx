@@ -71,26 +71,24 @@ export default function Testominal() {
       >
         <SwiperSlide className=" mb-16 flex justify-center">
           <div>
-            <img
+            {/* <img
               className="mx-auto mb-6 rounded-full shadow-lg dark:shadow-black/20 w-[150px]"
               src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).jpg"
               alt="avatar"
-            />
+            /> */}
             <div className="flex flex-wrap justify-center">
               <div className="w-full shrink-0 grow-0 basis-auto px-3 lg:w-8/12">
                 <h5 className="mb-2 text-lg font-bold text-center">
-                  John Smith1
+                  Faiza Haroon
                 </h5>
-                <p className="mb-4 font-medium text-neutral-700 dark:text-neutral-400 text-center">
+                {/* <p className="mb-4 font-medium text-neutral-700 dark:text-neutral-400 text-center">
                   Director
-                </p>
+                </p> */}
                 <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-                  Collaborating with Universal Tech on our complex website
-                  development project was a seamless experience. Their
-                  developers showcased exceptional technical skills and a deep
-                  understanding of our requirements. They made a fantastic
-                  website that streamlined our operations and enhanced
-                  efficiency. We look forward to working with them again.
+                  I visited this school and I want to say that the school's
+                  administration demonstrated excellent management. They have
+                  effectively guided the school, creating a positive and
+                  conducive learning environment for both students and staff.
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
@@ -170,26 +168,23 @@ export default function Testominal() {
         </SwiperSlide>
         <SwiperSlide className=" mb-16 flex justify-center">
           <div>
-            <img
+            {/* <img
               className="mx-auto mb-6 rounded-full shadow-lg dark:shadow-black/20 w-[150px]"
               src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).jpg"
               alt="avatar"
-            />
+            /> */}
             <div className="flex flex-wrap justify-center">
               <div className="w-full shrink-0 grow-0 basis-auto px-3 lg:w-8/12">
                 <h5 className="mb-2 text-lg font-bold text-center">
-                  John Smith2
+                  Sidra Waheed
                 </h5>
-                <p className="mb-4 font-medium text-neutral-700 dark:text-neutral-400 text-center">
+                {/* <p className="mb-4 font-medium text-neutral-700 dark:text-neutral-400 text-center">
                   Director
-                </p>
+                </p> */}
                 <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-                  Collaborating with Universal Tech on our complex website
-                  development project was a seamless experience. Their
-                  developers showcased exceptional technical skills and a deep
-                  understanding of our requirements. They made a fantastic
-                  website that streamlined our operations and enhanced
-                  efficiency. We look forward to working with them again.
+                  An extremely comfortable atmosphere to learn and to teach and
+                  very cooperative staff and management .I highly recommend
+                  those who wants to have a peaceful teaching career.
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
@@ -269,26 +264,25 @@ export default function Testominal() {
         </SwiperSlide>
         <SwiperSlide className=" mb-16 flex justify-center">
           <div>
-            <img
+            {/* <img
               className="mx-auto mb-6 rounded-full shadow-lg dark:shadow-black/20 w-[150px]"
               src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).jpg"
               alt="avatar"
-            />
+            /> */}
             <div className="flex flex-wrap justify-center">
               <div className="w-full shrink-0 grow-0 basis-auto px-3 lg:w-8/12">
                 <h5 className="mb-2 text-lg font-bold text-center">
-                  John Smith3
+                  Ayesha Siddiqui
                 </h5>
-                <p className="mb-4 font-medium text-neutral-700 dark:text-neutral-400 text-center">
+                {/* <p className="mb-4 font-medium text-neutral-700 dark:text-neutral-400 text-center">
                   Director
-                </p>
+                </p> */}
                 <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-                  Collaborating with Universal Tech on our complex website
-                  development project was a seamless experience. Their
-                  developers showcased exceptional technical skills and a deep
-                  understanding of our requirements. They made a fantastic
-                  website that streamlined our operations and enhanced
-                  efficiency. We look forward to working with them again.
+                  The teachers are amazing, each child is treated with care. My
+                  son and daughter attended this school as well. If you have any
+                  doubts please go and see (PN) and she will put you at ease. I
+                  am blessed that some of the same teachers who taught me are
+                  teaching my children as well.
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"

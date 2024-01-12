@@ -32,7 +32,7 @@ const LandingHeader: FC = () => {
             alt=""
             style={{
               width: "110px",
-              height: "80px",
+              height: "100px",
               marginTop: "5px",
             }}
           />

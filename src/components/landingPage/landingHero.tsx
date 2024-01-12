@@ -100,7 +100,7 @@ const HomeHero: FC = () => {
                       backgroundColor: "unset",
                     }}
                   >
-                    Improve{" "}
+                    Studies{" "}
                     <Box
                       sx={{
                         position: "absolute",
@@ -120,7 +120,7 @@ const HomeHero: FC = () => {
                       />
                     </Box>
                   </Typography>
-                  your{" "}
+                  With{" "}
                   <Typography
                     component="span"
                     sx={{
@@ -136,7 +136,7 @@ const HomeHero: FC = () => {
                       },
                     }}
                   >
-                    Skill
+                    The
                     <svg version="1.1" viewBox="0 0 3183 3072">
                       <g id="Layer_x0020_1">
                         <path
@@ -155,13 +155,13 @@ const HomeHero: FC = () => {
                     </svg>
                   </Typography>{" "}
                   <br />
-                  with Different Way
+                  Subject Experts
                 </Typography>
               </Box>
               <Box sx={{ mb: 4, width: { xs: "100%", md: "70%" } }}>
                 <Typography sx={{ color: "text.secondary", lineHeight: 1.6 }}>
                   {
-                    "Let's take an online course to improve your skills in a different way, you can set your own study time according to your learning speed. So you san study comfortable and absorb tge material easily."
+                    "Studies With The Subject Experts Our institution boasts a team of the most experienced & highly qualified teachers who are dedicated to foster a dynamic learning environment"
                   }
                 </Typography>
               </Box>
