@@ -26,7 +26,7 @@ async function addSubmission(body: TStudent) {
   try {
     await addDoc(collection(db, "submissions"), body);
     // alert('Successfully Added')
-    console.log("successfully added");
+    toast.success("Admission Form has been submitted");
   } catch (e: any) {
     alert(e.message);
   }
@@ -38,7 +38,7 @@ async function getSubmissions() {
     querySnapshot.forEach((doc: any) => {
       users.push({ ...doc.data(), id: doc.id });
     });
-    toast.success("Admission Form has been submitted");
+
     return users;
   } catch (e) {
     console.log(e);
