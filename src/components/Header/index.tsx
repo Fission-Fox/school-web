@@ -86,7 +86,7 @@ export default function Header() {
           />
         </div>
         <div className="invisible lg:visible w-0 lg:w-auto flex text-[#00306e] !text-base xl:!text-lg gap-10 xl:gap-20 font-semibold">
-          <Link href="#coverimg">
+          <Link href="/student-zone#coverimg">
             <div>
               {" "}
               <p className="hover:text-[#D2093C] cursor-pointer">Home</p>
@@ -112,6 +112,11 @@ export default function Header() {
           <Link href="#student">
             <div>
               <p className="hover:text-[#D2093C] cursor-pointer">Testimonial</p>
+            </div>
+          </Link>
+          <Link href="/">
+            <div>
+              <p className="hover:text-[#D2093C] cursor-pointer">Main Page</p>
             </div>
           </Link>
         </div>
