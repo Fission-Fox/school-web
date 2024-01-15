@@ -1,6 +1,6 @@
 "use client";
 // import LogoLight from "@/assets/images/logo-light.png";
-import logo from "@/assets/images/Logo-3.png";
+import logo from "@/assets/images/logo3.png";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";

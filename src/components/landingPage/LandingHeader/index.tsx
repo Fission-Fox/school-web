@@ -1,5 +1,5 @@
 "use client";
-import logo from "@/assets/images/bluelogo.png";
+import logo from "@/assets/images/coachinglogo.png";
 import { Close, Menu } from "@mui/icons-material";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -31,8 +31,8 @@ const LandingHeader: FC = () => {
             src={logo}
             alt=""
             style={{
-              width: "110px",
-              height: "100px",
+              width: "130px",
+              height: "80px",
               marginTop: "5px",
             }}
           />
