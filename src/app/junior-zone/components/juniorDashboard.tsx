@@ -26,6 +26,15 @@ export default function JuniorFooter() {
             <br /> Bakery, Karachi, Pakistan
           </div>
         </div>
+        <div className="flex items-center mt-5">
+          <div className="text-[#FFD600]">
+            <PlaceIcon sx={{ fontSize: { xs: "30px", sm: "50px" } }} />
+          </div>
+          <div className="text-[#ffffff] text-[14px] sm:text-[18px] ">
+            164 M, 2, behind Mehfil E Murtaza, Block 3
+            <br /> PECHS, Karachi, Pakistan
+          </div>
+        </div>
         <div className="flex gap-3 mt-10">
           <div>
             <Image className="rounded-3xl" src={image1} alt="" />
