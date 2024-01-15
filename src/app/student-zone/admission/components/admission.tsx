@@ -12,7 +12,6 @@ import {
 } from "@/config/firebase";
 import { TStudent } from "@/types/admission";
 import { useForm } from "react-hook-form";
-import { Label } from "@mui/icons-material";
 export default function Admission() {
   const [formType, setType] = useState("");
   console.log(formType);
@@ -25,57 +24,6 @@ export default function Admission() {
   const [Class, Setclass] = useState<any[]>([]);
   const form = useForm<TStudent>();
   const { register, control, formState, setValue, handleSubmit } = form;
-  // const admissionfor = [
-  //   // { name: "Junior zone" },
-  //   { name: "School" },
-  //   { name: "College" },
-  // ];
-  // const people = [
-  //   { name: "Federal / AKU-EB" },
-  //   { name: "O & A Levels" },
-  //   { name: "APTITUDE" },
-  //   { name: "OTHERS" },
-  //   // More users...
-  // ];
-  // const federal = [
-  //   { name: " IX" },
-  //   { name: "X" },
-  //   { name: " XI" },
-  //   { name: "XII" },
-  // ];
-  // const levels = [
-  //   { name: "  O-1" },
-  //   { name: "A’S" },
-  //   { name: " O-Levels" },
-  //   { name: " A-Levels" },
-  // ];
-  // const aptitude = [{ name: "  MCAT" }, { name: "BCAT" }, { name: " ECAT" }];
-  // const classes = [
-  //   { name: "I" },
-  //   { name: "II" },
-  //   { name: "III" },
-  //   { name: " IV" },
-  //   { name: " V" },
-  //   { name: "VI" },
-  //   { name: "VII" },
-  //   { name: " VIII " },
-  //   { name: " IX" },
-  //   { name: "X" },
-  //   { name: " XI" },
-  //   { name: "XII" },
-  // ];
-  // const getCurrentList = () => {
-  //   switch (formType) {
-  //     case "Federal / AKU-EB":
-  //       return federal;
-  //     case "O & A Levels":
-  //       return levels;
-  //     case "APTITUDE":
-  //       return aptitude;
-  //     default:
-  //       return classes;
-  //   }
-  // };
 
   const handleChage = (event: any) => {
     const { value, checked } = event.target;
