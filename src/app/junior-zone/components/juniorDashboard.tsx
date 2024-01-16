@@ -1,10 +1,9 @@
-import logo from "@/assets/images/Logo-3.png";
 import image1 from "@/assets/images/gal-2-1.jpg";
 import image2 from "@/assets/images/gal-2-2.jpg";
 import image3 from "@/assets/images/gal-2-3.jpg";
+import logo from "@/assets/images/logo3.png";
 import EmailIcon from "@mui/icons-material/Email";
 import FactCheckIcon from "@mui/icons-material/FactCheck";
-import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import PlaceIcon from "@mui/icons-material/Place";
 import Image from "next/image";
@@ -25,6 +24,15 @@ export default function JuniorFooter() {
           <div className="text-[#ffffff] text-[14px] sm:text-[18px] ">
             A-575 ,Block 5 ,Mochi morr signal ,Opposite Continental
             <br /> Bakery, Karachi, Pakistan
+          </div>
+        </div>
+        <div className="flex items-center mt-5">
+          <div className="text-[#FFD600]">
+            <PlaceIcon sx={{ fontSize: { xs: "30px", sm: "50px" } }} />
+          </div>
+          <div className="text-[#ffffff] text-[14px] sm:text-[18px] ">
+            164 M, 2, behind Mehfil E Murtaza, Block 3
+            <br /> PECHS, Karachi, Pakistan
           </div>
         </div>
         <div className="flex gap-3 mt-10">

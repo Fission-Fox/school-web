@@ -2,9 +2,10 @@ import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { TStudent } from "@/types/admission";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { addDoc, collection, getDocs, getFirestore } from "firebase/firestore";
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import { toast } from "react-toastify";
-
 const firebaseConfig = {
   apiKey: "AIzaSyCZvCHpPiHAfmCFkP2K3eWc68kbXRybOTA",
   authDomain: "remontadapp-32767.firebaseapp.com",
@@ -19,13 +20,18 @@ const firebaseConfig = {
 // Initialize Firebase
 initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
-// const auth = getAuth();
+const auth = getAuth();
 const db = getFirestore();
+const storage = getStorage();
 
-async function addSubmission(body: TStudent) {
+async function addSubmission(body: TStudent, file: File) {
   try {
-    await addDoc(collection(db, "submissions"), body);
+    const storageRef = ref(storage, `/profile/${file.name}`);
+    const response = await uploadBytes(storageRef, file);
+    const url = await getDownloadURL(response.ref);
+    await addDoc(collection(db, "submissions"), { ...body, image: url });
     // alert('Successfully Added')
+
     toast.success("Admission Form has been submitted");
   } catch (e: any) {
     alert(e.message);
@@ -119,14 +125,17 @@ async function getClass() {
 
 // }
 
-// async function login(email, password) {
-
-//         const user = await signInWithEmailAndPassword(auth, email, password)
-//         alert('Successfully LoggedIn')
-
-//         return user
-
-// }
+async function loginAdmin(email: string, password: string) {
+  try {
+    const user = await signInWithEmailAndPassword(auth, email, password);
+    if (user?.user) {
+      localStorage.setItem("isLogin", "true");
+    }
+    return user as any;
+  } catch (e) {
+    console.log("error===>", e);
+  }
+}
 
 // async function addPosts(title, price, description, dropdown,location,datetime,files) {
 //     let urls = []
@@ -181,8 +190,9 @@ async function getClass() {
 // }
 export {
   addSubmission,
-  getSubmissions,
-  getAdmissionType,
   getAdmissionFor,
+  getAdmissionType,
   getClass,
+  getSubmissions,
+  loginAdmin,
 };

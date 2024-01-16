@@ -1,6 +1,8 @@
 "use client";
 import { Checkbox, FormControlLabel } from "@mui/material";
-import { useEffect, useState } from "react";
+// import emailjs from 'emailjs-com';
+import emailjs from "@emailjs/browser";
+import { useEffect, useRef, useState } from "react";
 import SelectDropdown from "./dropdown";
 import Input from "./formInput";
 // import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
@@ -12,12 +14,14 @@ import {
 } from "@/config/firebase";
 import { TStudent } from "@/types/admission";
 import { useForm } from "react-hook-form";
-import { Label } from "@mui/icons-material";
+import InputFileUpload from "./imageUpload";
 export default function Admission() {
+  const formRef = useRef();
   const [formType, setType] = useState("");
   console.log(formType);
 
   const [classe, setClass] = useState("");
+  const [file, setFiles] = useState<any>();
   const [admissionFor, setAdmissionFor] = useState("");
   const [checkedvalue, setChecked] = useState<string[]>([]);
   const [admissionType, setAdmissionType] = useState<any[]>([]);
@@ -25,58 +29,6 @@ export default function Admission() {
   const [Class, Setclass] = useState<any[]>([]);
   const form = useForm<TStudent>();
   const { register, control, formState, setValue, handleSubmit } = form;
-  // const admissionfor = [
-  //   // { name: "Junior zone" },
-  //   { name: "School" },
-  //   { name: "College" },
-  // ];
-  // const people = [
-  //   { name: "Federal / AKU-EB" },
-  //   { name: "O & A Levels" },
-  //   { name: "APTITUDE" },
-  //   { name: "OTHERS" },
-  //   // More users...
-  // ];
-  // const federal = [
-  //   { name: " IX" },
-  //   { name: "X" },
-  //   { name: " XI" },
-  //   { name: "XII" },
-  // ];
-  // const levels = [
-  //   { name: "  O-1" },
-  //   { name: "A’S" },
-  //   { name: " O-Levels" },
-  //   { name: " A-Levels" },
-  // ];
-  // const aptitude = [{ name: "  MCAT" }, { name: "BCAT" }, { name: " ECAT" }];
-  // const classes = [
-  //   { name: "I" },
-  //   { name: "II" },
-  //   { name: "III" },
-  //   { name: " IV" },
-  //   { name: " V" },
-  //   { name: "VI" },
-  //   { name: "VII" },
-  //   { name: " VIII " },
-  //   { name: " IX" },
-  //   { name: "X" },
-  //   { name: " XI" },
-  //   { name: "XII" },
-  // ];
-  // const getCurrentList = () => {
-  //   switch (formType) {
-  //     case "Federal / AKU-EB":
-  //       return federal;
-  //     case "O & A Levels":
-  //       return levels;
-  //     case "APTITUDE":
-  //       return aptitude;
-  //     default:
-  //       return classes;
-  //   }
-  // };
-
   const handleChage = (event: any) => {
     const { value, checked } = event.target;
     if (checked) {
@@ -86,28 +38,15 @@ export default function Admission() {
         return [...pre.filter((skill) => skill !== value)];
       });
   };
-  console.log(checkedvalue);
 
   useEffect(() => {
     const getData = async () => {
       const res: any = await getAdmissionType();
       setAdmissionType(res);
-    };
-    getData();
-  }, []);
-
-  useEffect(() => {
-    const getData = async () => {
-      const res: any = await getAdmissionFor();
-      setAdmissionfor(res);
-    };
-    getData();
-  }, []);
-
-  useEffect(() => {
-    const getData = async () => {
-      const res: any = await getClass();
-      Setclass(res);
+      const res1: any = await getAdmissionFor();
+      setAdmissionfor(res1);
+      const res2: any = await getClass();
+      Setclass(res2);
     };
     getData();
   }, []);
@@ -118,7 +57,6 @@ export default function Admission() {
   const filteredAdmission = admissionType?.filter(
     (itm) => itm?.admissionForID?.includes(admissionFor),
   );
-  console.log(filteredClass);
   return (
     <div className="w-full bg-slate-200 py-10 ">
       <div className="w-full md:w-[50%] bg-white rounded-lg  py-3 m-auto space-y-10 divide-y mt-32 divide-gray-900/10">
@@ -128,24 +66,51 @@ export default function Admission() {
               ADMISSION FORM
             </h2>
           </div>
-
           <form
             onSubmit={handleSubmit(async (data) => {
+              // e.preventDefault();
               console.log({
                 ...data,
                 admissionFor,
                 admissionType: formType,
                 class: classe,
               });
-              addSubmission({
-                ...data,
-                admissionFor,
-                admissionType: formType,
-                class: classe,
-              });
+              addSubmission(
+                {
+                  ...data,
+                  admissionFor,
+                  admissionType: formType,
+                  class: classe,
+                },
+                file,
+              );
+              const templateParams = {
+                firstname: data?.firstname,
+                lastname: data?.lastname,
+                address: data?.address,
+              };
+
+              emailjs
+                .send(
+                  "service_rb7y9rs",
+                  "template_voryq4k",
+                  templateParams,
+                  "JsKGnCQ36ZK69Do7E",
+                )
+                .then(
+                  function (response) {
+                    console.log("SUCCESS!", response.status, response.text);
+                  },
+                  function (error) {
+                    console.log("FAILED...", error);
+                  },
+                );
             })}
             className="bg-white shadow-sm ring-1 py-3 ring-gray-900/5 sm:rounded-xl md:col-span-2"
           >
+            <div className="w-full flex justify-center ">
+              <InputFileUpload setFiles={setFiles} />
+            </div>
             <div className="flex flex-wrap justify-evenly">
               <SelectDropdown
                 label={"Admission for"}
@@ -340,6 +305,50 @@ export default function Admission() {
                   <div className="mb-1">
                     <FormControlLabel control={<Checkbox />} label="BIOLOGY" />
                   </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div className="px-4 py-6 sm:p-8">
+              <p className="text-center text-2xl">
+                Previous Examination Report
+              </p>
+              <div className="grid max-w-full grid-cols-1 gap-x-6 gap-y-8  mt-10 sm:grid-cols-6">
+                <div className="sm:col-span-1">
+                  <Input
+                    label={"Class *"}
+                    type="text"
+                    htmlFor="previous_class"
+                    register={{
+                      ...register("previous_class", {
+                        required: " required",
+                      }),
+                    }}
+                  />
+                </div>
+                <div className="sm:col-span-1">
+                  <Input
+                    label={"Percentage % *"}
+                    type="number"
+                    htmlFor="previous_percentage"
+                    register={{
+                      ...register("previous_percentage", {
+                        required: " required",
+                      }),
+                    }}
+                  />
+                </div>
+                <div className="sm:col-span-4">
+                  <Input
+                    label={"Name of last School/Collage *"}
+                    type="text"
+                    htmlFor="last_school"
+                    register={{
+                      ...register("last_school", {
+                        required: " required",
+                      }),
+                    }}
+                  />
                 </div>
               </div>
             </div>
@@ -551,10 +560,107 @@ export default function Admission() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center justify-center gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8">
+            <div className="flex flex-col items-center justify-center gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8">
+              <div className="w-full  ">
+                <p className="text-center text-xl font-bold my-5">
+                  SALIENT FEATURES
+                </p>
+                <div className="flex text-sm w-full justify-center">
+                  <div className="w-[48%] ">
+                    <p> ☆ Parents Teachers Meeting On Regular Basis</p>
+                    <p> ☆ Girls & Boys Separate classes</p>
+                    <p> ☆ Supporting Classes</p>
+                    <p>
+                      {" "}
+                      ☆ Provides notes for all subjects according to new
+                      syllabus (available in Urdu & English)
+                    </p>
+                    <p> ☆ Online Lecture & Assignment are available</p>
+                  </div>
+                  <div className="w-[48%]">
+                    <p> ☆ Regular Practice Of Past Paper Before Mock</p>
+                    <p> ☆ Computrized Academic Record Of Each Student</p>
+                    <p> ☆ Transport are available</p>
+                    <p> ☆ Multimedia & Internet Facility available/Sms Alert</p>
+                    <p> ☆ Temperature controlled class rooms</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="border-t border-gray-900/10 w-full mt-7">
+                <p className="text-center text-xl font-bold my-5">
+                  RULES & REGULATIONS{" "}
+                </p>
+                <div className="text-sm mb-4">
+                  <p>
+                    ✔ Student should write correct name, address in the form
+                    and attach a copy of CNIC of their Parents / Guardians
+                  </p>
+                  <p>
+                    ✔ After the Admission, a card will be issued by the
+                    administration to the student and he/she is required to show
+                    the card for the entrance in the institute
+                  </p>
+                  <p>
+                    ✔ If any student is found smoking, using narcotics or
+                    involved in unwarranted behaviour, his/her name will be
+                    struck off from the rolls and the fee will not be refunded
+                  </p>
+                  <p>
+                    ✔ Students will be responsible for their vehicles,
+                    calculators, mobile and other things
+                  </p>
+                  <p>
+                    ✔ If the student's card is lost, he/she will have to pay
+                    Rs. 200/- for the issuance of new card
+                  </p>
+                  <p>
+                    ✔ If due to some unavoidable reasons, any student is absent
+                    for a long period. His/Her application for the exemption of
+                    that month fee can be considered
+                  </p>
+                  <p>
+                    ✔ In Case of transfer from one section to the other,student
+                    will have to pay complete fees in the new section
+                  </p>
+                  <p>
+                    ✔ Institute reserves the right of refusal/cancellation of
+                    admission without any prior notice
+                  </p>
+                  <p>
+                    ✔ Installment fee must be paid with in start of every month
+                    or as per scheduled after due date Rs.500/- will be charged
+                    as late fee.
+                  </p>
+                  <p>
+                    ✔ Student should mark their attendance at the time of
+                    reporting.
+                  </p>
+                  <p>
+                    ✔ If any unseen situation occurs outside the Institute
+                    Students Zone will not be responsible for it.
+                  </p>
+                  <p>
+                    ✔ Name of the student will be registered after submission
+                    of the admission from along with any admission fee and first
+                    tuition fee.
+                  </p>
+                  <p>
+                    ✔ Fees will not be refunded or transferred in any
+                    circumtaces.
+                  </p>
+                  <p>
+                    ✔ Mobile and any Entertainment devices are strictly not
+                    allowed.
+                  </p>
+                  <p>
+                    ✔ Annual Prize Distribution ceremony charges are mandatory.
+                  </p>
+                </div>
+              </div>
               <button
                 type="submit"
-                className="rounded-md text-xl bg-indigo-600 px-8 py-4 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md text-xl bg-[#00306E!important] px-8 py-2 font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Save
               </button>
