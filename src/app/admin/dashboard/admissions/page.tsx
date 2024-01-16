@@ -1,5 +1,5 @@
 "use client";
-import { getAdmissionType, getSubmissions } from "@/config/firebase";
+import { getSubmissions } from "@/config/firebase";
 import { TStudent } from "@/types/admission";
 import { Box, Container } from "@mui/material";
 import { useEffect, useState } from "react";
@@ -7,6 +7,7 @@ import { List } from "../components/ListComponent";
 
 export default function Page() {
   const [submission, setSubmissions] = useState<TStudent[]>([]);
+
   useEffect(() => {
     const getData = async () => {
       const res: any = await getSubmissions();

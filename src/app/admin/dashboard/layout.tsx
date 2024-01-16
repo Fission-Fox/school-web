@@ -2,6 +2,7 @@
 import { Box } from "@mui/material";
 import { useState } from "react";
 
+import { redirect } from "next/navigation";
 import { DashboardNavbar } from "./components/Dashboard/DashboardNavbar";
 import { Sidebar } from "./components/Sidebar";
 import { HTMLHeader } from "./components/htmlHeader";
@@ -14,9 +15,11 @@ type Props = {
 
 export default function Layout(props: Props) {
   const { heading, children } = props;
-
+  const login = localStorage?.getItem("isLogin");
   const [isSidebarOpen, setSidebarOpen] = useState(true);
-
+  if (login !== "true") {
+    redirect("/admin/signin");
+  }
   return (
     <>
       <HTMLHeader heading={heading} />

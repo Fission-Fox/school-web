@@ -18,4 +18,7 @@ export type TStudent = {
   father_phone: number;
   region: string;
   birthPlace: string;
+  previous_class: string;
+  previous_percentage: number;
+  last_school: string;
 };

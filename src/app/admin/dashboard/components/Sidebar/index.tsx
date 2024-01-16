@@ -98,7 +98,8 @@ const SidebarComponent = (props: Props) => {
           sx={{ mt: 2 }}
           endIcon={<LogoutIcon />}
           onClick={() => {
-            router.push("/login");
+            localStorage.setItem("isLogin", "false");
+            router.push("/admin/signin");
           }}
           title={"SIGN OUT"}
         />
