@@ -15,7 +15,8 @@ type Props = {
 
 export default function Layout(props: Props) {
   const { heading, children } = props;
-  const login = localStorage?.getItem("isLogin");
+  const login =
+    typeof window !== "undefined" ? localStorage?.getItem("isLogin") : null;
   const [isSidebarOpen, setSidebarOpen] = useState(true);
   if (login !== "true") {
     redirect("/admin/signin");
