@@ -1,5 +1,4 @@
 "use client";
-import DescriptionIcon from "@mui/icons-material/Description";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
 import { Box, Container, Grid } from "@mui/material";
 // import HomeBill from 'components/ui/homeBill';
@@ -41,7 +40,7 @@ export default function DashboardPage() {
                 icon={<NewspaperIcon style={{ fontSize: "45px" }} />}
               />
             </Grid>
-            <Grid item lg={4} sm={6} xl={4} xs={12}>
+            {/* <Grid item lg={4} sm={6} xl={4} xs={12}>
               <DashboardCard
                 title={"Add Invoice"}
                 backgroundColor={"#36B9CC"}
@@ -58,7 +57,7 @@ export default function DashboardPage() {
                 borderColor={"#5A5C69"}
                 icon={<NewspaperIcon style={{ fontSize: "45px" }} />}
               />
-            </Grid>
+            </Grid> */}
             {/* <Grid item lg={4} sm={6} xl={4} xs={12}>
                 <DashboardCard
                   title={'TOTAL PRODUCTS'}

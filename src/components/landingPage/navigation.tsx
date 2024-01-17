@@ -20,6 +20,10 @@ const Navigation: FC = () => {
       label: "Junior Zone",
       path: "/junior-zone",
     },
+    {
+      label: "Admission",
+      path: "/student-zone/admission",
+    },
   ];
   return (
     <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}>

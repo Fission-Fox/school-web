@@ -3,7 +3,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { TStudent } from "@/types/admission";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { addDoc, collection, getDocs, getFirestore } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  getFirestore,
+} from "firebase/firestore";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import { toast } from "react-toastify";
 const firebaseConfig = {
@@ -34,7 +41,7 @@ async function addSubmission(body: TStudent, file: File) {
 
     toast.success("Admission Form has been submitted");
   } catch (e: any) {
-    alert(e.message);
+    console.log(e.message);
   }
 }
 async function getSubmissions() {
@@ -90,6 +97,12 @@ async function getClass() {
   } catch (e) {
     console.log(e);
   }
+}
+async function getSubmissionsByID(idd: string) {
+  const docRef = doc(db, "submissions", idd);
+  const docSnap = await getDoc(docRef);
+  const data = docSnap.data();
+  return data;
 }
 
 // async function register(email, password, name) {
@@ -171,14 +184,6 @@ async function loginAdmin(email: string, password: string) {
 //     return ads
 //   }
 
-//  async function getAdDetail(idd) {
-
-//     const docRef = doc(db, "posts", idd);
-//     const docSnap = await getDoc(docRef);
-//     const data = docSnap.data()
-//     return data
-//   }
-
 //  async function profile(){
 //     const userr = auth.currentUser;
 
@@ -194,5 +199,6 @@ export {
   getAdmissionType,
   getClass,
   getSubmissions,
+  getSubmissionsByID,
   loginAdmin,
 };

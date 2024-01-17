@@ -11,19 +11,19 @@ export const MENU = [
     icon: <SignalCellularAlt2BarIcon />,
     title: "Admissions",
   },
-  {
-    href: "/vendors",
-    icon: <SignalCellularAlt2BarIcon />,
-    title: "Vendors",
-  },
-  {
-    href: "/payments",
-    icon: <SignalCellularAlt2BarIcon />,
-    title: "Payments",
-  },
-  {
-    href: "/invoices",
-    icon: <SignalCellularAlt2BarIcon />,
-    title: "Invoices",
-  },
+  // {
+  //   href: "/vendors",
+  //   icon: <SignalCellularAlt2BarIcon />,
+  //   title: "Vendors",
+  // },
+  // {
+  //   href: "/payments",
+  //   icon: <SignalCellularAlt2BarIcon />,
+  //   title: "Payments",
+  // },
+  // {
+  //   href: "/invoices",
+  //   icon: <SignalCellularAlt2BarIcon />,
+  //   title: "Invoices",
+  // },
 ];
