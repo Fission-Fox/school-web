@@ -96,7 +96,7 @@ const ListComponent = <
           return (
             <div
               onClick={() => {
-                router.push(`${url}/details/${data.id}`);
+                router.push(`${url}/${data.id}`);
               }}
               style={{ cursor: "pointer" }}
             >

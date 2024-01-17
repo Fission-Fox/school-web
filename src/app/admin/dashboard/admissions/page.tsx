@@ -55,34 +55,11 @@ export default function Page() {
               <List
                 columns={COLUMNS}
                 content={submission}
-                url={"/dashboard/admissions"}
+                url={"/admin/dashboard/admissions"}
                 detailCol={true}
               />
             </div>
           </div>
-          {/* <div
-                        style={{
-                            width: '100%',
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            marginTop: '10px',
-                        }}
-                    >
-                        <div>
-                            {loading1 ? (
-                                <CircularProgress />
-                            ) : !query?.data?.data.previous ? null : (
-                                <AppButton title="Previous" onClick={previous} />
-                            )}
-                        </div>
-                        <div>
-                            {loading ? (
-                                <CircularProgress />
-                            ) : query?.data?.data.next ? (
-                                <AppButton title="Next" onClick={next} />
-                            ) : null}
-                        </div>
-                    </div> */}
         </Container>
       </Box>
     </div>

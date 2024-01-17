@@ -1,7 +1,10 @@
 export type TStudent = {
+  admissionForID: string;
   admissionFor: string;
   admissionType: string;
+  admissionTypeID: string;
   class: string;
+  classID: string;
   firstname: string;
   lastname: string;
   sonOf: string;
@@ -15,6 +18,7 @@ export type TStudent = {
   student_phone: number;
   address: string;
   mother_phone: number;
+  image: string;
   father_phone: number;
   region: string;
   birthPlace: string;
