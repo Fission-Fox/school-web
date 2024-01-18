@@ -70,7 +70,7 @@ export default function Admission() {
               if (!file) {
                 return toast.info("Please Enter Full Details");
               }
-              setLoader(false);
+              setLoader(true);
               const admissionTypeName = filteredAdmission.find(
                 (itm) => itm.id === formType,
               );
@@ -104,6 +104,7 @@ export default function Admission() {
                 firstname: data?.firstname,
                 lastname: data?.lastname,
                 address: data?.address,
+                phone: data?.student_phone,
               };
 
               emailjs
