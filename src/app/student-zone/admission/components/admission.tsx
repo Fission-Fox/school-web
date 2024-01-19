@@ -1,5 +1,10 @@
 "use client";
-import { Checkbox, CircularProgress, FormControlLabel } from "@mui/material";
+import {
+  Checkbox,
+  CircularProgress,
+  FormControlLabel,
+  Hidden,
+} from "@mui/material";
 // import emailjs from 'emailjs-com';
 import emailjs from "@emailjs/browser";
 import { useEffect, useState } from "react";
@@ -16,6 +21,9 @@ import { TStudent } from "@/types/admission";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import InputFileUpload from "./imageUpload";
+import { log } from "console";
+import { ClassNames } from "@emotion/react";
+import { EMAIL_SERVICE_ID, TEMPLATE_ID } from "@/config/environments";
 export default function Admission() {
   const [formType, setType] = useState("");
   const [loading, setLoader] = useState(false);
@@ -56,6 +64,7 @@ export default function Admission() {
   const filteredAdmission = admissionType?.filter(
     (itm) => itm?.admissionForID?.includes(admissionFor),
   );
+
   return (
     <div className="w-full bg-slate-200 py-10 ">
       <div className="w-full md:w-[50%] bg-white rounded-lg  py-3 m-auto space-y-10 divide-y mt-32 divide-gray-900/10">
@@ -87,18 +96,29 @@ export default function Admission() {
               //   classID: classe,
               //   class: className?.class,
               // });
-              addSubmission(
-                {
-                  ...data,
-                  admissionFor: admissionForName?.admissionFor,
-                  admissionForID: admissionFor,
-                  admissionTypeID: formType,
-                  admissionType: admissionTypeName?.admissionType,
-                  classID: classe,
-                  class: className?.class,
-                },
-                file,
-              );
+              if (admissionFor !== "m8TYVlxDPWcyHxgZOF6N") {
+                addSubmission(
+                  {
+                    ...data,
+                    admissionFor: admissionForName?.admissionFor,
+                    admissionForID: admissionFor,
+                    admissionTypeID: formType,
+                    admissionType: admissionTypeName?.admissionType,
+                    classID: classe,
+                    class: className?.class,
+                  },
+                  file,
+                );
+              } else {
+                addSubmission(
+                  {
+                    ...data,
+                    admissionFor: admissionForName?.admissionFor,
+                  },
+                  file,
+                );
+              }
+
               setLoader(false);
               const templateParams = {
                 firstname: data?.firstname,
@@ -109,8 +129,8 @@ export default function Admission() {
 
               emailjs
                 .send(
-                  "service_rb7y9rs",
-                  "template_voryq4k",
+                  EMAIL_SERVICE_ID,
+                  TEMPLATE_ID,
                   templateParams,
                   "JsKGnCQ36ZK69Do7E",
                 )
@@ -136,240 +156,272 @@ export default function Admission() {
                   return { name: itm.admissionFor, ...itm };
                 })}
               />
-              <SelectDropdown
-                setValue={setType}
-                label={"Admission type"}
-                list={filteredAdmission.map((itm) => {
-                  return { name: itm.admissionType, ...itm };
-                })}
-              />
-              <SelectDropdown
-                setValue={setClass}
-                label={"Classes"}
-                list={filteredClass.map((itm) => {
-                  return { name: itm.class, ...itm };
-                })}
-              />
+              {admissionFor !== "m8TYVlxDPWcyHxgZOF6N" && (
+                <>
+                  <SelectDropdown
+                    setValue={setType}
+                    label={"Admission type"}
+                    list={filteredAdmission.map((itm) => {
+                      return { name: itm.admissionType, ...itm };
+                    })}
+                  />
+                  <SelectDropdown
+                    setValue={setClass}
+                    label={"Classes"}
+                    list={filteredClass.map((itm) => {
+                      return { name: itm.class, ...itm };
+                    })}
+                  />
+                </>
+              )}
             </div>
             {/* <div className="flex justify-center">
                         <Example heading={"Federal / AKU-EB"} list={people3} />
                     </div> */}
+            {admissionFor !== "m8TYVlxDPWcyHxgZOF6N" && (
+              <>
+                <div className="flex flex-wrap justify-evenly mt-8">
+                  <div>
+                    <div className="font-semibold">Science Subjects</div>
+                    <div className="text-[14px] pl-1 w-32 mt-2">
+                      <div className="mb-1">
+                        <FormControlLabel
+                          onChange={handleChage}
+                          value={"BIOLOGY"}
+                          control={<Checkbox />}
+                          label="BIOLOGY"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          onChange={handleChage}
+                          value={"COMPUTER"}
+                          label="COMPUTER"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          onChange={handleChage}
+                          value={"PHYSICS"}
+                          control={<Checkbox />}
+                          label="PHYSICS"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label="CHEMISTRY"
+                          onChange={handleChage}
+                          value={"CHEMISTRY"}
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label="MATHEMATICS"
+                          onChange={handleChage}
+                          value={"MATHEMATICS"}
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          onChange={handleChage}
+                          value={"URDU"}
+                          control={<Checkbox />}
+                          label="URDU"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label="  PAK.STUDIES"
+                          onChange={handleChage}
+                          value={"PAK.STUDIES"}
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          onChange={handleChage}
+                          value={"ENGLISH"}
+                          control={<Checkbox />}
+                          label="ENGLISH"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          onChange={handleChage}
+                          value={"ISLAMIAT"}
+                          control={<Checkbox />}
+                          label="ISLAMIAT"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="font-semibold">Commerce Subjects</div>
+                    <div className="text-[14px] pl-1 w-48 mt-2">
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label=" ACCOUNTING"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label=" ECONOMICS"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label=" GEN SCIENCE"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label=" GEN. MATHS"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label=" BUSINESS STUDIES"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label=" URDU"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label=" PAK.STUDIES"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label=" ENGLISH"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label="ISLAMIAT"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="">
+                    <div className="font-semibold">O/A Levels Subjects</div>
+                    <div className="text-[14px] pl-1 w-40 mt-2">
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label="PAK.STUDIES"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label="ISLAMIAT"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label="MATHS"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label="CHEMISTRY"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label="ADD - MATHS"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel control={<Checkbox />} label="URDU" />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label="PHYSICS"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label="ENGLISH"
+                        />
+                      </div>
+                      <div className="mb-1">
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label="BIOLOGY"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div className="px-4 py-6 sm:p-8">
+                  <p className="text-center text-2xl">
+                    Previous Examination Report
+                  </p>
+                  <div className="grid max-w-full grid-cols-1 gap-x-6 gap-y-8  mt-10 sm:grid-cols-6">
+                    <div className="sm:col-span-1">
+                      <Input
+                        label={"Class *"}
+                        type="text"
+                        htmlFor="previous_class"
+                        register={{
+                          ...register("previous_class", {
+                            required: " required",
+                          }),
+                        }}
+                      />
+                    </div>
+                    <div className="sm:col-span-1">
+                      <Input
+                        label={"Percentage % *"}
+                        type="number"
+                        htmlFor="previous_percentage"
+                        register={{
+                          ...register("previous_percentage", {
+                            required: " required",
+                          }),
+                        }}
+                      />
+                    </div>
+                    <div className="sm:col-span-4">
+                      <Input
+                        label={"Name of last School/Collage *"}
+                        type="text"
+                        htmlFor="last_school"
+                        register={{
+                          ...register("last_school", {
+                            required: " required",
+                          }),
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <hr />
+              </>
+            )}
 
-            <div className="flex flex-wrap justify-evenly mt-8">
-              <div>
-                <div className="font-semibold">Science Subjects</div>
-                <div className="text-[14px] pl-1 w-32 mt-2">
-                  <div className="mb-1">
-                    <FormControlLabel
-                      onChange={handleChage}
-                      value={"BIOLOGY"}
-                      control={<Checkbox />}
-                      label="BIOLOGY"
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox />}
-                      onChange={handleChage}
-                      value={"COMPUTER"}
-                      label="COMPUTER"
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel
-                      onChange={handleChage}
-                      value={"PHYSICS"}
-                      control={<Checkbox />}
-                      label="PHYSICS"
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox />}
-                      label="CHEMISTRY"
-                      onChange={handleChage}
-                      value={"CHEMISTRY"}
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox />}
-                      label="MATHEMATICS"
-                      onChange={handleChage}
-                      value={"MATHEMATICS"}
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel
-                      onChange={handleChage}
-                      value={"URDU"}
-                      control={<Checkbox />}
-                      label="URDU"
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox />}
-                      label="  PAK.STUDIES"
-                      onChange={handleChage}
-                      value={"PAK.STUDIES"}
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel
-                      onChange={handleChage}
-                      value={"ENGLISH"}
-                      control={<Checkbox />}
-                      label="ENGLISH"
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel
-                      onChange={handleChage}
-                      value={"ISLAMIAT"}
-                      control={<Checkbox />}
-                      label="ISLAMIAT"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="font-semibold">Commerce Subjects</div>
-                <div className="text-[14px] pl-1 w-48 mt-2">
-                  <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox />}
-                      label=" ACCOUNTING"
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox />}
-                      label=" ECONOMICS"
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox />}
-                      label=" GEN SCIENCE"
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox />}
-                      label=" GEN. MATHS"
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox />}
-                      label=" BUSINESS STUDIES"
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel control={<Checkbox />} label=" URDU" />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox />}
-                      label=" PAK.STUDIES"
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel control={<Checkbox />} label=" ENGLISH" />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel control={<Checkbox />} label="ISLAMIAT" />
-                  </div>
-                </div>
-              </div>
-              <div className="">
-                <div className="font-semibold">O/A Levels Subjects</div>
-                <div className="text-[14px] pl-1 w-40 mt-2">
-                  <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox />}
-                      label="PAK.STUDIES"
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel control={<Checkbox />} label="ISLAMIAT" />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel control={<Checkbox />} label="MATHS" />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox />}
-                      label="CHEMISTRY"
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel
-                      control={<Checkbox />}
-                      label="ADD - MATHS"
-                    />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel control={<Checkbox />} label="URDU" />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel control={<Checkbox />} label="PHYSICS" />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel control={<Checkbox />} label="ENGLISH" />
-                  </div>
-                  <div className="mb-1">
-                    <FormControlLabel control={<Checkbox />} label="BIOLOGY" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <hr />
-            <div className="px-4 py-6 sm:p-8">
-              <p className="text-center text-2xl">
-                Previous Examination Report
-              </p>
-              <div className="grid max-w-full grid-cols-1 gap-x-6 gap-y-8  mt-10 sm:grid-cols-6">
-                <div className="sm:col-span-1">
-                  <Input
-                    label={"Class *"}
-                    type="text"
-                    htmlFor="previous_class"
-                    register={{
-                      ...register("previous_class", {
-                        required: " required",
-                      }),
-                    }}
-                  />
-                </div>
-                <div className="sm:col-span-1">
-                  <Input
-                    label={"Percentage % *"}
-                    type="number"
-                    htmlFor="previous_percentage"
-                    register={{
-                      ...register("previous_percentage", {
-                        required: " required",
-                      }),
-                    }}
-                  />
-                </div>
-                <div className="sm:col-span-4">
-                  <Input
-                    label={"Name of last School/Collage *"}
-                    type="text"
-                    htmlFor="last_school"
-                    register={{
-                      ...register("last_school", {
-                        required: " required",
-                      }),
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-            <hr />
             <div className="px-4 py-6 sm:p-8">
               <div className="grid max-w-full grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                 <div className="sm:col-span-3">

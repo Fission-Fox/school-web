@@ -12,22 +12,6 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <div className=" ml-0 m-auto">
-      {/* <div className=" flex  justify-evenly bg-[#FAFAFA]  sm:h-[142px] pt-14 ">
-        <div>
-          <div className="font-bold text-[24px]">
-            Consulting Agency For Your Business
-          </div>
-          <div className="text-[14px] text-[#737373] font-normal mt-3">
-            the quick fox jumps over the lazy dog
-          </div>
-        </div>
-        <div>
-          <button className="w-[160px] h-[58px] text-[#FFFFFF] bg-[#16697A] border rounded hover:bg-[#FAFAFA]  hover:text-[#16697A] hover:border-[#16697A] ">
-            Contact Us
-          </button>
-        </div>
-      </div> */}
-
       <div className="flex flex-col xl:flex-row  xl:justify-center pl-6 sm:pl-[40%] xl:pl-1 mt-10 text-[#FFFFFF] bg-[#000000] text-[14px] font-semibold pt-14 pb-24 ">
         <div className="mr-40">
           <Image
