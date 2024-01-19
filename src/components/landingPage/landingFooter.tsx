@@ -28,8 +28,8 @@ export default function Footer() {
         </div>
       </div> */}
 
-      <div className="flex flex-col xl:flex-row  xl:justify-center pl-6 sm:pl-[40%] xl:pl-1 mt-10 text-[#FFFFFF] bg-[#000000] text-[14px] font-semibold pt-14 pb-24 ">
-        <div className="mr-40">
+      <div className="flex gap-14 justify-center flex-wrap  items-center pb-10  text-[#FFFFFF] pt-6  bg-[#000000] text-[14px] font-semibold  ">
+        <div className="flex flex-col justify-center items-center w-[90%] sm:w-[320px]">
           <Image
             src={logo}
             alt=""
@@ -41,16 +41,14 @@ export default function Footer() {
           <div className="font-bold !text-[14px] md:text-[18px]  ">
             <p>
               {" "}
-              There are course and event custom <br />
-              post types so you can easily create <br />
-              and <br />
-              manage course, events.
+              There are course and event custom post types so you can easily
+              create and manage course, events.
             </p>
           </div>
         </div>
         <br />
 
-        <div className="mr-40">
+        <div className="mr-9">
           <Link href="#coverimg">
             {" "}
             <div>
@@ -87,7 +85,7 @@ export default function Footer() {
           </Link>
         </div>
 
-        <div className="text-12">
+        <div className="text-12 mt-">
           <div>
             {" "}
             <p className="font-bold text-[16px]">Get In Touch</p>{" "}
@@ -127,7 +125,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="text-12 ml-0 md:ml-24">
+        <div className="text-12 ">
           <div className="flex flex-wrap gap-5">
             <div>
               <div className="flex">
@@ -165,7 +163,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <hr />
+      <div className="bg-[#000000] ">
+        <hr />
+      </div>
       <div className=" flex flex-col lg:flex-row  lg:justify-between pl-4 pr-2 pt-8 bg-[#000000] pb-8 items-center">
         <div className="ml-0 lg:ml-52 text-[#ffffff] gap-1 flex text-[15px]">
           <p>
