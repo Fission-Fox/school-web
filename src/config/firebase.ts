@@ -13,15 +13,25 @@ import {
 } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import { toast } from "react-toastify";
+import {
+  FIREBASE_API_KEY,
+  FIREBASE_AUTH_DOMAIN,
+  FIREBASE_DATABASE_URL,
+  FIREBASE_MEASURMENT_ID,
+  FIREBASE_MESSAGE_SENDER_ID,
+  FIREBASE_PROJECT_ID,
+  FIREBASE_STORAGE_BUCKET,
+  NEXT_PUBLIC_FIREBASE_APP_ID,
+} from "./environments";
 const firebaseConfig = {
-  apiKey: "AIzaSyCZvCHpPiHAfmCFkP2K3eWc68kbXRybOTA",
-  authDomain: "remontadapp-32767.firebaseapp.com",
-  databaseURL: "https://remontadapp-32767-default-rtdb.firebaseio.com",
-  projectId: "remontadapp-32767",
-  storageBucket: "remontadapp-32767.appspot.com",
-  messagingSenderId: "600294478627",
-  appId: "1:600294478627:web:051edcd652b07ab11b7296",
-  measurementId: "G-E3229VPNSE",
+  apiKey: FIREBASE_API_KEY,
+  authDomain: FIREBASE_AUTH_DOMAIN,
+  databaseURL: FIREBASE_DATABASE_URL,
+  projectId: FIREBASE_PROJECT_ID,
+  storageBucket: FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: FIREBASE_MESSAGE_SENDER_ID,
+  appId: NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: FIREBASE_MEASURMENT_ID,
 };
 
 // Initialize Firebase

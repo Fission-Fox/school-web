@@ -1,10 +1,10 @@
 export type TStudent = {
   admissionForID: string;
   admissionFor: string;
-  admissionType: string;
-  admissionTypeID: string;
-  class: string;
-  classID: string;
+  admissionType?: string;
+  admissionTypeID?: string;
+  class?: string;
+  classID?: string;
   firstname: string;
   lastname: string;
   sonOf: string;
@@ -22,7 +22,7 @@ export type TStudent = {
   father_phone: number;
   region: string;
   birthPlace: string;
-  previous_class: string;
-  previous_percentage: number;
-  last_school: string;
+  previous_class?: string;
+  previous_percentage?: number;
+  last_school?: string;
 };
