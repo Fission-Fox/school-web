@@ -32,11 +32,11 @@ export default function Page({ params }: Props) {
         return collageLogo;
       case "Collage":
         return collageLogo;
-      case "Junior":
+      case "Day Care":
         return juniorLogo;
 
       default:
-        return coachingLogo;
+        return juniorLogo;
     }
   };
 
@@ -85,26 +85,31 @@ export default function Page({ params }: Props) {
               label={"Admission For"}
               value={submission?.admissionFor}
             />
-            <AdmissionItem
-              label={"Admission Type"}
-              value={submission?.admissionType}
-            />
-            <AdmissionItem
-              label={"Admission Class"}
-              value={submission?.class}
-            />
-            <AdmissionItem
-              label={"Previous Exam Class"}
-              value={submission?.previous_class}
-            />
-            <AdmissionItem
-              label={"Previous Exam Percentage"}
-              value={submission?.previous_percentage}
-            />
-            <AdmissionItem
-              label={"Previous Exam School"}
-              value={submission?.present_school}
-            />
+            {submission?.admissionFor !== "Day Care" && (
+              <>
+                <AdmissionItem
+                  label={"Admission Type"}
+                  value={submission?.admissionType}
+                />
+                <AdmissionItem
+                  label={"Admission Class"}
+                  value={submission?.class}
+                />
+                <AdmissionItem
+                  label={"Previous Exam Class"}
+                  value={submission?.previous_class}
+                />
+                <AdmissionItem
+                  label={"Previous Exam Percentage"}
+                  value={submission?.previous_percentage}
+                />
+                <AdmissionItem
+                  label={"Previous Exam School"}
+                  value={submission?.present_school}
+                />
+              </>
+            )}
+
             <AdmissionItem label={"First Name"} value={submission?.firstname} />
             <AdmissionItem label={"Last Name"} value={submission?.lastname} />
             <AdmissionItem label={"S/o. D/o"} value={submission?.sonOf} />
