@@ -169,7 +169,7 @@ const HomeHero: FC = () => {
                 {/* <ScrollLink to="popular-course" spy={true} smooth={true} offset={0} duration={350}> */}
                 <Link href={"/student-zone"}>
                   <StyledButton color="dark" size="large" variant="contained">
-                    Student Zone
+                    Schooling System
                   </StyledButton>
                 </Link>
 
