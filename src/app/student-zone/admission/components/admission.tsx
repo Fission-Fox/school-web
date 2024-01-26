@@ -1,16 +1,12 @@
 "use client";
-import {
-  Checkbox,
-  CircularProgress,
-  FormControlLabel,
-  Hidden,
-} from "@mui/material";
+import { Checkbox, CircularProgress, FormControlLabel } from "@mui/material";
 // import emailjs from 'emailjs-com';
 import emailjs from "@emailjs/browser";
 import { useEffect, useState } from "react";
 import SelectDropdown from "./dropdown";
 import Input from "./formInput";
 // import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
+import { EMAIL_SERVICE_ID, TEMPLATE_ID } from "@/config/environments";
 import {
   addSubmission,
   getAdmissionFor,
@@ -21,9 +17,6 @@ import { TStudent } from "@/types/admission";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import InputFileUpload from "./imageUpload";
-import { log } from "console";
-import { ClassNames } from "@emotion/react";
-import { EMAIL_SERVICE_ID, TEMPLATE_ID } from "@/config/environments";
 export default function Admission() {
   const [formType, setType] = useState("");
   const [loading, setLoader] = useState(false);
@@ -65,6 +58,33 @@ export default function Admission() {
     (itm) => itm?.admissionForID?.includes(admissionFor),
   );
 
+  const getClasses = () => {
+    let data: any = [];
+    if (filteredClass && filteredClass.length) {
+      if (admissionFor === "K2RjSRIR5XutN6pf0xGE") {
+        data = filteredClass.filter(
+          (itm) => itm.class == " XI" || itm.class == "XII",
+        );
+        return data?.map((itm: any) => {
+          return { name: itm.class, ...itm };
+        });
+      }
+
+      if (admissionFor === "sr1xzIrr1LygTQQRyBGy") {
+        data = filteredClass.filter(
+          (itm) => !itm?.class?.includes("XI") && !itm?.class?.includes("XII"),
+        );
+        return data?.map((itm: any) => {
+          return { name: itm.class, ...itm };
+        });
+      }
+
+      return filteredClass?.map((itm: any) => {
+        return { name: itm.class, ...itm };
+      });
+    }
+  };
+
   return (
     <div className="w-full bg-slate-200 py-10 ">
       <div className="w-full md:w-[50%] bg-white rounded-lg  py-3 m-auto space-y-10 divide-y mt-32 divide-gray-900/10">
@@ -80,13 +100,13 @@ export default function Admission() {
                 return toast.info("Please Enter Full Details");
               }
               setLoader(true);
-              const admissionTypeName = filteredAdmission.find(
+              const admissionTypeName = filteredAdmission?.find(
                 (itm) => itm.id === formType,
               );
-              const admissionForName = admissionfor.find(
+              const admissionForName = admissionfor?.find(
                 (itm) => itm.id === admissionFor,
               );
-              const className = filteredClass.find((itm) => itm.id === classe);
+              const className = filteredClass?.find((itm) => itm.id === classe);
               // console.log({
               //   ...data,
               //   admissionFor: admissionForName?.admissionFor,
@@ -132,7 +152,7 @@ export default function Admission() {
                   EMAIL_SERVICE_ID,
                   TEMPLATE_ID,
                   templateParams,
-                  "JsKGnCQ36ZK69Do7E",
+                  "MmzrJ_3ht15WTdj",
                 )
                 .then(
                   function (response) {
@@ -152,25 +172,31 @@ export default function Admission() {
               <SelectDropdown
                 label={"Admission for"}
                 setValue={setAdmissionFor}
-                list={admissionfor.map((itm) => {
-                  return { name: itm.admissionFor, ...itm };
-                })}
+                list={
+                  admissionfor && admissionfor.length
+                    ? admissionfor?.map((itm) => {
+                        return { name: itm.admissionFor, ...itm };
+                      })
+                    : []
+                }
               />
               {admissionFor !== "m8TYVlxDPWcyHxgZOF6N" && (
                 <>
                   <SelectDropdown
                     setValue={setType}
                     label={"Admission type"}
-                    list={filteredAdmission.map((itm) => {
-                      return { name: itm.admissionType, ...itm };
-                    })}
+                    list={
+                      filteredAdmission && filteredAdmission?.length
+                        ? filteredAdmission?.map((itm) => {
+                            return { name: itm.admissionType, ...itm };
+                          })
+                        : []
+                    }
                   />
                   <SelectDropdown
                     setValue={setClass}
                     label={"Classes"}
-                    list={filteredClass.map((itm) => {
-                      return { name: itm.class, ...itm };
-                    })}
+                    list={getClasses() ?? []}
                   />
                 </>
               )}

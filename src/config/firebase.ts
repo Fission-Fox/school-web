@@ -16,8 +16,6 @@ import { toast } from "react-toastify";
 import {
   FIREBASE_API_KEY,
   FIREBASE_AUTH_DOMAIN,
-  FIREBASE_DATABASE_URL,
-  FIREBASE_MEASURMENT_ID,
   FIREBASE_MESSAGE_SENDER_ID,
   FIREBASE_PROJECT_ID,
   FIREBASE_STORAGE_BUCKET,
@@ -26,13 +24,21 @@ import {
 const firebaseConfig = {
   apiKey: FIREBASE_API_KEY,
   authDomain: FIREBASE_AUTH_DOMAIN,
-  databaseURL: FIREBASE_DATABASE_URL,
+  // databaseURL: FIREBASE_DATABASE_URL,
   projectId: FIREBASE_PROJECT_ID,
   storageBucket: FIREBASE_STORAGE_BUCKET,
   messagingSenderId: FIREBASE_MESSAGE_SENDER_ID,
   appId: NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: FIREBASE_MEASURMENT_ID,
+  // measurementId: FIREBASE_MEASURMENT_ID,
 };
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDGnKdVjgDCH_jUBPKFlz98aAUuo_1qzH0",
+//   authDomain: "studentzone-9f3ea.firebaseapp.com",
+//   projectId: "studentzone-9f3ea",
+//   storageBucket: "studentzone-9f3ea.appspot.com",
+//   messagingSenderId: "615309376916",
+//   appId: "1:615309376916:web:a49f9a6ea9ad28ca42a381"
+// };
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
@@ -50,6 +56,16 @@ async function addSubmission(body: TStudent, file: File) {
     // alert('Successfully Added')
 
     toast.success("Admission Form has been submitted");
+  } catch (e: any) {
+    console.log(e.message);
+  }
+}
+async function customQuery(body: any) {
+  try {
+    await addDoc(collection(db, "class"), body);
+    // alert('Successfully Added')
+
+    console.log("Query has been submitted");
   } catch (e: any) {
     console.log(e.message);
   }
@@ -205,6 +221,7 @@ async function loginAdmin(email: string, password: string) {
 // }
 export {
   addSubmission,
+  customQuery,
   getAdmissionFor,
   getAdmissionType,
   getClass,
