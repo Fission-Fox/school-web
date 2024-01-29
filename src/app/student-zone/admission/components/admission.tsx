@@ -154,6 +154,7 @@ export default function Admission() {
             <PrintComponent ref={componentRef} data={undefined} />
           </div>
         </div>
+        <PrintComponent ref={componentRef} data={undefined} />
         <div>
           <div className="px-4 sm:px-0">
             <h2 className="text-5xl text-center my-4 font-semibold  text-gray-900">
