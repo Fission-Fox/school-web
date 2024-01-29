@@ -2,7 +2,8 @@
 import { Checkbox, CircularProgress, FormControlLabel } from "@mui/material";
 // import emailjs from 'emailjs-com';
 import emailjs from "@emailjs/browser";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import ReactToPrint from "react-to-print";
 import SelectDropdown from "./dropdown";
 import Input from "./formInput";
 // import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
@@ -17,6 +18,7 @@ import { TStudent } from "@/types/admission";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import InputFileUpload from "./imageUpload";
+import PrintComponent from "./printComponent";
 export default function Admission() {
   const [formType, setType] = useState("");
   const [loading, setLoader] = useState(false);
@@ -139,9 +141,19 @@ export default function Admission() {
     (itm) => itm.id === formType,
   );
 
+  const componentRef: any = useRef();
   return (
     <div className="w-full bg-slate-200 py-10 ">
       <div className="w-full md:w-[50%] bg-white rounded-lg  py-3 m-auto space-y-10 divide-y mt-32 divide-gray-900/10">
+        <div>
+          <ReactToPrint
+            trigger={() => <button>Generate Fee Challan</button>}
+            content={() => componentRef.current}
+          />
+          <div style={{ display: "none" }}>
+            <PrintComponent ref={componentRef} data={undefined} />
+          </div>
+        </div>
         <div>
           <div className="px-4 sm:px-0">
             <h2 className="text-5xl text-center my-4 font-semibold  text-gray-900">
