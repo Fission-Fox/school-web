@@ -25,4 +25,5 @@ export type TStudent = {
   previous_class?: string;
   previous_percentage?: number;
   last_school?: string;
+  subjects?: any;
 };

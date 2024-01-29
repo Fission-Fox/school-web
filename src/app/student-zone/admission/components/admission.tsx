@@ -24,21 +24,71 @@ export default function Admission() {
   const [file, setFiles] = useState<any>();
   const [admissionFor, setAdmissionFor] = useState("");
   const [checkedvalue, setChecked] = useState<string[]>([]);
+  const [selectedSubjects, setSelectedSubjects] = useState({
+    compulsory: [],
+    optional: [],
+  });
   const [admissionType, setAdmissionType] = useState<any[]>([]);
   const [admissionfor, setAdmissionfor] = useState<any[]>([]);
   const [Class, Setclass] = useState<any[]>([]);
   const form = useForm<TStudent>();
   const { register, control, formState, setValue, handleSubmit } = form;
-  const handleChage = (event: any) => {
-    const { value, checked } = event.target;
-    if (checked) {
-      setChecked((pre) => [...pre, value]);
-    } else
-      setChecked((pre) => {
-        return [...pre.filter((skill) => skill !== value)];
-      });
-  };
 
+  const handleSubjectSelection = (subject: string, category: string) => {
+    const updatedSubjects: any = { ...selectedSubjects };
+    updatedSubjects[category] = [...updatedSubjects[category], subject];
+    setSelectedSubjects(updatedSubjects);
+  };
+  const subjectsMap: any = {
+    "O & A Levels": {
+      compulsory: [
+        "English",
+        "Geography",
+        "History",
+        "Urdu",
+        "Islamic Studies",
+      ],
+      optional: [
+        "Mathematics",
+        "Physics",
+        "Chemistry",
+        "Additional Mathematics",
+        "Sociology",
+        "Biology",
+        "Computer Science",
+        "Economics",
+        "Accounting",
+      ],
+    },
+    "Federal / AKU-EB": {
+      compulsory: ["Urdu", "Islamiyat / Ethics", "Pakistan Studies", "English"],
+      optional: [
+        "Physics",
+        "Mathematics",
+        "Chemistry",
+        "Biology",
+        "Computer Science",
+      ],
+    },
+    Commerce: {
+      compulsory: [
+        "English",
+        "Geography",
+        "History",
+        "Urdu",
+        "Islamic Studies",
+      ],
+      optional: [
+        "Accounting",
+        "Business Mathematics",
+        "General Mathematics",
+        "Economics",
+        "Principles of Commerce (POC)",
+        "Statistics",
+        "Computer Science",
+      ],
+    },
+  };
   useEffect(() => {
     const getData = async () => {
       const res: any = await getAdmissionType();
@@ -85,6 +135,10 @@ export default function Admission() {
     }
   };
 
+  const admissionTypeName = filteredAdmission?.find(
+    (itm) => itm.id === formType,
+  );
+
   return (
     <div className="w-full bg-slate-200 py-10 ">
       <div className="w-full md:w-[50%] bg-white rounded-lg  py-3 m-auto space-y-10 divide-y mt-32 divide-gray-900/10">
@@ -126,6 +180,7 @@ export default function Admission() {
                     admissionType: admissionTypeName?.admissionType,
                     classID: classe,
                     class: className?.class,
+                    subjects: selectedSubjects,
                   },
                   file,
                 );
@@ -184,6 +239,9 @@ export default function Admission() {
                 <>
                   <SelectDropdown
                     setValue={setType}
+                    func={() => {
+                      setSelectedSubjects({ compulsory: [], optional: [] });
+                    }}
                     label={"Admission type"}
                     list={
                       filteredAdmission && filteredAdmission?.length
@@ -208,198 +266,57 @@ export default function Admission() {
               <>
                 <div className="flex flex-wrap justify-evenly mt-8">
                   <div>
-                    <div className="font-semibold">Science Subjects</div>
+                    <div className="font-semibold">Compulsory Subjects</div>
+
                     <div className="text-[14px] pl-1 w-32 mt-2">
-                      <div className="mb-1">
-                        <FormControlLabel
-                          onChange={handleChage}
-                          value={"BIOLOGY"}
-                          control={<Checkbox />}
-                          label="BIOLOGY"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          onChange={handleChage}
-                          value={"COMPUTER"}
-                          label="COMPUTER"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          onChange={handleChage}
-                          value={"PHYSICS"}
-                          control={<Checkbox />}
-                          label="PHYSICS"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="CHEMISTRY"
-                          onChange={handleChage}
-                          value={"CHEMISTRY"}
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="MATHEMATICS"
-                          onChange={handleChage}
-                          value={"MATHEMATICS"}
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          onChange={handleChage}
-                          value={"URDU"}
-                          control={<Checkbox />}
-                          label="URDU"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="  PAK.STUDIES"
-                          onChange={handleChage}
-                          value={"PAK.STUDIES"}
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          onChange={handleChage}
-                          value={"ENGLISH"}
-                          control={<Checkbox />}
-                          label="ENGLISH"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          onChange={handleChage}
-                          value={"ISLAMIAT"}
-                          control={<Checkbox />}
-                          label="ISLAMIAT"
-                        />
-                      </div>
+                      {subjectsMap[
+                        admissionTypeName?.admissionType
+                      ]?.compulsory.map((itm: string) => {
+                        return (
+                          <div className="mb-1">
+                            <FormControlLabel
+                              onChange={(e: any) =>
+                                handleSubjectSelection(
+                                  e.target.value,
+                                  "compulsory",
+                                )
+                              }
+                              value={itm}
+                              control={<Checkbox />}
+                              label={itm}
+                            />
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                   <div>
-                    <div className="font-semibold">Commerce Subjects</div>
-                    <div className="text-[14px] pl-1 w-48 mt-2">
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label=" ACCOUNTING"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label=" ECONOMICS"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label=" GEN SCIENCE"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label=" GEN. MATHS"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label=" BUSINESS STUDIES"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label=" URDU"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label=" PAK.STUDIES"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label=" ENGLISH"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="ISLAMIAT"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="">
-                    <div className="font-semibold">O/A Levels Subjects</div>
-                    <div className="text-[14px] pl-1 w-40 mt-2">
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="PAK.STUDIES"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="ISLAMIAT"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="MATHS"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="CHEMISTRY"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="ADD - MATHS"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel control={<Checkbox />} label="URDU" />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="PHYSICS"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="ENGLISH"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="BIOLOGY"
-                        />
-                      </div>
+                    <div className="font-semibold">Optional Subjects</div>
+
+                    <div className="text-[14px] pl-1 w-32 mt-2">
+                      {subjectsMap[
+                        admissionTypeName?.admissionType
+                      ]?.optional.map((itm: string) => {
+                        return (
+                          <div className="mb-1">
+                            <FormControlLabel
+                              onChange={(e: any) =>
+                                handleSubjectSelection(
+                                  e.target.value,
+                                  "optional",
+                                )
+                              }
+                              value={itm}
+                              control={<Checkbox />}
+                              label={itm}
+                            />
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
+
                 <hr />
                 <div className="px-4 py-6 sm:p-8">
                   <p className="text-center text-2xl">
