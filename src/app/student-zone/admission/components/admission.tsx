@@ -1,16 +1,13 @@
 "use client";
-import {
-  Checkbox,
-  CircularProgress,
-  FormControlLabel,
-  Hidden,
-} from "@mui/material";
+import { Checkbox, CircularProgress, FormControlLabel } from "@mui/material";
 // import emailjs from 'emailjs-com';
 import emailjs from "@emailjs/browser";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import ReactToPrint from "react-to-print";
 import SelectDropdown from "./dropdown";
 import Input from "./formInput";
 // import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
+import { EMAIL_SERVICE_ID, TEMPLATE_ID } from "@/config/environments";
 import {
   addSubmission,
   getAdmissionFor,
@@ -21,31 +18,81 @@ import { TStudent } from "@/types/admission";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import InputFileUpload from "./imageUpload";
-import { log } from "console";
-import { ClassNames } from "@emotion/react";
-import { EMAIL_SERVICE_ID, TEMPLATE_ID } from "@/config/environments";
+import PrintComponent from "./printComponent";
 export default function Admission() {
   const [formType, setType] = useState("");
   const [loading, setLoader] = useState(false);
   const [classe, setClass] = useState("");
   const [file, setFiles] = useState<any>();
   const [admissionFor, setAdmissionFor] = useState("");
-  const [checkedvalue, setChecked] = useState<string[]>([]);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [values, setFieldValue] = useState<any>();
+  const [selectedSubjects, setSelectedSubjects] = useState({
+    compulsory: [],
+    optional: [],
+  });
   const [admissionType, setAdmissionType] = useState<any[]>([]);
   const [admissionfor, setAdmissionfor] = useState<any[]>([]);
   const [Class, Setclass] = useState<any[]>([]);
   const form = useForm<TStudent>();
   const { register, control, formState, setValue, handleSubmit } = form;
-  const handleChage = (event: any) => {
-    const { value, checked } = event.target;
-    if (checked) {
-      setChecked((pre) => [...pre, value]);
-    } else
-      setChecked((pre) => {
-        return [...pre.filter((skill) => skill !== value)];
-      });
+
+  const handleSubjectSelection = (subject: string, category: string) => {
+    const updatedSubjects: any = { ...selectedSubjects };
+    updatedSubjects[category] = [...updatedSubjects[category], subject];
+    setSelectedSubjects(updatedSubjects);
   };
 
+  const subjectsMap: any = {
+    "O & A Levels": {
+      compulsory: [
+        "English",
+        "Geography",
+        "History",
+        "Urdu",
+        "Islamic Studies",
+      ],
+      optional: [
+        "Mathematics",
+        "Physics",
+        "Chemistry",
+        "Additional Mathematics",
+        "Sociology",
+        "Biology",
+        "Computer Science",
+        "Economics",
+        "Accounting",
+      ],
+    },
+    "Federal / AKU-EB": {
+      compulsory: ["Urdu", "Islamiyat / Ethics", "Pakistan Studies", "English"],
+      optional: [
+        "Physics",
+        "Mathematics",
+        "Chemistry",
+        "Biology",
+        "Computer Science",
+      ],
+    },
+    Commerce: {
+      compulsory: [
+        "English",
+        "Geography",
+        "History",
+        "Urdu",
+        "Islamic Studies",
+      ],
+      optional: [
+        "Accounting",
+        "Business Mathematics",
+        "General Mathematics",
+        "Economics",
+        "Principles of Commerce (POC)",
+        "Statistics",
+        "Computer Science",
+      ],
+    },
+  };
   useEffect(() => {
     const getData = async () => {
       const res: any = await getAdmissionType();
@@ -65,9 +112,47 @@ export default function Admission() {
     (itm) => itm?.admissionForID?.includes(admissionFor),
   );
 
+  const getClasses = () => {
+    let data: any = [];
+    if (filteredClass && filteredClass.length) {
+      if (admissionFor === "K2RjSRIR5XutN6pf0xGE") {
+        data = filteredClass.filter(
+          (itm) => itm.class == " XI" || itm.class == "XII",
+        );
+        return data?.map((itm: any) => {
+          return { name: itm.class, ...itm };
+        });
+      }
+
+      if (admissionFor === "sr1xzIrr1LygTQQRyBGy") {
+        data = filteredClass.filter(
+          (itm) => !itm?.class?.includes("XI") && !itm?.class?.includes("XII"),
+        );
+        return data?.map((itm: any) => {
+          return { name: itm.class, ...itm };
+        });
+      }
+
+      return filteredClass?.map((itm: any) => {
+        return { name: itm.class, ...itm };
+      });
+    }
+  };
+
+  const admissionTypeName = filteredAdmission?.find(
+    (itm) => itm.id === formType,
+  );
+
+  const componentRef: any = useRef();
   return (
     <div className="w-full bg-slate-200 py-10 ">
       <div className="w-full md:w-[50%] bg-white rounded-lg  py-3 m-auto space-y-10 divide-y mt-32 divide-gray-900/10">
+        <div>
+          <div style={{ display: "none" }}>
+            <PrintComponent ref={componentRef} values={values} />
+          </div>
+        </div>
+        {/* <PrintComponent ref={componentRef} data={{ admissionTypeName: admissionTypeName, ...values }} /> */}
         <div>
           <div className="px-4 sm:px-0">
             <h2 className="text-5xl text-center my-4 font-semibold  text-gray-900">
@@ -76,17 +161,22 @@ export default function Admission() {
           </div>
           <form
             onSubmit={handleSubmit(async (data) => {
-              if (!file) {
+              if (formSubmitted) {
+                return;
+              }
+
+              if (!file || !classe || !formType || !admissionFor) {
                 return toast.info("Please Enter Full Details");
               }
+
               setLoader(true);
-              const admissionTypeName = filteredAdmission.find(
+              const admissionTypeName = filteredAdmission?.find(
                 (itm) => itm.id === formType,
               );
-              const admissionForName = admissionfor.find(
+              const admissionForName = admissionfor?.find(
                 (itm) => itm.id === admissionFor,
               );
-              const className = filteredClass.find((itm) => itm.id === classe);
+              const className = filteredClass?.find((itm) => itm.id === classe);
               // console.log({
               //   ...data,
               //   admissionFor: admissionForName?.admissionFor,
@@ -97,7 +187,17 @@ export default function Admission() {
               //   class: className?.class,
               // });
               if (admissionFor !== "m8TYVlxDPWcyHxgZOF6N") {
-                addSubmission(
+                setFieldValue({
+                  ...data,
+                  admissionFor: admissionForName?.admissionFor,
+                  admissionForID: admissionFor,
+                  admissionTypeID: formType,
+                  admissionType: admissionTypeName?.admissionType,
+                  classID: classe,
+                  class: className?.class,
+                  subjects: selectedSubjects,
+                });
+                await addSubmission(
                   {
                     ...data,
                     admissionFor: admissionForName?.admissionFor,
@@ -106,11 +206,16 @@ export default function Admission() {
                     admissionType: admissionTypeName?.admissionType,
                     classID: classe,
                     class: className?.class,
+                    subjects: selectedSubjects,
                   },
                   file,
                 );
               } else {
-                addSubmission(
+                setFieldValue({
+                  ...data,
+                  admissionFor: admissionForName?.admissionFor,
+                });
+                await addSubmission(
                   {
                     ...data,
                     admissionFor: admissionForName?.admissionFor,
@@ -118,7 +223,7 @@ export default function Admission() {
                   file,
                 );
               }
-
+              setFormSubmitted(true);
               setLoader(false);
               const templateParams = {
                 firstname: data?.firstname,
@@ -132,7 +237,7 @@ export default function Admission() {
                   EMAIL_SERVICE_ID,
                   TEMPLATE_ID,
                   templateParams,
-                  "JsKGnCQ36ZK69Do7E",
+                  "MmzrJ_3ht15WTdj",
                 )
                 .then(
                   function (response) {
@@ -152,25 +257,34 @@ export default function Admission() {
               <SelectDropdown
                 label={"Admission for"}
                 setValue={setAdmissionFor}
-                list={admissionfor.map((itm) => {
-                  return { name: itm.admissionFor, ...itm };
-                })}
+                list={
+                  admissionfor && admissionfor.length
+                    ? admissionfor?.map((itm) => {
+                        return { name: itm.admissionFor, ...itm };
+                      })
+                    : []
+                }
               />
               {admissionFor !== "m8TYVlxDPWcyHxgZOF6N" && (
                 <>
                   <SelectDropdown
                     setValue={setType}
+                    func={() => {
+                      setSelectedSubjects({ compulsory: [], optional: [] });
+                    }}
                     label={"Admission type"}
-                    list={filteredAdmission.map((itm) => {
-                      return { name: itm.admissionType, ...itm };
-                    })}
+                    list={
+                      filteredAdmission && filteredAdmission?.length
+                        ? filteredAdmission?.map((itm) => {
+                            return { name: itm.admissionType, ...itm };
+                          })
+                        : []
+                    }
                   />
                   <SelectDropdown
                     setValue={setClass}
                     label={"Classes"}
-                    list={filteredClass.map((itm) => {
-                      return { name: itm.class, ...itm };
-                    })}
+                    list={getClasses() ?? []}
                   />
                 </>
               )}
@@ -182,198 +296,57 @@ export default function Admission() {
               <>
                 <div className="flex flex-wrap justify-evenly mt-8">
                   <div>
-                    <div className="font-semibold">Science Subjects</div>
+                    <div className="font-semibold">Compulsory Subjects</div>
+
                     <div className="text-[14px] pl-1 w-32 mt-2">
-                      <div className="mb-1">
-                        <FormControlLabel
-                          onChange={handleChage}
-                          value={"BIOLOGY"}
-                          control={<Checkbox />}
-                          label="BIOLOGY"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          onChange={handleChage}
-                          value={"COMPUTER"}
-                          label="COMPUTER"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          onChange={handleChage}
-                          value={"PHYSICS"}
-                          control={<Checkbox />}
-                          label="PHYSICS"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="CHEMISTRY"
-                          onChange={handleChage}
-                          value={"CHEMISTRY"}
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="MATHEMATICS"
-                          onChange={handleChage}
-                          value={"MATHEMATICS"}
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          onChange={handleChage}
-                          value={"URDU"}
-                          control={<Checkbox />}
-                          label="URDU"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="  PAK.STUDIES"
-                          onChange={handleChage}
-                          value={"PAK.STUDIES"}
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          onChange={handleChage}
-                          value={"ENGLISH"}
-                          control={<Checkbox />}
-                          label="ENGLISH"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          onChange={handleChage}
-                          value={"ISLAMIAT"}
-                          control={<Checkbox />}
-                          label="ISLAMIAT"
-                        />
-                      </div>
+                      {subjectsMap[
+                        admissionTypeName?.admissionType
+                      ]?.compulsory.map((itm: string) => {
+                        return (
+                          <div className="mb-1">
+                            <FormControlLabel
+                              onChange={(e: any) =>
+                                handleSubjectSelection(
+                                  e.target.value,
+                                  "compulsory",
+                                )
+                              }
+                              value={itm}
+                              control={<Checkbox />}
+                              label={itm}
+                            />
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                   <div>
-                    <div className="font-semibold">Commerce Subjects</div>
-                    <div className="text-[14px] pl-1 w-48 mt-2">
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label=" ACCOUNTING"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label=" ECONOMICS"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label=" GEN SCIENCE"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label=" GEN. MATHS"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label=" BUSINESS STUDIES"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label=" URDU"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label=" PAK.STUDIES"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label=" ENGLISH"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="ISLAMIAT"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="">
-                    <div className="font-semibold">O/A Levels Subjects</div>
-                    <div className="text-[14px] pl-1 w-40 mt-2">
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="PAK.STUDIES"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="ISLAMIAT"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="MATHS"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="CHEMISTRY"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="ADD - MATHS"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel control={<Checkbox />} label="URDU" />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="PHYSICS"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="ENGLISH"
-                        />
-                      </div>
-                      <div className="mb-1">
-                        <FormControlLabel
-                          control={<Checkbox />}
-                          label="BIOLOGY"
-                        />
-                      </div>
+                    <div className="font-semibold">Optional Subjects</div>
+
+                    <div className="text-[14px] pl-1 w-32 mt-2">
+                      {subjectsMap[
+                        admissionTypeName?.admissionType
+                      ]?.optional.map((itm: string) => {
+                        return (
+                          <div className="mb-1">
+                            <FormControlLabel
+                              onChange={(e: any) =>
+                                handleSubjectSelection(
+                                  e.target.value,
+                                  "optional",
+                                )
+                              }
+                              value={itm}
+                              control={<Checkbox />}
+                              label={itm}
+                            />
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
+
                 <hr />
                 <div className="px-4 py-6 sm:p-8">
                   <p className="text-center text-2xl">
@@ -727,7 +700,16 @@ export default function Admission() {
                   </p>
                 </div>
               </div>
-              {loading ? (
+              {formSubmitted ? (
+                <ReactToPrint
+                  trigger={() => (
+                    <button className="rounded-md text-xl bg-[#00306E!important] px-8 py-2 font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                      Generate Fee Challan
+                    </button>
+                  )}
+                  content={() => componentRef.current}
+                />
+              ) : loading ? (
                 <CircularProgress />
               ) : (
                 <button

@@ -1,4 +1,4 @@
-import logo from "@/assets/images/bluelogo.png";
+import logo from "@/assets/images/coachinglogo.png";
 import FacebookIcon from "@/assets/images/facebook";
 import InstagramIcon from "@/assets/images/instagram";
 import Location2Icon from "@/assets/images/location2";
@@ -22,7 +22,7 @@ export default function Footer() {
             }}
           />
 
-          <div className="font-bold !text-[14px] md:text-[18px]  ">
+          <div className="font-bold !text-[14px] md:text-[18px] mt-3 ">
             <p>
               {" "}
               There are course and event custom <br />
@@ -153,7 +153,7 @@ export default function Footer() {
       <div className=" flex flex-col lg:flex-row  lg:justify-between pl-4 pr-2 pt-8 bg-[#000000] pb-8 items-center">
         <div className="ml-0 lg:ml-52 text-[#ffffff] gap-1 flex text-[15px]">
           <p>
-            © 2022 <span className="text-[#D2093C]">Student's Zone</span>
+            © 2024 <span className="text-[#D2093C]">Student's Zone</span>
             <span>All Rights Reserved</span>
           </p>
         </div>
