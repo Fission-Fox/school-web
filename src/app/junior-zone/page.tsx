@@ -6,7 +6,6 @@ import HeroSection from "./components/heroSection";
 import JuniorFooter from "./components/juniorDashboard";
 import Leadlearning from "./components/leadlearning";
 import Owngrade from "./components/owngrade";
-import Preschool from "./components/preschool";
 import SessionTime from "./components/sessionTime";
 import Testimonials from "./components/testimonials";
 
@@ -18,7 +17,7 @@ export default function HomePage() {
       <EnrollChild />
       <Childbest />
       <SessionTime />
-      <Preschool />
+      {/* <Preschool /> */}
       <Owngrade />
       <Testimonials />
       <JuniorFooter />
