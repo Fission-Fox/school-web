@@ -1,4 +1,4 @@
-import logo from "@/assets/images/bluelogo.png";
+import logo from "@/assets/images/coachinglogo.png";
 import FacebookIcon from "@/assets/images/facebook";
 import InstagramIcon from "@/assets/images/instagram";
 import Location2Icon from "@/assets/images/location2";
@@ -22,7 +22,7 @@ export default function Footer() {
             }}
           />
 
-          <div className="font-bold !text-[14px] md:text-[18px]  ">
+          <div className="font-bold !text-[14px] md:text-[18px] mt-3 ">
             <p>
               {" "}
               There are course and event custom <br />
