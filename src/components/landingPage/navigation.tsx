@@ -13,7 +13,7 @@ const Navigation: FC = () => {
       path: "#testimonial",
     },
     {
-      label: "Student Zone",
+      label: "Schooling System",
       path: "/student-zone",
     },
     {
