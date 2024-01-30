@@ -36,7 +36,7 @@ export default function Page({ params }: Props) {
         return juniorLogo;
 
       default:
-        return juniorLogo;
+        return coachingLogo;
     }
   };
 
@@ -154,6 +154,28 @@ export default function Page({ params }: Props) {
               value={submission?.student_email}
             />
             <AdmissionItem label={"Relation "} value={submission?.relation} />
+            <div className="w-[90%] px-3 py-1 ">
+              <p className="mb-2 text-sm font-medium text-gray-900">
+                Compulsory Subjects
+              </p>
+
+              <div className=" text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+                {submission.subjects?.compulsory?.map((itm: string) => {
+                  return <p>{itm}</p>;
+                })}
+              </div>
+            </div>
+            <div className="w-[90%] px-3 py-1 ">
+              <p className="mb-2 text-sm font-medium text-gray-900">
+                Optional Subjects
+              </p>
+
+              <div className=" text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+                {submission.subjects?.optional?.map((itm: string) => {
+                  return <p>{itm}</p>;
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </Container>
