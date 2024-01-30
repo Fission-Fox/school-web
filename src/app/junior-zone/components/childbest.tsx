@@ -1,7 +1,6 @@
 import image from "@/assets/images/round.jpeg";
 import TaskAltIcon from "@mui/icons-material/TaskAlt";
 import Image from "next/image";
-import GradeSlider from "./grade";
 export default function Childbest() {
   return (
     <div className="">
@@ -74,7 +73,7 @@ export default function Childbest() {
         </div>
       </div>
       <div className="flex flex-col md:flex-row  justify-center  sm:justify-around items-center mt-28">
-        <div>
+        {/* <div>
           <div>
             <p className="font-bold ml-10 text-[16px] text-[#E8063C]">
               CHOOSE YOUR OWN GRADE LEVEL
@@ -85,7 +84,7 @@ export default function Childbest() {
               Smarty Programs
             </p>
           </div>
-        </div>
+        </div> */}
         {/* <div className="flex gap-4">
           <div className="bg-[#E8063C] text-[#ffffff] hover:text-[#E8063C] hover:bg-white border-2 border-[#E8063C] w-14 h-14  flex items-center justify-center rounded-full">
             <ArrowBackIcon style={{ fontSize: "40px" }} />
@@ -95,7 +94,7 @@ export default function Childbest() {
           </div>
         </div> */}
       </div>
-      <GradeSlider />
+      {/* <GradeSlider /> */}
     </div>
   );
 }

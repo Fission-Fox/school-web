@@ -2,7 +2,8 @@
 import { Checkbox, CircularProgress, FormControlLabel } from "@mui/material";
 // import emailjs from 'emailjs-com';
 import emailjs from "@emailjs/browser";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import ReactToPrint from "react-to-print";
 import SelectDropdown from "./dropdown";
 import Input from "./formInput";
 // import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
@@ -17,13 +18,15 @@ import { TStudent } from "@/types/admission";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import InputFileUpload from "./imageUpload";
+import PrintComponent from "./printComponent";
 export default function Admission() {
   const [formType, setType] = useState("");
   const [loading, setLoader] = useState(false);
   const [classe, setClass] = useState("");
   const [file, setFiles] = useState<any>();
   const [admissionFor, setAdmissionFor] = useState("");
-  const [checkedvalue, setChecked] = useState<string[]>([]);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [values, setFieldValue] = useState<any>();
   const [selectedSubjects, setSelectedSubjects] = useState({
     compulsory: [],
     optional: [],
@@ -39,6 +42,7 @@ export default function Admission() {
     updatedSubjects[category] = [...updatedSubjects[category], subject];
     setSelectedSubjects(updatedSubjects);
   };
+
   const subjectsMap: any = {
     "O & A Levels": {
       compulsory: [
@@ -139,9 +143,16 @@ export default function Admission() {
     (itm) => itm.id === formType,
   );
 
+  const componentRef: any = useRef();
   return (
     <div className="w-full bg-slate-200 py-10 ">
       <div className="w-full md:w-[50%] bg-white rounded-lg  py-3 m-auto space-y-10 divide-y mt-32 divide-gray-900/10">
+        <div>
+          <div style={{ display: "none" }}>
+            <PrintComponent ref={componentRef} values={values} />
+          </div>
+        </div>
+        {/* <PrintComponent ref={componentRef} data={{ admissionTypeName: admissionTypeName, ...values }} /> */}
         <div>
           <div className="px-4 sm:px-0">
             <h2 className="text-5xl text-center my-4 font-semibold  text-gray-900">
@@ -150,9 +161,14 @@ export default function Admission() {
           </div>
           <form
             onSubmit={handleSubmit(async (data) => {
-              if (!file) {
+              if (formSubmitted) {
+                return;
+              }
+
+              if (!file || !classe || !formType || !admissionFor) {
                 return toast.info("Please Enter Full Details");
               }
+
               setLoader(true);
               const admissionTypeName = filteredAdmission?.find(
                 (itm) => itm.id === formType,
@@ -171,7 +187,17 @@ export default function Admission() {
               //   class: className?.class,
               // });
               if (admissionFor !== "m8TYVlxDPWcyHxgZOF6N") {
-                addSubmission(
+                setFieldValue({
+                  ...data,
+                  admissionFor: admissionForName?.admissionFor,
+                  admissionForID: admissionFor,
+                  admissionTypeID: formType,
+                  admissionType: admissionTypeName?.admissionType,
+                  classID: classe,
+                  class: className?.class,
+                  subjects: selectedSubjects,
+                });
+                await addSubmission(
                   {
                     ...data,
                     admissionFor: admissionForName?.admissionFor,
@@ -185,7 +211,11 @@ export default function Admission() {
                   file,
                 );
               } else {
-                addSubmission(
+                setFieldValue({
+                  ...data,
+                  admissionFor: admissionForName?.admissionFor,
+                });
+                await addSubmission(
                   {
                     ...data,
                     admissionFor: admissionForName?.admissionFor,
@@ -193,7 +223,7 @@ export default function Admission() {
                   file,
                 );
               }
-
+              setFormSubmitted(true);
               setLoader(false);
               const templateParams = {
                 firstname: data?.firstname,
@@ -670,7 +700,16 @@ export default function Admission() {
                   </p>
                 </div>
               </div>
-              {loading ? (
+              {formSubmitted ? (
+                <ReactToPrint
+                  trigger={() => (
+                    <button className="rounded-md text-xl bg-[#00306E!important] px-8 py-2 font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                      Generate Fee Challan
+                    </button>
+                  )}
+                  content={() => componentRef.current}
+                />
+              ) : loading ? (
                 <CircularProgress />
               ) : (
                 <button

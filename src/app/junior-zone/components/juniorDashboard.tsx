@@ -7,6 +7,7 @@ import FactCheckIcon from "@mui/icons-material/FactCheck";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import PlaceIcon from "@mui/icons-material/Place";
 import Image from "next/image";
+import Link from "next/link";
 export default function JuniorFooter() {
   return (
     <div className="bg-[#490D59] flex flex-wrap pl-1 pr-1  justify-evenly items-center pb-10">
@@ -90,9 +91,11 @@ export default function JuniorFooter() {
       </div>
 
       <div className="mt-8 xl:mt-0 ">
-        <div className="text-[16px] text-[#ffffff] flex justify-center items-center rounded-full bg-[#E8063C] border-[#E8063C] border-4 hover:bg-[#490D59] w-[209px] h-[55px] font-bold">
-          <button>Start Registration</button>
-        </div>
+        <Link href={"/student-zone/admission"}>
+          <div className="text-[16px] text-[#ffffff] flex justify-center items-center rounded-full bg-[#E8063C] border-[#E8063C] border-4 hover:bg-[#490D59] w-[209px] h-[55px] font-bold">
+            <button>Start Registration</button>
+          </div>
+        </Link>
         {/* <div className="text-[20px] sm:text-[36px] font-bold text-[#ffffff] mt-10">
           Useful Services
         </div> */}

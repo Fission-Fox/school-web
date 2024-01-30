@@ -27,12 +27,12 @@ const Page = () => {
   };
   return (
     <>
-      <div className="w-full justify-between flex  bg-slate-200 h-screen items-center ">
-        <div className="ml-44">
+      <div className="w-full md:w-[80%] m-auto justify-between flex !flex-col md:!flex-row  h-screen items-center ">
+        <div className="">
           <Image src={logo} alt="" />
         </div>
 
-        <div className="w-[500px] shadow-2xl bg-white flex flex-col justify-center   items-center rounded-md mr-44 ">
+        <div className="w-[90%] m-auto md:w-[500px] shadow-2xl bg-white flex flex-col justify-center   items-center rounded-md  ">
           <p className="font-bold mt-10 text-center"> SIGN IN</p>
 
           <input
