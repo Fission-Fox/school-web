@@ -1,4 +1,4 @@
-import collageLogo from "@/assets/images/bluelogo.png";
+import collegeLogo from "@/assets/images/bluelogo.png";
 import coachingLogo from "@/assets/images/coachinglogo.png";
 import juniorLogo from "@/assets/images/logo3.png";
 import Image from "next/image";
@@ -12,9 +12,9 @@ const PrintComponent = forwardRef((props: { values: any }, ref: any) => {
   const getImage = () => {
     switch (props.values?.admissionFor) {
       case "School":
-        return collageLogo;
-      case "Collage":
-        return collageLogo;
+        return collegeLogo;
+      case "College":
+        return collegeLogo;
       case "Day Care":
         return juniorLogo;
 
