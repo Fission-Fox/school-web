@@ -134,7 +134,7 @@ const PrintComponent = forwardRef((props: { values: any }, ref: any) => {
         <div>
           <p style={{ fontWeight: "bold" }}>
             {" "}
-            Note: fee Transfer thorough ATM/Internet banking is not allowed
+            Note: fee Transfer thorough ATM/Internet banking is allowed
           </p>
         </div>
       </div>
@@ -240,7 +240,7 @@ const PrintComponent = forwardRef((props: { values: any }, ref: any) => {
         <div>
           <p style={{ fontWeight: "bold" }}>
             {" "}
-            Note: fee Transfer thorough ATM/Internet banking is not allowed
+            Note: fee Transfer thorough ATM/Internet banking is allowed
           </p>
         </div>
       </div>
@@ -346,7 +346,7 @@ const PrintComponent = forwardRef((props: { values: any }, ref: any) => {
         <div>
           <p style={{ fontWeight: "bold" }}>
             {" "}
-            Note: fee Transfer thorough ATM/Internet banking is not allowed
+            Note: fee Transfer thorough ATM/Internet banking is allowed
           </p>
         </div>
       </div>
