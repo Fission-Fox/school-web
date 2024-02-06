@@ -74,7 +74,7 @@ const HomeTestimonial: FC = () => {
   const data: any = [
     {
       id: 1,
-      title: "Detailed learning materials",
+      // title: "Detailed learning materials",
       content:
         "I am grateful for the holistic education I received here, where innovative teaching methods and real-world applications have prepared me to navigate the complexities of the modern world.",
       user: {
@@ -84,7 +84,7 @@ const HomeTestimonial: FC = () => {
     },
     {
       id: 2,
-      title: "Best Quality Online Course!",
+      // title: "Best Quality Online Course!",
       content:
         "The online courses provided by our school are top-notch, offering engaging content and interactive learning experiences that cater to diverse learning styles I appreciate, the high-quality instruction and well-structured curriculum.",
       user: {
@@ -94,7 +94,7 @@ const HomeTestimonial: FC = () => {
     },
     {
       id: 3,
-      title: "Very complete class",
+      // title: "Very complete class",
       content:
         "The class has a perfect balance between theoretical concepts and practical applications, allowing us to develop both a deep understanding of the subject matter and the skills needed in our future careers. It's a truly enriching educational experience.",
       user: {
@@ -114,7 +114,7 @@ const HomeTestimonial: FC = () => {
     },
     {
       id: 5,
-      title: "Detailed learning materials",
+      // title: "Detailed learning materials",
       content:
         "The school's emphasis on holistic development goes beyond academics, promoting character-building, leadership skills, and a sense of social responsibility. I am proud to be associated with an institution that prioritizes both academic excellence and the overall growth of its students.",
       user: {
