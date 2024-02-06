@@ -14,11 +14,11 @@ export default function RisingStar() {
       <div className="flex flex-col justify-center items-center ">
         <table>
           <tr>
-            <h1 className="text-[10px] sm:text-[18px]  font-bold underline">
+            <h1 className="text-[10px] sm:text-[18px]  font-bold underline mt-14 mb-5">
               Session 2021-2022
             </h1>
           </tr>
-          <th className="border-black border-[1px] px-4 sm:px-8 text-[10px] sm:text-[14px]">
+          <th className="border-black border-[1px] px-4 sm:px-8 text-[10px] sm:text-[14px] mt-6">
             Student's Name
           </th>
           <th className="border-black border-[1px] px-4 sm:px-8px-8 text-[10px] sm:text-[14px]">
@@ -67,7 +67,7 @@ export default function RisingStar() {
 
         <table>
           <tr>
-            <h1 className="text-[10px] sm:text-[18px]   font-bold underline">
+            <h1 className="text-[10px] sm:text-[18px]   font-bold underline mt-14 mb-5">
               Session 2022-2023
             </h1>
           </tr>
