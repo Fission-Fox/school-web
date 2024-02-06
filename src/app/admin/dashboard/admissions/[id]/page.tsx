@@ -1,5 +1,5 @@
 "use client";
-import collageLogo from "@/assets/images/bluelogo.png";
+import collegeLogo from "@/assets/images/bluelogo.png";
 import coachingLogo from "@/assets/images/coachinglogo.png";
 import juniorLogo from "@/assets/images/logo3.png";
 import { getSubmissionsByID } from "@/config/firebase";
@@ -29,9 +29,9 @@ export default function Page({ params }: Props) {
   const getImage = () => {
     switch (submission?.admissionFor) {
       case "School":
-        return collageLogo;
-      case "Collage":
-        return collageLogo;
+        return collegeLogo;
+      case "college":
+        return collegeLogo;
       case "Day Care":
         return juniorLogo;
 

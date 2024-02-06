@@ -379,7 +379,7 @@ export default function Admission() {
                     </div>
                     <div className="sm:col-span-4">
                       <Input
-                        label={"Name of last School/Collage *"}
+                        label={"Name of last School/College *"}
                         type="text"
                         htmlFor="last_school"
                         register={{

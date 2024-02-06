@@ -1,4 +1,4 @@
-import collageLogo from "@/assets/images/bluelogo.png";
+import collegeLogo from "@/assets/images/bluelogo.png";
 import coachingLogo from "@/assets/images/coachinglogo.png";
 import juniorLogo from "@/assets/images/logo3.png";
 import Image from "next/image";
@@ -12,9 +12,9 @@ const PrintComponent = forwardRef((props: { values: any }, ref: any) => {
   const getImage = () => {
     switch (props.values?.admissionFor) {
       case "School":
-        return collageLogo;
-      case "Collage":
-        return collageLogo;
+        return collegeLogo;
+      case "College":
+        return collegeLogo;
       case "Day Care":
         return juniorLogo;
 
@@ -134,7 +134,7 @@ const PrintComponent = forwardRef((props: { values: any }, ref: any) => {
         <div>
           <p style={{ fontWeight: "bold" }}>
             {" "}
-            Note: fee Transfer thorough ATM/Internet banking is not allowed
+            Note: fee Transfer thorough ATM/Internet banking is allowed
           </p>
         </div>
       </div>
@@ -240,7 +240,7 @@ const PrintComponent = forwardRef((props: { values: any }, ref: any) => {
         <div>
           <p style={{ fontWeight: "bold" }}>
             {" "}
-            Note: fee Transfer thorough ATM/Internet banking is not allowed
+            Note: fee Transfer thorough ATM/Internet banking is allowed
           </p>
         </div>
       </div>
@@ -346,7 +346,7 @@ const PrintComponent = forwardRef((props: { values: any }, ref: any) => {
         <div>
           <p style={{ fontWeight: "bold" }}>
             {" "}
-            Note: fee Transfer thorough ATM/Internet banking is not allowed
+            Note: fee Transfer thorough ATM/Internet banking is allowed
           </p>
         </div>
       </div>
