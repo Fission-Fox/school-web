@@ -8,8 +8,12 @@ const Navigation: FC = () => {
       label: "Home",
       path: "#", // '/',
     },
+    // {
+    //   label: "Testimonial ",
+    //   path: "#testimonial",
+    // },
     {
-      label: "Testimonial ",
+      label: "Practice Materials ",
       path: "#testimonial",
     },
     {
@@ -17,8 +21,12 @@ const Navigation: FC = () => {
       path: "/student-zone",
     },
     {
-      label: "Junior Zone",
+      label: "Juniors` Zone",
       path: "/junior-zone",
+    },
+    {
+      label: "College",
+      path: "/student-zone",
     },
     {
       label: "Admission",

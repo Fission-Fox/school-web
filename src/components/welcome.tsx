@@ -59,7 +59,7 @@ export default function Welcome() {
                   href=""
                   className="text-left text-[18px] text-[#00306E] font-bold hover:text-[#D2093C]"
                 >
-                  www.studentszone.com.pk
+                  studentzoneschoolingsystemc11@gmail.com
                 </a>
               </div>
             </div>

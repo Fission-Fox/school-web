@@ -2,8 +2,8 @@ import ThemeRegistry from "@/components/ThemeRegistry/ThemeRegistry";
 import "@/styles/globals.css";
 import * as React from "react";
 export const metadata = {
-  title: "Student Zone",
-  description: "Student Zone",
+  title: "Students` Zone",
+  description: "Students` Zone",
 };
 
 export default function RootLayout({
