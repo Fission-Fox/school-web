@@ -125,7 +125,7 @@ export default function WelcomeCollege() {
 
           <div className="flex flex-col lg:flex-row ">
             <button className="mt-10 text-[16px] text-[#00306E]  border-2 rounded-md font-bold px-8  hover:bg-[#D2093C] hover:text-white">
-              Sch
+              Scholarship
               <ArrowForwardIcon />
             </button>
             <div className="flex mt-10 ">
