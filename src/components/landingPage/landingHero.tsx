@@ -180,7 +180,7 @@ const HomeHero: FC = () => {
 
                 {/* </ScrollLink> */}
                 {/* <ScrollLink to="video-section" spy={true} smooth={true} offset={0} duration={350}> */}
-                <Link href={"/junior-zone"}>
+                <Link href={"/college"}>
                   <StyledButton color="dark" size="large" variant="outlined">
                     College
                   </StyledButton>
