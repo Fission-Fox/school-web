@@ -61,7 +61,7 @@ export default function JuniorFooter() {
           Get In Touch
         </div>
         <div className="text-[#ffffff] text-[14px] sm:text-[18px] ">
-          Monday to Friday: 8.30am – 02.00pm
+          Monday to Friday: 7:30am – 02.00pm
         </div>
         <div className="text-[#ffffff] text-[14px] sm:text-[18px] mt-5">
           Saturday, Sunday: <span className="font-bold">Close</span>

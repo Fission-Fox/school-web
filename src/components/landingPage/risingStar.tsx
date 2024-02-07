@@ -1,6 +1,5 @@
-import React from "react";
-import Image from "next/image";
 import images from "@/assets/images/line.png";
+import Image from "next/image";
 export default function RisingStar() {
   return (
     <div className="flex flex-col items-center ">
@@ -119,7 +118,7 @@ export default function RisingStar() {
         </table>
         <div className="mt-20">
           <h1 className="text-[12px] sm:text-[14px] text-center font-bold border-black border-[1px] px-5 sm:px-24">
-            Free Structure for (XI - XII) New Admission 2021-2025
+            Free Structure for (XI - XII) New Admission 2024-2025
           </h1>
           <table>
             <th className="border-black border-[1px] px-6 sm:px-12 mt-3 text-[10px] sm:text-[14px]">
@@ -139,7 +138,7 @@ export default function RisingStar() {
                 Admission
               </td>
               <td className="border-black border-[1px] text-center font-bold">
-                5400
+                54000
               </td>
               <td className="border-black border-[1px] text-center font-bold">
                 <sup>25%off</sup>40500
@@ -212,7 +211,7 @@ export default function RisingStar() {
         <span className="font-extrabold !text-[14px] sm:!text-[18px]">
           Note:
         </span>{" "}
-        Our College Students can avail 50% discount in our Coaching Classes
+        Our College Students can avail 40% discount in our Coaching Classes
       </div>
     </div>
   );

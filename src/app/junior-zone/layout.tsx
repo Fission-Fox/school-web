@@ -4,8 +4,8 @@ import * as React from "react";
 import JuniorLayout from "./components/Layout";
 
 export const metadata = {
-  title: "Junior Zone",
-  description: "Junior Zone",
+  title: "Juniors` Zone",
+  description: "Juniors` Zone",
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

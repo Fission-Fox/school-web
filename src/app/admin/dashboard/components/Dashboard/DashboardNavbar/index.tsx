@@ -21,7 +21,7 @@ const DashboardNavbarComponent = (props: any) => {
     >
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Typography variant="h4" sx={{ color: "black" }}>
-          Student Zone
+          Students` Zone
         </Typography>
       </Box>
     </DashboardNavbarRoot>

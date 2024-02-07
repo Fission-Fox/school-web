@@ -70,7 +70,7 @@ export default function TemporaryDrawer() {
                       Get In Touch
                     </div>
                     <div className="mt-6">
-                      Monday to Friday: <span>8.30am – 02.00pm</span>
+                      Monday to Friday: <span>7:30am – 02.00pm</span>
                     </div>
                     <div className="mt-3">
                       Saturday, Sunday:{" "}
