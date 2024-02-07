@@ -26,7 +26,7 @@ const Navigation: FC = () => {
     },
     {
       label: "College",
-      path: "/student-zone",
+      path: "/college",
     },
     {
       label: "Admission",
