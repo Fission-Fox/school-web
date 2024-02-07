@@ -58,7 +58,8 @@ export default function Header() {
             </div>
             <div>
               <p className="hover:text-[#FFDFC7] cursor-pointer">
-                Studentszone6@gmail.com
+                {/* Studentszone6@gmail.com */}
+                studentzoneschoolingsystemc11@gmail.com
               </p>
             </div>
           </div>

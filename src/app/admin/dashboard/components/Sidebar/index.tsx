@@ -56,7 +56,7 @@ const SidebarComponent = (props: Props) => {
           >
             <div>
               <Typography color="inherit" variant="subtitle1">
-                Student Zone
+                Students` Zone
               </Typography>
             </div>
           </Box>

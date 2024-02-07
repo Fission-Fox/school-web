@@ -14,7 +14,7 @@ function HTMLHeaderComponent({ heading = "" }: Props) {
   //   : `${translate(APP_NAME)} - ${translate(heading)}`;
   return (
     <Head>
-      <title>Student Zone</title>
+      <title>Students` Zone</title>
     </Head>
   );
 }

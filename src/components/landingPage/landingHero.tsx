@@ -167,6 +167,11 @@ const HomeHero: FC = () => {
               </Box>
               <Box sx={{ "& button": { mr: 2 } }}>
                 {/* <ScrollLink to="popular-course" spy={true} smooth={true} offset={0} duration={350}> */}
+                <Link href={"/junior-zone"}>
+                  <StyledButton color="dark" size="large" variant="outlined">
+                    Juniors` Zone
+                  </StyledButton>
+                </Link>
                 <Link href={"/student-zone"}>
                   <StyledButton color="dark" size="large" variant="contained">
                     Schooling System
@@ -177,7 +182,7 @@ const HomeHero: FC = () => {
                 {/* <ScrollLink to="video-section" spy={true} smooth={true} offset={0} duration={350}> */}
                 <Link href={"/junior-zone"}>
                   <StyledButton color="dark" size="large" variant="outlined">
-                    Junior Zone
+                    College
                   </StyledButton>
                 </Link>
 
