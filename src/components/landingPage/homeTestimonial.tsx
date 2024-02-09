@@ -66,8 +66,7 @@ const HomeTestimonial: FC = () => {
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // prevArrow: <SliderArrow type="prev" />,
-    // nextArrow: <SliderArrow type="next" />,
+    dots: true,
   };
   const data: any = [
     {

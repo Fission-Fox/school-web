@@ -684,7 +684,7 @@ export default function Admission() {
                   </p>
                   <p>
                     ✔ If any unseen situation occurs outside the Institute
-                    Students Zone will not be responsible for it.
+                    Students` Zone will not be responsible for it.
                   </p>
                   <p>
                     ✔ Name of the student will be registered after submission

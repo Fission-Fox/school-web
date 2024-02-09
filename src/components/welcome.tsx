@@ -35,7 +35,7 @@ export default function Welcome() {
           <hr className="w-[80%]" />
           <p className=" mt-10 text-[16px] text-[#777777] ">
             <span className="text-[#00306E] font-bold text-[20px] ">
-              Students Zone Coaching Offer{" "}
+              Students` Zone Coaching Offer{" "}
             </span>{" "}
             <br /> IX,X, XI, XII, O ' LeveL, AGA Khan Board, Federal Board,
             Sindh Board, MDCAT, ECAT AND BCAT Aptitude Test Preparation.

@@ -3,7 +3,29 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Image from "next/image";
 
 import image from "@/assets/images/college-cover.jpg";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import Typography from "@mui/material/Typography";
+import { useState } from "react";
+
+const style = {
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  borderRadius: "20px",
+  boxShadow: 24,
+  p: 4,
+};
+
 export default function WelcomeCollege() {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <div>
       <div
@@ -27,7 +49,7 @@ export default function WelcomeCollege() {
             The Most Trusted Name In AKU-EB
           </p>
           <p className="mt-10 text-[20px] text-blue-900 font-bold">
-            Empower Minds, Transform Lives" At students zone college we make
+            Empower Minds, Transform Lives" At Students` Zone college we make
             sure to empower the youth with the power of education to conquer the
             world
           </p>
@@ -109,7 +131,7 @@ export default function WelcomeCollege() {
           <hr className="w-[80%]" />
           <p className=" mt-10 text-[16px] text-[#777777] ">
             <span className="text-[#00306E] font-bold text-[20px] ">
-              Students Zone Coaching Offer{" "}
+              Students` Zone Coaching Offer{" "}
             </span>{" "}
             <br /> IX,X, XI, XII, O ' LeveL, AGA Khan Board, Federal Board,
             Sindh Board, MDCAT, ECAT AND BCAT Aptitude Test Preparation.
@@ -118,7 +140,10 @@ export default function WelcomeCollege() {
           </p>
 
           <div className="flex flex-col lg:flex-row ">
-            <button className="mt-10 text-[16px] text-[#00306E]  border-2 rounded-md font-bold px-8  hover:bg-[#D2093C] hover:text-white">
+            <button
+              onClick={handleOpen}
+              className="mt-10 text-[16px] text-[#00306E]  border-2 rounded-md font-bold px-8  hover:bg-[#D2093C] hover:text-white"
+            >
               Scholarship
               <ArrowForwardIcon />
             </button>
@@ -139,6 +164,19 @@ export default function WelcomeCollege() {
           </div>
         </div>
       </div>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Scholarship Offers for A+ Grade and students of Students` Zone
+            Coaching Center
+          </Typography>
+        </Box>
+      </Modal>
     </div>
   );
 }
