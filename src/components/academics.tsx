@@ -1,8 +1,8 @@
-import academic from "@/assets/images/academic.jpeg";
-import academic2 from "@/assets/images/academic2.jpeg";
-import academic3 from "@/assets/images/academic3.jpeg";
+import academic3 from "@/assets/images/commerceCollege.jpg";
+import academic2 from "@/assets/images/computerCollege.jpg";
 import images from "@/assets/images/line.png";
-import img from "@/assets/images/pic1.jpeg";
+import academic from "@/assets/images/preEngCollege.jpg";
+import img from "@/assets/images/premedicalCollege.jpg";
 import Image from "next/image";
 
 export default function Academics() {
@@ -42,7 +42,7 @@ export default function Academics() {
                 Pre-Medical{" "}
               </p>
               <div className="flex w-full mb-5 ">
-                <p className="text-white font-sans font-bold text-sm  group-hover:!text-gray-500 opacity-80   ml-4 ">
+                {/* <p className="text-white font-sans font-bold text-sm  group-hover:!text-gray-500 opacity-80   ml-4 ">
                   Learn More
                 </p>
                 <svg
@@ -59,7 +59,7 @@ export default function Academics() {
                 >
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+                </svg> */}
               </div>
             </div>
           </div>
@@ -87,10 +87,10 @@ export default function Academics() {
                 Pre-Engineering
               </p>
               <div className="flex w-full mb-5">
-                <p className="text-[white] font-bold text-sm font-sans ml-4  group-hover:!text-gray-500 ">
+                {/* <p className="text-[white] font-bold text-sm font-sans ml-4  group-hover:!text-gray-500 ">
                   Learn More
-                </p>
-                <svg
+                </p> */}
+                {/* <svg
                   className="text-[white]   group-hover:!text-gray-500  "
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -104,7 +104,7 @@ export default function Academics() {
                 >
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+                </svg> */}
               </div>
             </div>
           </div>
@@ -133,10 +133,10 @@ export default function Academics() {
                 Computer Science
               </p>
               <div className="flex w-full mb-5">
-                <p className="text-white font-sans font-bold text-sm ml-4  group-hover:!text-gray-500 ">
+                {/* <p className="text-white font-sans font-bold text-sm ml-4  group-hover:!text-gray-500 ">
                   Learn More
-                </p>
-                <svg
+                </p> */}
+                {/* <svg
                   className="text-[white]  group-hover:!text-gray-500  "
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -150,7 +150,7 @@ export default function Academics() {
                 >
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+                </svg> */}
               </div>
             </div>
           </div>
@@ -179,7 +179,7 @@ export default function Academics() {
                 Commerce
               </p>
               <div className="flex w-full mb-5">
-                <p className="text-white font-sans font-bold text-sm  ml-4  group-hover:!text-gray-500">
+                {/* <p className="text-white font-sans font-bold text-sm  ml-4  group-hover:!text-gray-500">
                   Learn More
                 </p>
                 <svg
@@ -196,7 +196,7 @@ export default function Academics() {
                 >
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+                </svg> */}
               </div>
             </div>
           </div>

@@ -1,5 +1,4 @@
 import comment from "@/assets/images/comment.png";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Image from "next/image";
 
 import image from "@/assets/images/picimage.png";
@@ -23,7 +22,7 @@ export default function Welcome() {
           <p className="mt-10 text-[20px] text-blue-900 font-bold">
             The Most Trusted Name In AKU-EB & Federal Board
           </p>
-          <p className="mt-10 text-[16px] text-[#777777] mb-10">
+          {/* <p className="mt-10 text-[16px] text-[#777777] mb-10">
             Have questions?
             <a
               href="#"
@@ -32,7 +31,7 @@ export default function Welcome() {
               {" "}
               Get Free Guide{" "}
             </a>
-          </p>
+          </p> */}
           <hr className="w-[80%]" />
           <p className=" mt-10 text-[16px] text-[#777777] ">
             <span className="text-[#00306E] font-bold text-[20px] ">
@@ -45,10 +44,10 @@ export default function Welcome() {
           </p>
 
           <div className="flex flex-col lg:flex-row ">
-            <button className="mt-10 text-[16px] text-[#00306E]  border-2 rounded-md font-bold px-8  hover:bg-[#D2093C] hover:text-white">
+            {/* <button className="mt-10 text-[16px] text-[#00306E]  border-2 rounded-md font-bold px-8  hover:bg-[#D2093C] hover:text-white">
               Read More
               <ArrowForwardIcon />
-            </button>
+            </button> */}
             <div className="flex mt-10 ">
               <div className="ml-6">
                 <Image src={comment} alt="" />

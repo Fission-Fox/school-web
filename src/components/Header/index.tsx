@@ -6,6 +6,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import TemporaryDrawer from "../menu";
 export default function Header() {
@@ -13,6 +14,7 @@ export default function Header() {
   const toggleMenu = () => {
     setMenu(!isOpen);
   };
+  const pathname = usePathname();
   return (
     <nav className="fixed z-50 w-full top-0">
       <div className="bg-[#00306e]  text-[14px] text-[white] !hidden lg:!flex justify-around gap-5  h-10 items-center ">
@@ -87,12 +89,21 @@ export default function Header() {
           />
         </div>
         <div className="invisible lg:visible w-0 lg:w-auto flex text-[#00306e] !text-base xl:!text-lg gap-10 xl:gap-20 font-semibold">
-          <Link href="/student-zone#coverimg">
+          <Link href="#coverimg">
             <div>
               {" "}
               <p className="hover:text-[#D2093C] cursor-pointer">Home</p>
             </div>
           </Link>
+
+          {pathname === "/college" && (
+            <Link href="#about">
+              <div>
+                {" "}
+                <p className="hover:text-[#D2093C] cursor-pointer">About Us</p>
+              </div>
+            </Link>
+          )}
           <Link href="#academics">
             <div>
               {" "}
@@ -104,17 +115,23 @@ export default function Header() {
               <p className="hover:text-[#D2093C] cursor-pointer">Campus life</p>
             </div>
           </Link>
-          <Link href="#upcoming">
-            <div>
-              {" "}
-              <p className="hover:text-[#D2093C] cursor-pointer">Events</p>
-            </div>
-          </Link>
-          <Link href="#student">
-            <div>
-              <p className="hover:text-[#D2093C] cursor-pointer">Testimonial</p>
-            </div>
-          </Link>
+          {pathname !== "/college" && (
+            <>
+              <Link href="#upcoming">
+                <div>
+                  {" "}
+                  <p className="hover:text-[#D2093C] cursor-pointer">Events</p>
+                </div>
+              </Link>
+              <Link href="#student">
+                <div>
+                  <p className="hover:text-[#D2093C] cursor-pointer">
+                    Testimonial
+                  </p>
+                </div>
+              </Link>
+            </>
+          )}
           <Link href="/">
             <div>
               <p className="hover:text-[#D2093C] cursor-pointer">Main Page</p>

@@ -144,7 +144,7 @@ export default function Admission() {
   const admissionTypeName = filteredAdmission?.find(
     (itm) => itm.id === formType,
   );
-
+  const admissionForName = admissionfor?.find((itm) => itm.id === admissionFor);
   const componentRef: any = useRef();
   return (
     <div className="w-full bg-slate-200 py-10 ">
@@ -197,7 +197,7 @@ export default function Admission() {
                   admissionType: admissionTypeName?.admissionType,
                   classID: classe ?? "",
                   class: className?.class ?? "",
-                  subjects: selectedSubjects,
+                  subjects: selectedSubjects ?? "",
                 });
                 await addSubmission(
                   {
@@ -206,9 +206,9 @@ export default function Admission() {
                     admissionForID: admissionFor,
                     admissionTypeID: formType,
                     admissionType: admissionTypeName?.admissionType,
-                    classID: classe,
-                    class: className?.class,
-                    subjects: selectedSubjects,
+                    classID: classe ?? "",
+                    class: className?.class ?? "",
+                    subjects: selectedSubjects ?? "",
                   },
                   file,
                 );
@@ -283,11 +283,13 @@ export default function Admission() {
                         : []
                     }
                   />
-                  <SelectDropdown
-                    setValue={setClass}
-                    label={"Classes"}
-                    list={getClasses() ?? []}
-                  />
+                  {admissionForName?.admissionFor !== "Pre Primary" && (
+                    <SelectDropdown
+                      setValue={setClass}
+                      label={"Classes"}
+                      list={getClasses() ?? []}
+                    />
+                  )}
                 </>
               )}
             </div>

@@ -6,7 +6,10 @@ import image from "@/assets/images/college-cover.jpg";
 export default function WelcomeCollege() {
   return (
     <div>
-      <div className="flex flex-col items-center lg:flex-row justify-center gap-28 mt-36 px-3 w-[90%] lg:w-[80%] m-auto">
+      <div
+        className="flex flex-col items-center lg:flex-row justify-center gap-28 mt-36 px-3 w-[90%] lg:w-[80%] m-auto"
+        id="about"
+      >
         <div className="lg:w-[50%]">
           <Image src={image} alt=" image" />
         </div>
@@ -102,16 +105,7 @@ export default function WelcomeCollege() {
               <p>Commerce</p>
             </div>
           </div>
-          <p className="mt-10 text-[16px] text-[#777777] mb-10">
-            Have questions?
-            <a
-              href="#"
-              className="text-[#D2093C] text-[16px] font-bold underline "
-            >
-              {" "}
-              Get Free Guide{" "}
-            </a>
-          </p>
+
           <hr className="w-[80%]" />
           <p className=" mt-10 text-[16px] text-[#777777] ">
             <span className="text-[#00306E] font-bold text-[20px] ">

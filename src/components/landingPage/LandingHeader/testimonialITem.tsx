@@ -27,6 +27,7 @@ const TestimonialItem: FC<Props> = ({ item }) => {
           overflow: "hidden",
           display: "flex",
           alignItems: "center",
+          justifyContent: "center",
           width: 270,
           backgroundColor: "background.paper",
         }}
@@ -51,6 +52,15 @@ const TestimonialItem: FC<Props> = ({ item }) => {
             quality={97}
             alt={item.user.name}
           /> */}
+          <Box sx={{ width: "100%" }}>
+            <Image
+              src={item?.img}
+              width={520}
+              height={540}
+              quality={97}
+              alt="Testimonial img"
+            />
+          </Box>
         </Box>
         <Box>
           <Typography variant="h6">{item.user.name}</Typography>

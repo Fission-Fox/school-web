@@ -1,4 +1,5 @@
 import LandingHeader from "@/components/landingPage/LandingHeader";
+import CeoMessage from "@/components/landingPage/ceoMessage";
 import HomeTestimonial from "@/components/landingPage/homeTestimonial";
 import LandingFooter from "@/components/landingPage/landingFooter";
 import HomeHero from "@/components/landingPage/landingHero";
@@ -10,6 +11,7 @@ export default function page() {
       <LandingHeader />
       <HomeHero />
       <HomeTestimonial />
+      <CeoMessage />
       <RisingStar />
       <LandingFooter />
     </div>

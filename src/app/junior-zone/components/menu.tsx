@@ -94,7 +94,7 @@ export default function TemporaryDrawer() {
                       <div>
                         Phone:{" "}
                         <span className="hover:text-[#EC063C] cursor-pointer">
-                          (021) 34973439
+                          (021) 34973439, 03332044329
                         </span>
                       </div>
                     </div>
