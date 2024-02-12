@@ -121,23 +121,29 @@ export default function Admission() {
         data = filteredClass.filter(
           (itm) => itm.class == " XI" || itm.class == "XII",
         );
-        return data?.map((itm: any) => {
-          return { name: itm.class, ...itm };
-        });
+        return data
+          ?.sort((a: any, b: any) => a?.order - b?.order)
+          ?.map((itm: any) => {
+            return { name: itm.class, ...itm };
+          });
       }
 
       if (admissionFor === "sr1xzIrr1LygTQQRyBGy") {
         data = filteredClass.filter(
           (itm) => !itm?.class?.includes("XI") && !itm?.class?.includes("XII"),
         );
-        return data?.map((itm: any) => {
-          return { name: itm.class, ...itm };
-        });
+        return data
+          .sort((a: any, b: any) => a?.order - b?.order)
+          .map((itm: any) => {
+            return { name: itm.class, ...itm };
+          });
       }
 
-      return filteredClass?.map((itm: any) => {
-        return { name: itm.class, ...itm };
-      });
+      return filteredClass
+        ?.sort((a: any, b: any) => a?.order - b?.order)
+        ?.map((itm: any) => {
+          return { name: itm.class, ...itm };
+        });
     }
   };
 
