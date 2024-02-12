@@ -63,7 +63,7 @@ export default function CeoMessage() {
           >
             <Image
               src="/images/ceo.jpg"
-              style={{ borderRadius: "50%" }}
+              style={{ borderRadius: "50%", maxWidth: "100%" }}
               width={300}
               height={540}
               quality={97}

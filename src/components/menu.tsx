@@ -6,13 +6,15 @@ import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import * as React from "react";
 type Anchor = "top";
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
     top: false,
   });
-
+  const pathname = usePathname();
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -70,23 +72,75 @@ export default function TemporaryDrawer() {
                 </div>
               </div>
 
-              <div>
-                <p className=" px-4 py-4 font-bold h-14 items-center text-[#00306e] hover:text-[#D2093C]">
-                  Home
-                </p>
-              </div>
-              <hr />
-              <div className="px-4 py-4 font-bold h-14  text-[#00306e] hover:text-[#D2093C]">
-                Pages
-              </div>
-              <hr />
-              <hr />
-              <div className="px-4 py-4 font-bold h-14  text-[#00306e] hover:text-[#D2093C]">
-                Blogs
-              </div>
-              <hr />
-              <div className="px-4 py-4 font-bold h-14  text-[#00306e] hover:text-[#D2093C]">
-                Contact
+              <div className=" w-auto flex flex-col items-center  text-[#00306e] !text-base xl:!text-lg gap-6  font-semibold">
+                <Link href="#coverimg" onClick={toggleDrawer(anchor, false)}>
+                  <div>
+                    {" "}
+                    <p className="hover:text-[#D2093C] cursor-pointer">Home</p>
+                  </div>
+                  <hr />
+                </Link>
+                {pathname === "/college" && (
+                  <Link href="#about" onClick={toggleDrawer(anchor, false)}>
+                    <div>
+                      {" "}
+                      <p className="hover:text-[#D2093C] cursor-pointer">
+                        About Us
+                      </p>
+                    </div>
+                    <hr />
+                  </Link>
+                )}
+                <Link href="#academics" onClick={toggleDrawer(anchor, false)}>
+                  <div>
+                    {" "}
+                    <p className="hover:text-[#D2093C] cursor-pointer">
+                      Academics
+                    </p>
+                  </div>
+                  <hr />
+                </Link>
+                <Link href="#campuslife" onClick={toggleDrawer(anchor, false)}>
+                  <div>
+                    <p className="hover:text-[#D2093C] cursor-pointer">
+                      Campus life
+                    </p>
+                  </div>
+                  <hr />
+                </Link>
+                {pathname !== "/college" && (
+                  <>
+                    <Link
+                      href="#upcoming"
+                      onClick={toggleDrawer(anchor, false)}
+                    >
+                      <div>
+                        {" "}
+                        <p className="hover:text-[#D2093C] cursor-pointer">
+                          Events
+                        </p>
+                      </div>
+                      <hr />
+                    </Link>
+                    <Link href="#student" onClick={toggleDrawer(anchor, false)}>
+                      <div>
+                        <p className="hover:text-[#D2093C] cursor-pointer">
+                          Testimonial
+                        </p>
+                      </div>
+                      <hr />
+                    </Link>
+                  </>
+                )}
+                <Link href="/" onClick={toggleDrawer(anchor, false)}>
+                  <div>
+                    <p className="hover:text-[#D2093C] cursor-pointer">
+                      Main Page
+                    </p>
+                  </div>
+                  <hr />
+                </Link>
+                <br />
               </div>
             </div>
           </Drawer>

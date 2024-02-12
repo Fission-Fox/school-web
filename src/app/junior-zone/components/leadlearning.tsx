@@ -75,6 +75,17 @@ export default function Leadlearning() {
         </div>
         <div>
           <p className="text-[16px] xl:text-[18px]">
+            At the Juniors zone we strive to turn the learning process into a
+            bright new exciting trip
+            <br className="!hidden lg:!flex" /> towards knowledge. your child
+            will be learning the alphabet phonics,numbers,fine motor skills,art
+            and craft, <br className="!hidden lg:!flex" /> and pre writing
+            skills. Your child will be meeting many new friends and will be able
+            to establish a strong connection
+            <br className="!hidden lg:!flex" /> with them as well as the
+            environment.
+            {/* 
+
             your child will be learning the alphabet phonics, numbers, fine
             motors skills art crafts,
             <br />
@@ -84,7 +95,7 @@ export default function Leadlearning() {
             bright new exciting <br />
             relationships, we have specious playground where your children can
             laugh, run and <br />
-            have fun!
+            have fun! */}
           </p>
         </div>
         <div className="flex  items-center gap-10">

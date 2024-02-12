@@ -41,12 +41,13 @@ export default function WelcomeCollege() {
             Welcome to
           </h2>
           <h1 className="text-[50px] font-sans font-bold text-[#D2093C]">
-            Student's Zone <br />
+            Students` Zone <br />
             Intermediate Program
           </h1>
 
           <p className="mt-10 text-[20px] text-blue-900 font-bold">
-            The Most Trusted Name In AKU-EB
+            The Most Trusted Name In{" "}
+            <span className=" whitespace-nowrap">AKU-EB</span>
           </p>
           <p className="mt-10 text-[20px] text-blue-900 font-bold">
             Empower Minds, Transform Lives" At Students` Zone college we make

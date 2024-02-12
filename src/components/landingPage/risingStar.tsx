@@ -18,7 +18,7 @@ export default function RisingStar() {
             </h1>
           </tr>
           <th className="border-black border-[1px] px-4 sm:px-8 text-[10px] sm:text-[14px] mt-6">
-            Student's Name
+            Students` Name
           </th>
           <th className="border-black border-[1px] px-4 sm:px-8px-8 text-[10px] sm:text-[14px]">
             Percentage % Scored
@@ -71,7 +71,7 @@ export default function RisingStar() {
             </h1>
           </tr>
           <th className="border-black border-[1px] px-4 sm:px-8 text-[10px] sm:text-[14px]">
-            Student's Name
+            Students` Name
           </th>
           <th className="border-black border-[1px] px-4 sm:px-8 text-[10px] sm:text-[14px]">
             Percentage % Scored

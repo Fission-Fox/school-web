@@ -133,7 +133,7 @@ export default function Upcoming() {
           {/* <div className="flex flex-wrap justify-center items-center m-auto flex-col lg:flex-row  gap-10"> */}
           <div className="bg-[#fff] w-[300px] !py-10 xl:!py-14 ">
             <p className="text-[#D2093C] text-[20px] font-sans font-semibold leading-8 px-10">
-              STUDENT'S WEEK 2022
+              Students` WEEK 2022
             </p>
             <div className="px-10">
               <p className="text-[#00306e] text-[12px] xl:text-[18px] font-sans  leading-7 mt-1">

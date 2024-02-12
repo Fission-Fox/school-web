@@ -657,7 +657,7 @@ export default function Admission() {
                     calculators, mobile and other things
                   </p>
                   <p>
-                    ✔ If the student's card is lost, he/she will have to pay
+                    ✔ If the Students` card is lost, he/she will have to pay
                     Rs. 200/- for the issuance of new card
                   </p>
                   <p>
