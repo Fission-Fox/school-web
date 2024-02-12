@@ -84,7 +84,7 @@ export default function JuniorFooter() {
           <div className="text-[#ffffff] text-[14px] sm:text-[18px] ">
             Phone:{" "}
             <span className="hover:text-[#E8063C] cursor-pointer">
-              (021) 34973439
+              (021) 34973439, 03332044329
             </span>
           </div>
         </div>

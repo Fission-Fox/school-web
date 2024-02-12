@@ -3,11 +3,9 @@ import IconArrowBack from "@mui/icons-material/ArrowBack";
 import IconArrowForward from "@mui/icons-material/ArrowForward";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
-import Image from "next/image";
 import { FC, useRef } from "react";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
@@ -68,58 +66,62 @@ const HomeTestimonial: FC = () => {
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // prevArrow: <SliderArrow type="prev" />,
-    // nextArrow: <SliderArrow type="next" />,
+    dots: true,
   };
   const data: any = [
     {
       id: 1,
       // title: "Detailed learning materials",
+      img: "/images/Alishbah.png",
       content:
-        "I am grateful for the holistic education I received here, where innovative teaching methods and real-world applications have prepared me to navigate the complexities of the modern world.",
+        "With dreams in my eyes,determination,dedication and goaI to become a future doctor, I entered Students’ Zone in 2014 and stayed with them till 2018.With all my hardwork and with help of subject experts provided by students‘ zone I proudly announce that, yes I am just an year away from achieving my MBBS degree. If you know you want to work hard for your dream then all you need to achieve it, is proper guidance,support and a system to train you for that and Students’ Zone is that platform.",
       user: {
         id: 1,
-        name: "Muneeb parkar",
+        name: "Alishabah",
       },
     },
     {
       id: 2,
       // title: "Best Quality Online Course!",
+      img: "/images/Edhwa.png",
       content:
-        "The online courses provided by our school are top-notch, offering engaging content and interactive learning experiences that cater to diverse learning styles I appreciate, the high-quality instruction and well-structured curriculum.",
+        "It is with great pleasure that I write this testimonial for Student’s Zone. The skills and knowledge I gained from this institution were invaluable. From study guides to mock exams, everything was designed to help students achieve their goals and succeed academically. I would highly recommend Student’s Zone to anyone looking for their academic pursuits and I am grateful for the skills and knowledge I gained during my time as a student here",
       user: {
         id: 1,
-        name: "Shayan mehdi",
+        name: "Edhwa khan",
       },
     },
     {
       id: 3,
       // title: "Very complete class",
+      img: "/images/Shujaat.png",
       content:
-        "The class has a perfect balance between theoretical concepts and practical applications, allowing us to develop both a deep understanding of the subject matter and the skills needed in our future careers. It's a truly enriching educational experience.",
+        " I was just a simple student like you all. The reason behind my  success  is resilience and consistency that I learned through my days here in Students’ Zone. After my ﬁrst interaction with Sir Ali Dilshad as our physics teacher, after my whole concept toward studies took a u-turn. His concepts and well directed teaching have brought the  Students‘ Zone, where it is today. I'm pretty sure if you have the current to grow, Students’ Zone will make sure to direct that current in the right path of success.",
       user: {
         id: 1,
-        name: "Muhammad Maaz",
+        name: "Shujaat Abbas",
       },
     },
     {
       id: 4,
-      title: "Great Quality!",
+      // title: "Great Quality!",
+      img: "/images/Hunain.png",
       content:
-        "The exceptional quality of education at our school has truly transformed my learning experience. The dedicated teachers and cutting-edge curriculum have equipped me with the skills and knowledge needed for success in today's competitive world.",
+        "I am currently working as Equity Fund Specialist at Faysal Funds and am a CFA Charter Holder. I have also done my BBA and MBA in Finance from Institute of Business Management. I was a student of the Students’ Zone in 2008-2009. I highly recommend Students’ Zone to students as the institute is one of the pioneers and most experienced in the preparation for Aga Khan Board Exams. The teachers are highly experienced and skilled and provide rigorous teaching and guidance to students to help them outshine.",
       user: {
         id: 1,
-        name: "Anus shams",
+        name: "Muhammad Hunain",
       },
     },
     {
       id: 5,
       // title: "Detailed learning materials",
+      img: "/images/Hadi.png",
       content:
-        "The school's emphasis on holistic development goes beyond academics, promoting character-building, leadership skills, and a sense of social responsibility. I am proud to be associated with an institution that prioritizes both academic excellence and the overall growth of its students.",
+        "During the crucial stages of my academic life, specifically in 9th and 10th grade, I made the decision to enroll in Students’ Zone, an educational institution that played a pivotal role in shaping my future. Fortunately, I had the privilege of being taught by exceptional teachers at Students’ Zone, particularly Sir Ali Dilshad for Physics and Sir Kashif for Chemistry. Their dedication and passion for their subjects made the learning process not only engaging but also fostered a deeper understanding of the material.",
       user: {
         id: 1,
-        name: "Muhib khan",
+        name: "Dr. Hadi Hassan",
       },
     },
   ];
@@ -130,55 +132,54 @@ const HomeTestimonial: FC = () => {
       sx={{ pb: { xs: 6, md: 10 }, backgroundColor: "background.paper" }}
     >
       <Container>
-        <Grid container spacing={5}>
-          <Grid item xs={12} md={6}>
+        <div className="w-[95%] md:w-[80%] m-auto">
+          <Typography
+            component="h2"
+            sx={{
+              position: "relative",
+              fontSize: { xs: 36, md: 46 },
+              mt: { xs: 0, md: 7 },
+              mb: 4,
+              lineHeight: 1,
+              fontWeight: "bold",
+            }}
+          >
+            Testimonial What our{" "}
             <Typography
-              component="h2"
+              component="mark"
               sx={{
                 position: "relative",
-                fontSize: { xs: 36, md: 46 },
-                mt: { xs: 0, md: 7 },
-                mb: 4,
-                lineHeight: 1,
-                fontWeight: "bold",
+                color: "#074886",
+                fontSize: "inherit",
+                fontWeight: "inherit",
+                backgroundColor: "unset",
               }}
             >
-              Testimonial What our{" "}
-              <Typography
-                component="mark"
+              Students{" "}
+              <Box
                 sx={{
-                  position: "relative",
-                  color: "#074886",
-                  fontSize: "inherit",
-                  fontWeight: "inherit",
-                  backgroundColor: "unset",
+                  position: "absolute",
+                  top: { xs: 30, md: 60 },
+                  left: 2,
+                  "& img": { width: { xs: 130, md: 175 }, height: "auto" },
                 }}
               >
-                Students{" "}
-                <Box
-                  sx={{
-                    position: "absolute",
-                    top: { xs: 30, md: 60 },
-                    left: 2,
-                    "& img": { width: { xs: 130, md: 175 }, height: "auto" },
-                  }}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/images/headline-curve.svg" alt="Headline curve" />
-                </Box>
-              </Typography>
-              Say
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/headline-curve.svg" alt="Headline curve" />
+              </Box>
             </Typography>
+            Say
+          </Typography>
 
-            <StyledSlickContainer>
-              <Slider ref={sliderRef} {...sliderConfig}>
-                {data.map((item: any, index: any) => (
-                  <TestimonialItem key={String(index)} item={item} />
-                ))}
-              </Slider>
-            </StyledSlickContainer>
-          </Grid>
-          <Grid
+          <StyledSlickContainer>
+            <Slider ref={sliderRef} {...sliderConfig}>
+              {data.map((item: any, index: any) => (
+                <TestimonialItem key={String(index)} item={item} />
+              ))}
+            </Slider>
+          </StyledSlickContainer>
+        </div>
+        {/* <Grid
             item
             xs={12}
             md={6}
@@ -193,8 +194,7 @@ const HomeTestimonial: FC = () => {
                 alt="Testimonial img"
               />
             </Box>
-          </Grid>
-        </Grid>
+          </Grid> */}
       </Container>
     </Box>
   );

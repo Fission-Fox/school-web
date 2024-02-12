@@ -1,7 +1,6 @@
-import main2 from "@/assets/images/main2.jpg";
 import line from "@/assets/images/line.png";
+import main2 from "@/assets/images/main2.jpg";
 import shape from "@/assets/images/shape.png";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 import SettingsIcon from "@mui/icons-material/Settings";
@@ -92,14 +91,14 @@ export default function Campuslife() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center mt-6 ">
+      {/* <div className="flex justify-center mt-6 ">
         <button className="mt-10 text-[16px] text-[#00306E]  border-2 rounded font-bold px-10 py-3 hover:bg-[#D2093C] hover:text-white">
           <p>
             {" "}
             More about Campus Life <ArrowForwardIcon />
           </p>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

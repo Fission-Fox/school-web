@@ -153,7 +153,7 @@ export default function Footer() {
       <div className=" flex flex-col lg:flex-row  lg:justify-between pl-4 pr-2 pt-8 bg-[#000000] pb-8 items-center">
         <div className="ml-0 lg:ml-52 text-[#ffffff] gap-1 flex text-[15px]">
           <p>
-            © 2024 <span className="text-[#D2093C]">Student's Zone</span>
+            © 2024 <span className="text-[#D2093C]">Students` Zone</span>
             <span>All Rights Reserved</span>
           </p>
         </div>

@@ -121,30 +121,36 @@ export default function Admission() {
         data = filteredClass.filter(
           (itm) => itm.class == " XI" || itm.class == "XII",
         );
-        return data?.map((itm: any) => {
-          return { name: itm.class, ...itm };
-        });
+        return data
+          ?.sort((a: any, b: any) => a?.order - b?.order)
+          ?.map((itm: any) => {
+            return { name: itm.class, ...itm };
+          });
       }
 
       if (admissionFor === "sr1xzIrr1LygTQQRyBGy") {
         data = filteredClass.filter(
           (itm) => !itm?.class?.includes("XI") && !itm?.class?.includes("XII"),
         );
-        return data?.map((itm: any) => {
-          return { name: itm.class, ...itm };
-        });
+        return data
+          .sort((a: any, b: any) => a?.order - b?.order)
+          .map((itm: any) => {
+            return { name: itm.class, ...itm };
+          });
       }
 
-      return filteredClass?.map((itm: any) => {
-        return { name: itm.class, ...itm };
-      });
+      return filteredClass
+        ?.sort((a: any, b: any) => a?.order - b?.order)
+        ?.map((itm: any) => {
+          return { name: itm.class, ...itm };
+        });
     }
   };
 
   const admissionTypeName = filteredAdmission?.find(
     (itm) => itm.id === formType,
   );
-
+  const admissionForName = admissionfor?.find((itm) => itm.id === admissionFor);
   const componentRef: any = useRef();
   return (
     <div className="w-full bg-slate-200 py-10 ">
@@ -197,7 +203,7 @@ export default function Admission() {
                   admissionType: admissionTypeName?.admissionType,
                   classID: classe ?? "",
                   class: className?.class ?? "",
-                  subjects: selectedSubjects,
+                  subjects: selectedSubjects ?? "",
                 });
                 await addSubmission(
                   {
@@ -206,9 +212,9 @@ export default function Admission() {
                     admissionForID: admissionFor,
                     admissionTypeID: formType,
                     admissionType: admissionTypeName?.admissionType,
-                    classID: classe,
-                    class: className?.class,
-                    subjects: selectedSubjects,
+                    classID: classe ?? "",
+                    class: className?.class ?? "",
+                    subjects: selectedSubjects ?? "",
                   },
                   file,
                 );
@@ -283,11 +289,13 @@ export default function Admission() {
                         : []
                     }
                   />
-                  <SelectDropdown
-                    setValue={setClass}
-                    label={"Classes"}
-                    list={getClasses() ?? []}
-                  />
+                  {admissionForName?.admissionFor !== "Pre Primary" && (
+                    <SelectDropdown
+                      setValue={setClass}
+                      label={"Classes"}
+                      list={getClasses() ?? []}
+                    />
+                  )}
                 </>
               )}
             </div>
@@ -655,7 +663,7 @@ export default function Admission() {
                     calculators, mobile and other things
                   </p>
                   <p>
-                    ✔ If the student's card is lost, he/she will have to pay
+                    ✔ If the Students` card is lost, he/she will have to pay
                     Rs. 200/- for the issuance of new card
                   </p>
                   <p>
@@ -682,7 +690,7 @@ export default function Admission() {
                   </p>
                   <p>
                     ✔ If any unseen situation occurs outside the Institute
-                    Students Zone will not be responsible for it.
+                    Students` Zone will not be responsible for it.
                   </p>
                   <p>
                     ✔ Name of the student will be registered after submission

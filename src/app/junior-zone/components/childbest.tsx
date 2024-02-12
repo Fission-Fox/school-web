@@ -8,17 +8,17 @@ export default function Childbest() {
         <div className="flex flex-col">
           <div>
             <p className="text-[40px] sm:text-[60px] font-bold">
-              Safety & security
+              Safety & Security
             </p>
           </div>
           <div>
             <p className="text-[16px] sm:text-[18px] text-[#444444] w-[90%] sm:w-[453px]">
-              we have the proper measure in palace such as secure entrance ,
+              we have the proper measure in place such as secure entrance ,
               emergency procedures and security cameras
             </p>
           </div>
           <div className="text-[16px ] text-[#444444] mt-10 ">
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-start">
               <div className="text-[#EC3C66]">
                 <TaskAltIcon />
               </div>
@@ -29,7 +29,7 @@ export default function Childbest() {
                 </p>
               </div>
             </div>
-            <div className="flex gap-2 items-center mt-3">
+            <div className="flex gap-2 items-start mt-3">
               <div className="text-[#EC3C66]">
                 <TaskAltIcon />
               </div>
@@ -40,7 +40,7 @@ export default function Childbest() {
                 </p>
               </div>
             </div>
-            <div className="flex gap-2 items-center mt-3">
+            <div className="flex gap-2 items-start mt-3">
               <div className="text-[#EC3C66]">
                 <TaskAltIcon />
               </div>
@@ -49,14 +49,6 @@ export default function Childbest() {
                   We use bright wheel so that you can check on your's child
                   safety
                 </p>
-              </div>
-            </div>
-            <div className="flex gap-2 items-center mt-3">
-              <div className="text-[#EC3C66]">
-                <TaskAltIcon />
-              </div>
-              <div className="">
-                <p>Yo can check daily progress</p>
               </div>
             </div>
           </div>

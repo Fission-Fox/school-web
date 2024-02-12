@@ -94,7 +94,7 @@ export default function TemporaryDrawer() {
                       <div>
                         Phone:{" "}
                         <span className="hover:text-[#EC063C] cursor-pointer">
-                          (021) 34973439
+                          (021) 34973439, 03332044329
                         </span>
                       </div>
                     </div>
@@ -204,7 +204,10 @@ export default function TemporaryDrawer() {
                     <div className="mt-10">
                       <div className="flex justify-between ml-7 mr-7">
                         <div className="flex gap-2 items-center">
-                          <Link href={"#home"}>
+                          <Link
+                            href={"#home"}
+                            onClick={toggleDrawer(anchor, false)}
+                          >
                             <div className="font-extrabold">Home</div>
                           </Link>
                         </div>
@@ -214,7 +217,10 @@ export default function TemporaryDrawer() {
                     <div className="mt-3">
                       <div className="flex justify-between ml-7 mr-7">
                         <div className="flex gap-2 items-center">
-                          <Link href={"#aboutUs"}>
+                          <Link
+                            href={"#aboutUs"}
+                            onClick={toggleDrawer(anchor, false)}
+                          >
                             <div className="font-extrabold">About Us</div>
                           </Link>
                         </div>
@@ -224,7 +230,10 @@ export default function TemporaryDrawer() {
                     <div className="mt-3">
                       <div className="flex justify-between ml-7 mr-7">
                         <div className="flex gap-2 items-center">
-                          <Link href={"#classes"}>
+                          <Link
+                            href={"#classes"}
+                            onClick={toggleDrawer(anchor, false)}
+                          >
                             <div className="font-extrabold">Classes</div>
                           </Link>
                         </div>
@@ -244,7 +253,10 @@ export default function TemporaryDrawer() {
                     <div className="mt-3">
                       <div className="flex justify-between ml-7 mr-7">
                         <div className="flex gap-2 items-center">
-                          <Link href={"#testimonial"}>
+                          <Link
+                            href={"#testimonial"}
+                            onClick={toggleDrawer(anchor, false)}
+                          >
                             <div className="font-extrabold">Testimonials</div>
                           </Link>
                         </div>
@@ -254,8 +266,21 @@ export default function TemporaryDrawer() {
                     <div className="mt-3">
                       <div className="flex justify-between ml-7 mr-7">
                         <div className="flex gap-2 items-center">
-                          <Link href={"#contact"}>
+                          <Link
+                            href={"#contact"}
+                            onClick={toggleDrawer(anchor, false)}
+                          >
                             <div className="font-extrabold">Contact Us</div>
+                          </Link>
+                        </div>
+                      </div>
+                      <hr className="w-[80%] ml-8 mt-3" />
+                    </div>
+                    <div className="mt-3">
+                      <div className="flex justify-between ml-7 mr-7">
+                        <div className="flex gap-2 items-center">
+                          <Link href={"/"}>
+                            <div className="font-extrabold"> Main Page</div>
                           </Link>
                         </div>
                       </div>

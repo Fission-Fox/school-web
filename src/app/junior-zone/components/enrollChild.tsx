@@ -1,12 +1,11 @@
-import React from "react";
-import ShieldIcon from "@mui/icons-material/Shield";
-import LocalPizzaIcon from "@mui/icons-material/LocalPizza";
-import ExtensionIcon from "@mui/icons-material/Extension";
-import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
+import image3 from "@/assets/images/0L0A5554.jpeg";
 import image1 from "@/assets/images/1.jpeg";
 import image2 from "@/assets/images/2.jpeg";
-import image3 from "@/assets/images/0L0A5554.jpeg";
 import image4 from "@/assets/images/student.jpeg";
+import ExtensionIcon from "@mui/icons-material/Extension";
+import LocalPizzaIcon from "@mui/icons-material/LocalPizza";
+import ShieldIcon from "@mui/icons-material/Shield";
+import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
 import Image from "next/image";
 export default function EnrollChild() {
   return (
@@ -20,7 +19,7 @@ export default function EnrollChild() {
       </div>
       <div>
         <p className="text-[20px] sm:!text-[30px] lg:!text-[48px] font-bold flex justify-center items-center mt-10">
-          Enrol Your Child In A Session Now!
+          Enrol your child now!
         </p>
       </div>
       <div>

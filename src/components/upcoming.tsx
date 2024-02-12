@@ -1,12 +1,8 @@
-import React from "react";
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
 import line from "@/assets/images/line.png";
+import Image from "next/image";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import PersonPinCircleIcon from "@mui/icons-material/PersonPinCircle";
-import { ClassNames } from "@emotion/react";
 export default function Upcoming() {
   return (
     <div className=" bg-[#f8f7f7] w-full mt-6 pt-20 pb-40" id="upcoming">
@@ -87,7 +83,7 @@ export default function Upcoming() {
             <div className="px-10">
               <p className="text-[#00306e] text-[12px] xl:text-[18px] font-sans  leading-7 mt-1">
                 The school elections are one of the most important events among
-                other highlighted events of the school. The students zone
+                other highlighted events of the school. The Students` Zone
                 schooling system organized the event being sure that the
                 elections were free and fair and the rules and regulations were
                 followed.
@@ -137,12 +133,12 @@ export default function Upcoming() {
           {/* <div className="flex flex-wrap justify-center items-center m-auto flex-col lg:flex-row  gap-10"> */}
           <div className="bg-[#fff] w-[300px] !py-10 xl:!py-14 ">
             <p className="text-[#D2093C] text-[20px] font-sans font-semibold leading-8 px-10">
-              STUDENT'S WEEK 2022
+              Students` WEEK 2022
             </p>
             <div className="px-10">
               <p className="text-[#00306e] text-[12px] xl:text-[18px] font-sans  leading-7 mt-1">
                 “Stand up for the champions!” Annual Sports Day was organized at
-                the Students Zone Schooling System as we believe sports offer
+                the Students` Zone Schooling System as we believe sports offer
                 children a change from the monotony of their daily life. It is
                 also a useful means of entertainment and physical activities for
                 students.
@@ -159,7 +155,7 @@ export default function Upcoming() {
             <div className="px-10">
               <p className="text-[#00306e] text-[12px] xl:text-[18px] font-sans  leading-7 mt-1">
                 “Stand up for the champions!” Annual Sports Day was organized at
-                the Students Zone Schooling System as we believe sports offer
+                the Students` Zone Schooling System as we believe sports offer
                 children a change from the monotony of their daily life. It is
                 also a useful means of entertainment and physical activities for
                 students.
