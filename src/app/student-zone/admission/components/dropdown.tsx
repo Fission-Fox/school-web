@@ -148,7 +148,7 @@ export default function SelectDropdown({ list, label, setValue, func }: Prop) {
     setAge(event.target.value as string);
     if (setValue) {
       setValue(event.target.value as string);
-      func();
+      if (func) func();
     }
   };
 

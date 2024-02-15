@@ -12,10 +12,10 @@ const Navigation: FC = () => {
     //   label: "Testimonial ",
     //   path: "#testimonial",
     // },
-    {
-      label: "Practice Materials ",
-      path: "#testimonial",
-    },
+    //    {
+    //label: "Practice Materials ",
+    //path: "#testimonial",
+    //  },
     {
       label: "Schooling System",
       path: "/student-zone",
