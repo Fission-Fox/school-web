@@ -261,7 +261,7 @@ export default function Admission() {
             <div className="w-full flex justify-center ">
               <InputFileUpload setFiles={setFiles} />
             </div>
-            <div className="flex flex-wrap justify-evenly">
+            <div className="flex flex-wrap gap-4 justify-evenly">
               <SelectDropdown
                 label={"Admission for"}
                 setValue={setAdmissionFor}
