@@ -64,7 +64,7 @@ export default function Admission() {
         "Accounting",
       ],
     },
-    "Federal / AKU-EB": {
+    "AKU-EB": {
       compulsory: ["Urdu", "Islamiyat / Ethics", "Pakistan Studies", "English"],
       optional: [
         "Physics",

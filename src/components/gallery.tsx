@@ -19,6 +19,15 @@ import ImageListItem from "@mui/material/ImageListItem";
 import Image from "next/image";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
+import gallery1 from "@/assets/images/gallery1.jpeg";
+import gallery2 from "@/assets/images/gallery2.jpeg";
+import gallery3 from "@/assets/images/gallery3.jpeg";
+import gallery4 from "@/assets/images/gallery4.jpeg";
+import gallery5 from "@/assets/images/gallery5.jpeg";
+import gallery6 from "@/assets/images/gallery6.jpeg";
+import gallery7 from "@/assets/images/gallery7.jpeg";
+import gallery8 from "@/assets/images/gallery8.jpeg";
+import gallery9 from "@/assets/images/gallery9.jpeg";
 
 export default function StandardImageList() {
   const itemData = [
@@ -27,45 +36,45 @@ export default function StandardImageList() {
       title: "youtube",
     },
     {
-      img: child,
-      title: " child  ",
+      img: gallery1,
+      title: " gallery1 ",
     },
     {
-      img: girls,
-      title: "girls",
+      img: gallery2,
+      title: "gallery2",
     },
     {
-      img: image1,
-      title: " image1",
+      img: gallery3,
+      title: " gallery3",
     },
     {
       img: image3,
       title: "image3",
     },
     {
-      img: image4,
-      title: "image4",
+      img: gallery4,
+      title: "gallery4",
     },
     {
-      img: image8,
-      title: "image8",
+      img: gallery5,
+      title: "gallery5",
     },
     {
-      img: image9,
-      title: "image9",
+      img: gallery6,
+      title: "gallery6",
     },
 
     {
-      img: image14,
-      title: "image14",
+      img: gallery7,
+      title: "gallery7",
     },
     {
-      img: image18,
-      title: "image18 ",
+      img: gallery8,
+      title: "gallery8 ",
     },
     {
-      img: image19,
-      title: "image19 ",
+      img: gallery9,
+      title: "gallery9  ",
     },
     {
       img: image20,
