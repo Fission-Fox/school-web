@@ -73,14 +73,14 @@ export default function TemporaryDrawer() {
               </div>
 
               <div className=" w-auto flex flex-col items-center  text-[#00306e] !text-base xl:!text-lg gap-6  font-semibold">
-                <Link href="#coverimg" onClick={toggleDrawer(anchor, false)}>
+                {/* <Link href="#coverimg" onClick={toggleDrawer(anchor, false)}>
                   <div>
                     {" "}
                     <p className="hover:text-[#D2093C] cursor-pointer">Home</p>
                   </div>
                   <hr />
                 </Link>
-                {pathname === "/college" && (
+                {(pathname === "/college" || "/coaching") && (
                   <Link href="#about" onClick={toggleDrawer(anchor, false)}>
                     <div>
                       {" "}
@@ -91,7 +91,15 @@ export default function TemporaryDrawer() {
                     <hr />
                   </Link>
                 )}
-                <Link href="#academics" onClick={toggleDrawer(anchor, false)}>
+                {pathname === "/coaching" &&
+                  <Link href="#Achievers">
+                    <div>
+                      {" "}
+                      <p className="hover:text-[#D2093C] cursor-pointer">High Achievers</p>
+                    </div>
+                  </Link>
+                }
+                {pathname !== "coaching" && <>  <Link href="#academics" onClick={toggleDrawer(anchor, false)}>
                   <div>
                     {" "}
                     <p className="hover:text-[#D2093C] cursor-pointer">
@@ -100,15 +108,15 @@ export default function TemporaryDrawer() {
                   </div>
                   <hr />
                 </Link>
-                <Link href="#campuslife" onClick={toggleDrawer(anchor, false)}>
-                  <div>
-                    <p className="hover:text-[#D2093C] cursor-pointer">
-                      Campus life
-                    </p>
-                  </div>
-                  <hr />
-                </Link>
-                {pathname !== "/college" && (
+                  <Link href="#campuslife" onClick={toggleDrawer(anchor, false)}>
+                    <div>
+                      <p className="hover:text-[#D2093C] cursor-pointer">
+                        Campus life
+                      </p>
+                    </div>
+                    <hr />
+                  </Link></>}
+                {(pathname !== "/college" || '/coaching') && (
                   <>
                     <Link
                       href="#upcoming"
@@ -139,6 +147,93 @@ export default function TemporaryDrawer() {
                     </p>
                   </div>
                   <hr />
+                </Link>
+                <br /> */}
+                <Link href="#coverimg" onClick={toggleDrawer(anchor, false)}>
+                  <div>
+                    {" "}
+                    <p className="hover:text-[#D2093C] cursor-pointer">Home</p>
+                  </div>
+                </Link>
+
+                {pathname === "/college" ||
+                  ("/coaching" && (
+                    <Link href="#about" onClick={toggleDrawer(anchor, false)}>
+                      <div>
+                        {" "}
+                        <p className="hover:text-[#D2093C] cursor-pointer">
+                          About Us
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+                {pathname === "/coaching" && (
+                  <Link href="#Achievers" onClick={toggleDrawer(anchor, false)}>
+                    <div>
+                      {" "}
+                      <p className="hover:text-[#D2093C] cursor-pointer">
+                        High Achievers
+                      </p>
+                    </div>
+                  </Link>
+                )}
+                {pathname !== "/coaching" && (
+                  <>
+                    <Link
+                      href="#academics"
+                      onClick={toggleDrawer(anchor, false)}
+                    >
+                      <div>
+                        {" "}
+                        <p className="hover:text-[#D2093C] cursor-pointer">
+                          Academics
+                        </p>
+                      </div>
+                    </Link>
+                    <Link
+                      href="#campuslife"
+                      onClick={toggleDrawer(anchor, false)}
+                    >
+                      <div>
+                        <p className="hover:text-[#D2093C] cursor-pointer">
+                          Campus life
+                        </p>
+                      </div>
+                    </Link>
+                  </>
+                )}
+                {pathname !== "/college" ||
+                  ("/coaching" && (
+                    <>
+                      <Link
+                        href="#upcoming"
+                        onClick={toggleDrawer(anchor, false)}
+                      >
+                        <div>
+                          {" "}
+                          <p className="hover:text-[#D2093C] cursor-pointer">
+                            Events
+                          </p>
+                        </div>
+                      </Link>
+                      <Link
+                        href="#student"
+                        onClick={toggleDrawer(anchor, false)}
+                      >
+                        <div>
+                          <p className="hover:text-[#D2093C] cursor-pointer">
+                            Testimonial
+                          </p>
+                        </div>
+                      </Link>
+                    </>
+                  ))}
+                <Link href="/" onClick={toggleDrawer(anchor, false)}>
+                  <div>
+                    <p className="hover:text-[#D2093C] cursor-pointer">
+                      Main Page
+                    </p>
+                  </div>
                 </Link>
                 <br />
               </div>

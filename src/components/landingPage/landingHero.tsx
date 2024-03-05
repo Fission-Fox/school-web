@@ -185,6 +185,11 @@ const HomeHero: FC = () => {
                     College
                   </StyledButton>
                 </Link>
+                <Link href={"/coaching"}>
+                  <StyledButton color="dark" size="large" variant="contained">
+                    Coaching
+                  </StyledButton>
+                </Link>
 
                 {/* </ScrollLink> */}
               </Box>

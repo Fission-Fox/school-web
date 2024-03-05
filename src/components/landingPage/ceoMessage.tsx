@@ -59,6 +59,8 @@ export default function CeoMessage() {
               width: { xs: "100%", md: "50%" },
               display: "flex",
               justifyContent: "center",
+              flexDirection: "column",
+              alignItems: "center",
             }}
           >
             <Image
@@ -69,6 +71,7 @@ export default function CeoMessage() {
               quality={97}
               alt="Testimonial img"
             />
+            <h2 className="font-bold">Sir Ali Dilshad</h2>
           </Box>
           <Box sx={{ width: { xs: "100%", md: "50%" } }}>
             <p>
