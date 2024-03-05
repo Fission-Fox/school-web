@@ -96,42 +96,66 @@ export default function Header() {
             </div>
           </Link>
 
-          {pathname === "/college" && (
-            <Link href="#about">
+          {pathname === "/college" ||
+            ("/coaching" && (
+              <Link href="#about">
+                <div>
+                  {" "}
+                  <p className="hover:text-[#D2093C] cursor-pointer">
+                    About Us
+                  </p>
+                </div>
+              </Link>
+            ))}
+          {pathname === "/coaching" && (
+            <Link href="#Achievers">
               <div>
                 {" "}
-                <p className="hover:text-[#D2093C] cursor-pointer">About Us</p>
+                <p className="hover:text-[#D2093C] cursor-pointer">
+                  High Achievers
+                </p>
               </div>
             </Link>
           )}
-          <Link href="#academics">
-            <div>
-              {" "}
-              <p className="hover:text-[#D2093C] cursor-pointer">Academics</p>
-            </div>
-          </Link>
-          <Link href="#campuslife">
-            <div>
-              <p className="hover:text-[#D2093C] cursor-pointer">Campus life</p>
-            </div>
-          </Link>
-          {pathname !== "/college" && (
+          {pathname !== "/coaching" && (
             <>
-              <Link href="#upcoming">
+              <Link href="#academics">
                 <div>
                   {" "}
-                  <p className="hover:text-[#D2093C] cursor-pointer">Events</p>
+                  <p className="hover:text-[#D2093C] cursor-pointer">
+                    Academics
+                  </p>
                 </div>
               </Link>
-              <Link href="#student">
+              <Link href="#campuslife">
                 <div>
                   <p className="hover:text-[#D2093C] cursor-pointer">
-                    Testimonial
+                    Campus life
                   </p>
                 </div>
               </Link>
             </>
           )}
+          {pathname !== "/college" ||
+            ("/coaching" && (
+              <>
+                <Link href="#upcoming">
+                  <div>
+                    {" "}
+                    <p className="hover:text-[#D2093C] cursor-pointer">
+                      Events
+                    </p>
+                  </div>
+                </Link>
+                <Link href="#student">
+                  <div>
+                    <p className="hover:text-[#D2093C] cursor-pointer">
+                      Testimonial
+                    </p>
+                  </div>
+                </Link>
+              </>
+            ))}
           <Link href="/">
             <div>
               <p className="hover:text-[#D2093C] cursor-pointer">Main Page</p>
