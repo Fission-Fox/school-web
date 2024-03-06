@@ -58,7 +58,7 @@ export default function WelcomeCoaching() {
                   href=""
                   className="text-left text-[12px] md:text-[18px] text-[#00306E] font-bold hover:text-[#D2093C]"
                 >
-                  studentzoneschoolingsystemc11@gmail.com
+                  studentszone6@gmail.com
                 </a>
               </div>
             </div>
