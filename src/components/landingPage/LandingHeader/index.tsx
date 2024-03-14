@@ -2,7 +2,6 @@
 import logo from "@/assets/images/coachinglogo.png";
 import { Close, Menu } from "@mui/icons-material";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -17,7 +16,8 @@ const LandingHeader: FC = () => {
 
   return (
     <Box sx={{ backgroundColor: "background.paper" }}>
-      <Container sx={{ py: { xs: 2, md: 1 } }}>
+      {/* <Container sx={{ py: { xs: 2, md: 1 } }}> */}
+      <Box sx={{ width: "80%", margin: "auto", py: { xs: 2, md: 1 } }}>
         <Box
           sx={{
             display: "flex",
@@ -78,7 +78,8 @@ const LandingHeader: FC = () => {
             )}
           </Box>
         </Box>
-      </Container>
+      </Box>
+      {/* </Container> */}
     </Box>
   );
 };

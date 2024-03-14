@@ -1,7 +1,7 @@
 import comment from "@/assets/images/comment.png";
 import Image from "next/image";
 
-import image from "@/assets/images/picimage.png";
+import image from "@/assets/images/hero.png";
 export default function Welcome() {
   return (
     <div>
