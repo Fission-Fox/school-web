@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { TStudent } from "@/types/admission";
+import emailjs from "@emailjs/browser";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import {
   addDoc,
@@ -14,12 +15,14 @@ import {
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import { toast } from "react-toastify";
 import {
+  EMAIL_SERVICE_ID,
   FIREBASE_API_KEY,
   FIREBASE_AUTH_DOMAIN,
   FIREBASE_MESSAGE_SENDER_ID,
   FIREBASE_PROJECT_ID,
   FIREBASE_STORAGE_BUCKET,
   NEXT_PUBLIC_FIREBASE_APP_ID,
+  TEMPLATE_ID,
 } from "./environments";
 const firebaseConfig = {
   apiKey: FIREBASE_API_KEY,
@@ -47,16 +50,42 @@ const auth = getAuth();
 const db = getFirestore();
 const storage = getStorage();
 
-async function addSubmission(body: TStudent, file: File) {
+async function addSubmission(
+  body: TStudent,
+  file: File,
+  setFormSubmitted: any,
+  setLoader: any,
+) {
   try {
     const storageRef = ref(storage, `/profile/${file.name}`);
     const response = await uploadBytes(storageRef, file);
     const url = await getDownloadURL(response.ref);
     await addDoc(collection(db, "submissions"), { ...body, image: url });
     // alert('Successfully Added')
-
+    setFormSubmitted(true);
+    setLoader(false);
     toast.success("Admission Form has been submitted");
+
+    const templateParams = {
+      firstname: body?.firstname,
+      lastname: body?.lastname,
+      address: body?.address,
+      phone: body?.student_phone,
+    };
+    emailjs
+      .send(EMAIL_SERVICE_ID, TEMPLATE_ID, templateParams, "MmzrJ_3ht15WTdj-0")
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        },
+      );
   } catch (e: any) {
+    setFormSubmitted(false);
+    setLoader(false);
+    toast.error("Something Went Wrong");
     console.log(e.message);
   }
 }
