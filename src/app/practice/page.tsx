@@ -3,7 +3,7 @@ import images from "@/assets/images/line.png";
 import LandingHeader from "@/components/landingPage/LandingHeader";
 import Image from "next/image";
 import Link from "next/link";
-
+import img from "../../../public/images/flyer.png";
 export default function page() {
   return (
     <div>
@@ -53,6 +53,9 @@ export default function page() {
             Class 2nd Year
           </div>
         </Link>
+      </div>
+      <div className="w-full flex justify-center mt-24" id="Achievers">
+        <Image src={img} alt="img" />
       </div>
     </div>
   );
