@@ -1,13 +1,11 @@
 "use client";
 import { Checkbox, CircularProgress, FormControlLabel } from "@mui/material";
 // import emailjs from 'emailjs-com';
-import emailjs from "@emailjs/browser";
 import { useEffect, useRef, useState } from "react";
 import ReactToPrint from "react-to-print";
 import SelectDropdown from "./dropdown";
 import Input from "./formInput";
 // import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
-import { EMAIL_SERVICE_ID, TEMPLATE_ID } from "@/config/environments";
 import {
   addSubmission,
   getAdmissionFor,
@@ -217,6 +215,8 @@ export default function Admission() {
                     subjects: selectedSubjects ?? "",
                   },
                   file,
+                  setFormSubmitted,
+                  setLoader,
                 );
               } else {
                 setFieldValue({
@@ -229,32 +229,10 @@ export default function Admission() {
                     admissionFor: admissionForName?.admissionFor,
                   },
                   file,
+                  setFormSubmitted,
+                  setLoader,
                 );
               }
-              setFormSubmitted(true);
-              setLoader(false);
-              const templateParams = {
-                firstname: data?.firstname,
-                lastname: data?.lastname,
-                address: data?.address,
-                phone: data?.student_phone,
-              };
-
-              emailjs
-                .send(
-                  EMAIL_SERVICE_ID,
-                  TEMPLATE_ID,
-                  templateParams,
-                  "MmzrJ_3ht15WTdj-0",
-                )
-                .then(
-                  function (response) {
-                    console.log("SUCCESS!", response.status, response.text);
-                  },
-                  function (error) {
-                    console.log("FAILED...", error);
-                  },
-                );
             })}
             className="bg-white shadow-sm ring-1 py-3 ring-gray-900/5 sm:rounded-xl md:col-span-2"
           >

@@ -84,7 +84,7 @@ export default function Footer() {
                 </div>
                 <div>
                   {" "}
-                  <p className="mt-8 flex"> 03332044313</p>
+                  <p className="mt-8 flex"> 03212044328</p>
                 </div>
               </div>
               <div className="flex mt-4">

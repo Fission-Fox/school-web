@@ -1,4 +1,5 @@
 "use client";
+import JuniorImageList from "@/components/galleryjunior";
 import { Box } from "@mui/material";
 import Childbest from "./components/childbest";
 import EnrollChild from "./components/enrollChild";
@@ -20,6 +21,7 @@ export default function HomePage() {
       {/* <Preschool /> */}
       <Owngrade />
       <Testimonials />
+      <JuniorImageList />
       <JuniorFooter />
 
       {/* <Newsletter /> */}

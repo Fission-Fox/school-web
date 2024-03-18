@@ -6,7 +6,7 @@ const Navigation: FC = () => {
   const navigations: any = [
     {
       label: "Home",
-      path: "#", // '/',
+      path: "/#", // '/',
     },
     // {
     //   label: "Testimonial ",
@@ -31,6 +31,10 @@ const Navigation: FC = () => {
     {
       label: "Coaching",
       path: "/coaching",
+    },
+    {
+      label: "   Practice material",
+      path: "/practice",
     },
     {
       label: "Admission",
