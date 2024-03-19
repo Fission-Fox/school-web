@@ -33,7 +33,7 @@ const Navigation: FC = () => {
       path: "/coaching",
     },
     {
-      label: "   Practice material",
+      label: "    Past Papers",
       path: "/practice",
     },
     {
