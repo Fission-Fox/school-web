@@ -3,13 +3,13 @@ import images from "@/assets/images/line.png";
 import LandingHeader from "@/components/landingPage/LandingHeader";
 import Image from "next/image";
 import Link from "next/link";
-import img from "../../../public/images/flyer.png";
+import img from "../../../public/images/poster.jpg";
 export default function page() {
   return (
     <div>
       <LandingHeader />
       <div className="text-[26px] flex flex-col items-center justify-center sm:text-[50px] mb-10 text-blue-900 text-center   mt-6  font-bold">
-        Practice Material
+        Past Papers
         <Image className="logo" src={images} alt="" />
       </div>
       <div className="w-full flex justify-center gap-5 flex-wrap">
