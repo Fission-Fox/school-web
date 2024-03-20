@@ -2,6 +2,7 @@
 import CoverImg from "@/components/coverImg";
 // import BackgroudImage from "@/app/assets/images/bg/1.jpg";
 
+import AcademicsCoaching from "@/components/academicsCoaching";
 import WelcomeCoaching from "@/components/welcomecoaching";
 import Image from "next/image";
 import "swiper/css";
@@ -13,6 +14,7 @@ export default function HomePage() {
     <>
       <CoverImg />
       <WelcomeCoaching />
+      <AcademicsCoaching />
       <div className="w-full mt-24" id="Achievers">
         <Image src={img} alt="img" />
       </div>
