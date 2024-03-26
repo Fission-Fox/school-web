@@ -9,6 +9,8 @@ import styles from "./blog.module.css";
 // import { app } from "@/utils/firebase";
 import Link from "next/link";
 import ReactQuill from "react-quill";
+import Post from "@/app/blog/components/post";
+import dayjs from "dayjs";
 
 const page = () => {
   //   const { status } = useSession();
@@ -20,6 +22,7 @@ const page = () => {
   const [value, setValue] = useState("");
   const [title, setTitle] = useState("");
   const [catSlug, setCatSlug] = useState("");
+  const [Preview, setpreview] = useState(false);
 
   //   useEffect(() => {
   //     const storage = getStorage(app);
@@ -90,6 +93,7 @@ const page = () => {
     }
   };
 
+  let GetDate = dayjs().format("DD-MMM , YYYY");
   return (
     <div className={styles.container}>
       <Link href={"/admin/dashboard/blogposts"}>
@@ -116,18 +120,27 @@ const page = () => {
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
           <Image src="/plus.png" alt="" width={16} height={16} />
+          img
         </button>
         {open && (
           <div className={styles.add}>
             <input
               type="file"
               id="image"
-              onChange={(e: any) => setFile(e.target.files[0])}
+              onChange={(e: any) => {
+                const file = e.target.files[0];
+                const reader: any = new FileReader();
+                reader.onloadend = () => {
+                  setFile(reader.result);
+                };
+                reader.readAsDataURL(file);
+                // setFile(e.target.files[0])
+              }}
               style={{ display: "none" }}
             />
             <button className={styles.addButton}>
               <label htmlFor="image">
-                <Image src="/image.png" alt="" width={16} height={16} />
+                <Image src="/image.png" alt="" width={16} height={16} /> img
               </label>
             </button>
             <button className={styles.addButton}>
@@ -145,10 +158,20 @@ const page = () => {
           onChange={setValue}
           placeholder="Tell your story..."
         />
+        <button onClick={() => setpreview(!Preview)}>preview</button>
       </div>
       <button className={styles.publish} onClick={handleSubmit}>
         Publish
       </button>
+      {Preview == true && (
+        <Post
+          tag={catSlug}
+          date={GetDate.toString()}
+          title={title}
+          description={value}
+          image={file ?? ""}
+        />
+      )}
     </div>
   );
 };
