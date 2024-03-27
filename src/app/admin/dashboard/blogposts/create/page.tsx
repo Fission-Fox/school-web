@@ -11,6 +11,8 @@ import Link from "next/link";
 import ReactQuill from "react-quill";
 import Post from "@/app/blog/components/post";
 import dayjs from "dayjs";
+import ImageIcon from "@mui/icons-material/Image";
+import VideoCameraBackIcon from "@mui/icons-material/VideoCameraBack";
 
 const page = () => {
   //   const { status } = useSession();
@@ -103,11 +105,13 @@ const page = () => {
       <input
         type="text"
         placeholder="Title"
-        className={styles.input}
+        // className={styles.input}
+        className="w-[90%] h-10 border ml-4 pl-4 mt-6 mb-6"
         onChange={(e) => setTitle(e.target.value)}
       />
       <select
-        className={styles.select}
+        // className={styles.select}
+        className="w-32 border ml-4"
         onChange={(e) => setCatSlug(e.target.value)}
       >
         <option value="style">style</option>
@@ -117,49 +121,69 @@ const page = () => {
         <option value="travel">travel</option>
         <option value="coding">coding</option>
       </select>
-      <div className={styles.editor}>
-        <button className={styles.button} onClick={() => setOpen(!open)}>
-          <Image src="/plus.png" alt="" width={16} height={16} />
-          img
-        </button>
-        {open && (
-          <div className={styles.add}>
-            <input
-              type="file"
-              id="image"
-              onChange={(e: any) => {
-                const file = e.target.files[0];
-                const reader: any = new FileReader();
-                reader.onloadend = () => {
-                  setFile(reader.result);
-                };
-                reader.readAsDataURL(file);
-                // setFile(e.target.files[0])
-              }}
-              style={{ display: "none" }}
-            />
-            <button className={styles.addButton}>
-              <label htmlFor="image">
-                <Image src="/image.png" alt="" width={16} height={16} /> img
-              </label>
-            </button>
-            <button className={styles.addButton}>
-              <Image src="/external.png" alt="" width={16} height={16} />
-            </button>
-            <button className={styles.addButton}>
-              <Image src="/video.png" alt="" width={16} height={16} />
-            </button>
-          </div>
-        )}
+      <div
+      // className={styles.editor}
+      >
+        <div className="flex items-center ml-4 ">
+          <button
+            // className={styles.button}
+            onClick={() => setOpen(!open)}
+          >
+            <Image src="/plus.png" alt="" width={16} height={16} />
+            Image
+          </button>
+          {open && (
+            <div className={styles.add}>
+              <input
+                type="file"
+                id="image"
+                onChange={(e: any) => {
+                  const file = e.target.files[0];
+                  const reader: any = new FileReader();
+                  reader.onloadend = () => {
+                    setFile(reader.result);
+                  };
+                  reader.readAsDataURL(file);
+                  // setFile(e.target.files[0])
+                }}
+                style={{ display: "none" }}
+              />
+              <button
+              // className={styles.addButton}
+              >
+                <label htmlFor="image">
+                  <Image src="/image.png" alt="" width={16} height={16} />{" "}
+                  <ImageIcon className="ml-3 " />
+                </label>
+              </button>
+              <button
+              // className={styles.addButton}
+              >
+                <Image src="/external.png" alt="" width={16} height={16} />
+              </button>
+              <button className={styles.addButton}>
+                <Image src="/video.png" alt="" width={16} height={16} />
+              </button>
+            </div>
+          )}
+        </div>
+
         <ReactQuill
-          className={styles.textArea}
+          // className={styles.textArea}
+          className="border w-[90%] ml-4 mt-6"
           theme="bubble"
           value={value}
           onChange={setValue}
           placeholder="Tell your story..."
         />
-        <button onClick={() => setpreview(!Preview)}>preview</button>
+        <button
+          className="ml-4 border mt-6 p-2"
+          onClick={() => setpreview(!Preview)}
+        >
+          preview
+        </button>
       </div>
+
       <button className={styles.publish} onClick={handleSubmit}>
         Publish
       </button>
