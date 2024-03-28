@@ -173,7 +173,7 @@ export default function WelcomeCollege() {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Scholarship Offers for A+ Grade and students of Students` Zone
+            Scholarship Offers for A & A+ Grade and students of Students` Zone
             Coaching Center
           </Typography>
         </Box>

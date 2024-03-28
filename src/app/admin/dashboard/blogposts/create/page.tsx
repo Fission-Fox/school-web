@@ -7,14 +7,14 @@ import "react-quill/dist/quill.bubble.css";
 import styles from "./blog.module.css";
 // import { useSession } from "next-auth/react";
 // import { app } from "@/utils/firebase";
-import Link from "next/link";
-import ReactQuill from "react-quill";
 import Post from "@/app/blog/components/post";
-import dayjs from "dayjs";
 import ImageIcon from "@mui/icons-material/Image";
-import VideoCameraBackIcon from "@mui/icons-material/VideoCameraBack";
+import dayjs from "dayjs";
+import Link from "next/link";
+import { Editor } from "react-draft-wysiwyg";
 import Tag from "./tag";
-
+// import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import "@/../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 const page = () => {
   //   const { status } = useSession();
   const router = useRouter();
@@ -183,7 +183,7 @@ const page = () => {
           </div>
         </div>
 
-        <ReactQuill
+        {/* <ReactQuill
           // className={styles.textArea}
           className="border w-[90%] ml-4 mt-6"
           theme="bubble"
@@ -191,7 +191,17 @@ const page = () => {
           onChange={setValue}
           placeholder="Tell your story..."
         />
+      
+        /> */}
         <Tag />
+        <div className="w-[95%] m-auto">
+          <Editor
+            // editorState={value}
+            wrapperClassName="demo-wrapper"
+            editorClassName="demo-editor"
+            // onEditorStateChange={(e) => setValue(e)}
+          />
+        </div>
 
         <button
           className="ml-4 border mt-6 p-2"
