@@ -13,12 +13,13 @@ import Post from "@/app/blog/components/post";
 import dayjs from "dayjs";
 import ImageIcon from "@mui/icons-material/Image";
 import VideoCameraBackIcon from "@mui/icons-material/VideoCameraBack";
+import Tag from "./tag";
 
 const page = () => {
   //   const { status } = useSession();
   const router = useRouter();
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [file, setFile] = useState<any>();
   const [media, setMedia] = useState("");
   const [value, setValue] = useState("");
@@ -101,12 +102,12 @@ const page = () => {
       <Link href={"/admin/dashboard/blogposts"}>
         <p className="font-semibold ml-6 "> ⬅ Back</p>
       </Link>
-
+      <h1 className="mt-6  ml-4 font-bold">Title</h1>
       <input
         type="text"
         placeholder="Title"
         // className={styles.input}
-        className="w-[90%] h-10 border ml-4 pl-4 mt-6 mb-6"
+        className="w-[90%] h-10 border ml-4 pl-4  mb-6"
         onChange={(e) => setTitle(e.target.value)}
       />
       <select
@@ -124,48 +125,62 @@ const page = () => {
       <div
       // className={styles.editor}
       >
-        <div className="flex items-center ml-4 ">
-          <button
+        {/* <div className="flex items-center ml-4 ">
+          <button className="font-bold"
             // className={styles.button}
             onClick={() => setOpen(!open)}
           >
             <Image src="/plus.png" alt="" width={16} height={16} />
             Image
           </button>
-          {open && (
-            <div className={styles.add}>
-              <input
-                type="file"
-                id="image"
-                onChange={(e: any) => {
-                  const file = e.target.files[0];
-                  const reader: any = new FileReader();
-                  reader.onloadend = () => {
-                    setFile(reader.result);
-                  };
-                  reader.readAsDataURL(file);
-                  // setFile(e.target.files[0])
-                }}
-                style={{ display: "none" }}
-              />
-              <button
-              // className={styles.addButton}
+
+        </div> */}
+        <div>
+          <h1 className="font-bold mt-6 ml-4">Featured Image</h1>
+          <div className="flex justify-center ml-4   bg-[#DADDE1] w-[250px] h-10">
+            <button
+              className="  flex justify-center items-center    rounded-lg"
+              onClick={() => setOpen(open)}
+            >
+              Featured Image
+            </button>
+            {open && (
+              <div
+              //  className={styles.add}
               >
-                <label htmlFor="image">
-                  <Image src="/image.png" alt="" width={16} height={16} />{" "}
-                  <ImageIcon className="ml-3 " />
-                </label>
-              </button>
-              <button
-              // className={styles.addButton}
-              >
-                <Image src="/external.png" alt="" width={16} height={16} />
-              </button>
-              <button className={styles.addButton}>
-                <Image src="/video.png" alt="" width={16} height={16} />
-              </button>
-            </div>
-          )}
+                <input
+                  type="file"
+                  id="image"
+                  onChange={(e: any) => {
+                    const file = e.target.files[0];
+                    const reader: any = new FileReader();
+                    reader.onloadend = () => {
+                      setFile(reader.result);
+                    };
+                    reader.readAsDataURL(file);
+                    // setFile(e.target.files[0])
+                  }}
+                  style={{ display: "none" }}
+                />
+                <button
+                // className={styles.addButton}
+                >
+                  <label htmlFor="image">
+                    <Image src="/image.png" alt="" width={16} height={16} />{" "}
+                    <ImageIcon className=" " />
+                  </label>
+                </button>
+                <button
+                // className={styles.addButton}
+                >
+                  <Image src="/external.png" alt="" width={16} height={16} />
+                </button>
+                <button className={styles.addButton}>
+                  <Image src="/video.png" alt="" width={16} height={16} />
+                </button>
+              </div>
+            )}
+          </div>
         </div>
 
         <ReactQuill
@@ -176,6 +191,8 @@ const page = () => {
           onChange={setValue}
           placeholder="Tell your story..."
         />
+        <Tag />
+
         <button
           className="ml-4 border mt-6 p-2"
           onClick={() => setpreview(!Preview)}
