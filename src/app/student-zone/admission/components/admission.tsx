@@ -502,7 +502,7 @@ export default function Admission() {
                 <div className="sm:col-span-2 sm:col-start-1">
                   <Input
                     label={"    Student’s Cell *"}
-                    type="text"
+                    type="number"
                     htmlFor="student_phone"
                     register={{
                       ...register("student_phone", {
@@ -515,7 +515,7 @@ export default function Admission() {
                 <div className="sm:col-span-2">
                   <Input
                     label={"Home Cell *"}
-                    type="text"
+                    type="number"
                     htmlFor="home_phone"
                     register={{
                       ...register("home_phone", {
