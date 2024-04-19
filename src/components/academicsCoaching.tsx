@@ -1,8 +1,9 @@
-import academic3 from "@/assets/images/commerceCollege.jpg";
-import academic2 from "@/assets/images/computerCollege.jpg";
+import academic3 from "@/assets/images/cambridge.png";
+import academic2 from "@/assets/images/sindhBoard.jpg";
 import images from "@/assets/images/line.png";
-import academic from "@/assets/images/preEngCollege.jpg";
-import img from "@/assets/images/premedicalCollege.jpg";
+import academic from "@/assets/images/federalB.png";
+import aptitude from "@/assets/images/aptitude.jpg";
+import img from "@/assets/images/aghaKhan.jpg";
 import Image from "next/image";
 
 export default function AcademicsCoaching() {
@@ -68,7 +69,7 @@ export default function AcademicsCoaching() {
             <Image
               className=" "
               style={{
-                objectFit: "cover",
+                objectFit: "contain",
                 width: "100%",
                 height: "100%",
                 position: "absolute",
@@ -113,7 +114,7 @@ export default function AcademicsCoaching() {
             <Image
               className=""
               style={{
-                objectFit: "cover",
+                objectFit: "contain",
                 width: "100%",
                 height: "100%",
                 position: "absolute",
@@ -159,7 +160,7 @@ export default function AcademicsCoaching() {
             <Image
               className="ml[70px]"
               style={{
-                objectFit: "cover",
+                objectFit: "contain",
                 width: "100%",
                 height: "100%",
                 position: "absolute",
@@ -192,7 +193,7 @@ export default function AcademicsCoaching() {
                 position: "absolute",
                 top: "0px",
               }}
-              src={academic3}
+              src={aptitude}
               alt=""
             />
             <div
