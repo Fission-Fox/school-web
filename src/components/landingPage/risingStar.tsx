@@ -116,7 +116,7 @@ export default function RisingStar() {
             </td>
           </tr>
         </table>
-        <div className="mt-20">
+        {/* <div className="mt-20">
           <h1 className="text-[12px] sm:text-[14px] text-center font-bold border-black border-[1px] px-5 sm:px-24">
             Free Structure for (XI - XII) New Admission 2024-2025
           </h1>
@@ -204,15 +204,15 @@ export default function RisingStar() {
               </td>
             </tr>
           </table>
-        </div>
+        </div> */}
       </div>
 
-      <div className="font-semibold border-[1px] bg-[#E5E9EF] border-black !text-[14px] sm:!text-[18px] px-12 mt-10 text-center">
+      {/* <div className="font-semibold border-[1px] bg-[#E5E9EF] border-black !text-[14px] sm:!text-[18px] px-12 mt-10 text-center">
         <span className="font-extrabold !text-[14px] sm:!text-[18px]">
           Note:
         </span>{" "}
         Our College Students can avail 40% discount in our Coaching Classes
-      </div>
+      </div> */}
     </div>
   );
 }
