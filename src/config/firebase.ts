@@ -34,14 +34,7 @@ const firebaseConfig = {
   appId: NEXT_PUBLIC_FIREBASE_APP_ID,
   // measurementId: FIREBASE_MEASURMENT_ID,
 };
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDGnKdVjgDCH_jUBPKFlz98aAUuo_1qzH0",
-//   authDomain: "studentzone-9f3ea.firebaseapp.com",
-//   projectId: "studentzone-9f3ea",
-//   storageBucket: "studentzone-9f3ea.appspot.com",
-//   messagingSenderId: "615309376916",
-//   appId: "1:615309376916:web:a49f9a6ea9ad28ca42a381"
-// };
+
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
