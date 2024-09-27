@@ -11,6 +11,11 @@ export const MENU = [
     icon: <SignalCellularAlt2BarIcon />,
     title: "Admissions",
   },
+  {
+    href: "/admin/dashboard/blogposts",
+    icon: <SignalCellularAlt2BarIcon />,
+    title: "Blog Posts",
+  },
   // {
   //   href: "/vendors",
   //   icon: <SignalCellularAlt2BarIcon />,
