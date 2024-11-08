@@ -20,8 +20,8 @@ export default function Page() {
 
   return (
     <div>
-      {showPopup && <ImagePopup onClose={closePopup} />} {/* Conditionally render the pop-up */}
-      
+      {showPopup && <ImagePopup onClose={closePopup} />}{" "}
+      {/* Conditionally render the pop-up */}
       {/* Only render the page components once the pop-up is closed */}
       {isPopupClosed && (
         <>

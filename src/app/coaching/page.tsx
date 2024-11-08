@@ -8,7 +8,7 @@ import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import img from "../../../public/images/HigherAchievers.jpg";
+import img from "@/assets/images/HigherAchevier.jpeg";
 export default function HomePage() {
   return (
     <>

@@ -1,11 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { FC, MouseEventHandler } from "react";
 import Image from "next/image";
-import PopImage from "../assets/images/HigherAchevier.jpeg";
-import { FaTimes } from "react-icons/fa"; // Importing the close icon from react-icons
+import PopImage from "@/assets/images/HigherAchevier.jpeg";
+import { FaTimes } from "react-icons/fa";
 
-export default function ImagePopup({ onClose }) {
+interface ImagePopupProps {
+  onClose: MouseEventHandler<HTMLButtonElement>;
+}
+
+const ImagePopup: FC<ImagePopupProps> = ({ onClose }) => {
   return (
     <div
       style={{
@@ -20,10 +24,8 @@ export default function ImagePopup({ onClose }) {
     >
       <div
         style={{
-    
           padding: "24px",
           borderRadius: "12px",
-       
           position: "relative",
           maxWidth: "80%",
           width: "100%",
@@ -37,7 +39,7 @@ export default function ImagePopup({ onClose }) {
             position: "absolute",
             top: "16px",
             right: "16px",
-            color: "#FFFFFF", // gray-600
+            color: "#FFFFFF",
             fontSize: "24px",
             border: "none",
             background: "none",
@@ -64,9 +66,9 @@ export default function ImagePopup({ onClose }) {
             }}
           />
         </div>
-
-    
       </div>
     </div>
   );
-}
+};
+
+export default ImagePopup;
