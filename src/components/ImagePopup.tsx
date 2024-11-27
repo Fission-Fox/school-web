@@ -1,74 +1,41 @@
+
+
 "use client";
 
-import React, { FC, MouseEventHandler } from "react";
+import React from "react";
 import Image from "next/image";
-import PopImage from "@/assets/images/HigherAchevier.jpeg";
-import { FaTimes } from "react-icons/fa";
+import PopImage from "../assets/images/HigherAchevier.jpeg";
 
-interface ImagePopupProps {
-  onClose: MouseEventHandler<HTMLButtonElement>;
-}
+export default function ImagePopup({ onClose }) {
+  // Handle click on the background to close the popup
+  const handleBackgroundClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
 
-const ImagePopup: FC<ImagePopupProps> = ({ onClose }) => {
   return (
     <div
-      style={{
-        position: "fixed",
-        inset: 0,
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        zIndex: 50,
-      }}
+      className="fixed inset-0 bg-gradient-to-br from-white/30 to-blue-500/20 backdrop-blur-sm backdrop-saturate-200 flex justify-center items-center z-50"
+      onClick={handleBackgroundClick} // Handle background click
     >
       <div
-        style={{
-          padding: "24px",
-          borderRadius: "12px",
-          position: "relative",
-          maxWidth: "80%",
-          width: "100%",
-          margin: "0 16px",
-        }}
+        className="relative p-6 max-w-[70%] w-full overflow-hidden"
+        onClick={(e) => e.stopPropagation()} // Stop propagation for the container
       >
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          style={{
-            position: "absolute",
-            top: "16px",
-            right: "16px",
-            color: "#FFFFFF",
-            fontSize: "24px",
-            border: "none",
-            background: "none",
-            cursor: "pointer",
-          }}
-        >
-          <FaTimes />
-        </button>
-
         {/* Image */}
-        <div style={{ marginBottom: "24px" }}>
+        <div className="mb-6">
           <Image
             src={PopImage}
             alt="Pop-up Image"
             height={0}
             width={0}
-            style={{
-              maxWidth: "80%",
-              height: "auto",
-              borderRadius: "8px",
-              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-              display: "block",
-              margin: "0 auto",
-            }}
+            className="max-w-full h-auto rounded-lg shadow-lg block mx-auto"
+            onClick={onClose} // Close popup when clicking on the image
           />
         </div>
       </div>
     </div>
   );
-};
+}
 
-export default ImagePopup;
