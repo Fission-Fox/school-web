@@ -1,14 +1,18 @@
-
-
 "use client";
 
 import React from "react";
 import Image from "next/image";
 import PopImage from "../assets/images/HigherAchevier.jpeg";
+import '../styles/globals.css';
 
-export default function ImagePopup({ onClose }) {
+// Define the types for the props
+interface ImagePopupProps {
+  onClose: () => void; // The onClose function is expected to be a function that returns void
+}
+
+const ImagePopup: React.FC<ImagePopupProps> = ({ onClose }) => {
   // Handle click on the background to close the popup
-  const handleBackgroundClick = (e) => {
+  const handleBackgroundClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       onClose();
     }
@@ -28,8 +32,8 @@ export default function ImagePopup({ onClose }) {
           <Image
             src={PopImage}
             alt="Pop-up Image"
-            height={0}
-            width={0}
+            height={500} // Fixed height or dynamic if needed
+            width={700}  // Fixed width or dynamic if needed
             className="max-w-full h-auto rounded-lg shadow-lg block mx-auto"
             onClick={onClose} // Close popup when clicking on the image
           />
@@ -37,5 +41,6 @@ export default function ImagePopup({ onClose }) {
       </div>
     </div>
   );
-}
+};
 
+export default ImagePopup;
